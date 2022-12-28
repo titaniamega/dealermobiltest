@@ -1,0 +1,38 @@
+@extends('adminlte::page')
+@section('title', 'Tambah Data Mobil')
+@section('content_header')
+    <h1 class="m-0 text-dark">Tambah Data Mobil</h1>
+@stop
+@section('content')
+    <form action="{{route('mobil.store')}}" method="post">
+        @csrf
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputName">Merk Mobil</label>
+                        <input type="text" class="form-control @error('merk_mobil') is-invalid @enderror" id="exampleInputMerk" placeholder="Merk mobil" name="merk_mobil" value="{{old('merk_mobil')}}">
+                        @error('merk_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Tipe Mobil</label>
+                        <input type="text" class="form-control @error('tipe_mobil') is-invalid @enderror" id="exampleInputTipe" placeholder="Tipe mobil" name="tipe_mobil" value="{{old('tipe_mobil')}}">
+                        @error('tipe_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputHarga">Harga</label>
+                        <input type="number" class="form-control @error('harga') is-invalid @enderror" id="exampleInputHarga" placeholder="Harga mobil" name="harga" value="{{old('harga')}}">
+                        @error('harga') <span class="text-danger">{{$message}}</span> @enderror
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <a href="{{route('mobil.index')}}" class="btn btn-default">
+                        Batal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
