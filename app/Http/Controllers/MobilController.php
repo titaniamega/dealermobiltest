@@ -108,6 +108,7 @@ class MobilController extends Controller
     public function destroy($id)
     {
         $mobil = Mobil::findorFail($id);
+        $mobil->delete();
         return redirect()->route('mobil.index')
         ->with('success', 'Data berhasil dihapus!');
     }
