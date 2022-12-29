@@ -15,7 +15,7 @@ class MobilController extends Controller
      */
     public function index()
     {
-        $data['mobils'] = Mobil::orderBy('id','desc')->paginate(10);
+        $data['mobils'] = Mobil::orderBy('id','desc')->paginate(7);
         return view('mobil.index', $data);
     }
 
