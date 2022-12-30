@@ -45,9 +45,12 @@ class MobilController extends Controller
             'deskripsi' => 'required'
             ]);
 
+            $gambar = $request->hidden_gambar;
+            if($request->gambar != '')
+        {
             $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
             $request->gambar->move(public_path('images'), $nama_file);
-
+        }
             $mobil = new Mobil;
             $mobil->merk_mobil = $request->merk_mobil;
             $mobil->tipe_mobil = $request->tipe_mobil;
@@ -67,6 +70,7 @@ class MobilController extends Controller
      */
     public function show($id)
     {
+        $mobil = Mobil::findOrFail($id);
         return view('mobil.show',compact('mobil'));
     }
 
@@ -97,11 +101,16 @@ class MobilController extends Controller
         'merk_mobil' => 'required',
         'tipe_mobil' => 'required',
         'harga' => 'required',
+        'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        'deskripsi' => 'required'
         ]);
+
         $mobil = Mobil::find($id);
         $mobil->merk_mobil = $request->merk_mobil;
         $mobil->tipe_mobil = $request->tipe_mobil;
         $mobil->harga = $request->harga;
+
+
         $mobil->save();
         return redirect()->route('mobil.index')
         ->with('Mobil berhasil diupdate');
