@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => 'ADMIN',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -303,8 +303,8 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            // 'type' => 'sidebar-menu-search',
+            // 'text' => 'search',
         ],
         [
             'text' => 'blog',
@@ -315,27 +315,27 @@ return [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 1,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'MENU'],
         [
-            'text' => 'profile',
+            'text' => 'Profil Akun',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Promo',
+            'url'  => '/promo',
+            'icon' => 'fas fa-fw fa-book',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'Informasi Produk',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Data Produk',
+                    'url'  => '/mobil',
                 ],
                 [
                     'text'    => 'level_one',

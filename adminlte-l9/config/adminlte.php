@@ -315,12 +315,12 @@ return [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 1,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'profil',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
@@ -330,7 +330,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'Informasi Produk',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
