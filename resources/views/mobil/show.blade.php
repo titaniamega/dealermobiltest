@@ -30,8 +30,8 @@
                         @error('harga') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
-                        <label for="exampleInputGambar">Gambar</label>
-                        <img src="{{url('images/'.$mobil->gambar)}}" width="100" height="100"/> 
+                        <!-- <label for="exampleInputGambar">Gambar</label> -->
+                        <img src="{{url('images/'.$mobil->gambar)}}" width="300"/> 
                         </div>
                     </div>
                     </div>

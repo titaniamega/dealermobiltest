@@ -5,7 +5,7 @@
     <h1 class="m-0 text-dark">Edit Data Mobil</h1>
 @stop
 @section('content')
-<form action="{{route('mobil.update',$mobil->id)}}" method="post">
+<form action="{{route('mobil.update',$mobil->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="row">
