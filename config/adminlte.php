@@ -327,7 +327,7 @@ return [
         [
             'text' => 'Promo',
             'url'  => '/promo',
-            'icon' => 'fas fa-fw fa-book',
+            'icon' => 'fas fa-fw fa-bullhorn',
         ],
         [
             'text'    => 'Informasi Produk',
@@ -336,36 +336,23 @@ return [
                 [
                     'text' => 'Data Produk',
                     'url'  => '/mobil',
+                    'icon' => 'fas fa-fw fa-car',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Tipe Produk',
+                    'url'  => '/tipe',
+                    'icon' => 'fas fa-fw fa-list',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Paket Kredit Global',
+                    'url'  => '/kredit',
                 ],
             ],
+        ],
+        [
+            'text' => 'Konsumen',
+            'url'  => '/konsumen',
+            'icon' => 'fas fa-fw fa-book',
         ],
         ['header' => 'labels'],
         [

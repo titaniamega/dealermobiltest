@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MobilController;
-
+use App\Http\Controllers\PromoController;
+use App\Http\Controllers\KonsumenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,11 @@ Route::get('/', 'App\Http\Controllers\MobilController@index');
 Route::get('/create','App\Http\Controllers\MobilController@create');
 Route::get('/update','App\Http\Controllers\MobilController@update');
 
-Route::get('kliping', [HomeController::class, 'getKliping']);
+Route::resource('/promo', PromoController::class);
+Route::get('/', 'App\Http\Controllers\PromoController@index');
+
+Route::resource('/konsumen', KonsumenController::class);
+Route::get('/', 'App\Http\Controllers\KonsumenController@index');
 
 Route::group(['prefix' => 'admin'], function() {
   Route::get('/', 'DashboardController@index');

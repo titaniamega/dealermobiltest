@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Mobil;
 use Illuminate\Http\Request;
 use DataTables;
-use App\Helpers\Uang;
+
 
 class MobilController extends Controller
 {
@@ -13,7 +13,7 @@ class MobilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+      public function index()
     {
         $data['mobils'] = Mobil::orderBy('id','desc')->paginate(7);
         return view('mobil.index', $data);
@@ -134,13 +134,5 @@ class MobilController extends Controller
         ->with('success', 'Data berhasil dihapus!');
     }
 
-    public function getKliping()
-    {
-        $data = KlipingModel::select('*')
-                ->join('tb_kat_berita', 'tb_kliping.id_kat_berita', '=', 'tb_kat_berita.id_kat_berita')
-                ->where('tb_kliping.id_stat_kliping', 2)
-                ->limit(100)
-                ->get();
-        return DataTables::of($data)->make(true);
-    }
+   
 }

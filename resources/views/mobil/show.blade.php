@@ -1,7 +1,19 @@
 @extends('adminlte::page')
-@section('title', 'Detail Data Mobil')
+@section('title', 'Detail Mobil')
 @section('content_header')
-    <h1 class="m-0 text-dark">Detail Data Mobil</h1>
+<div class="d-flex flex-row align-items-center my-flex-container">
+  <div class="row">
+    <div class="p-2 mr-auto my-flex-item">
+    <h1 class="m-0 p-0 text-dark">Detail Mobil</h1>
+    </div>
+    <div class="p-2 mr-auto my-flex-item">
+    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$mobil->created_at->isoFormat('dddd, D MMMM Y') }} </p>
+    </div>
+    <div class="p-2 mr-auto my-flex-item">
+    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$mobil->updated_at->isoFormat('dddd, D MMMM Y') }}
+    </div>
+  </div>
+</div>
 @stop
 @section('content')
     <div class="row">
@@ -12,12 +24,12 @@
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputName">Merk Mobil</label>
-                        <input type="text" name="merk_mobil" value="{{ $mobil->merk_mobil }}" class="form-control" readonly="readonly" placeholder="Edit Merk Mobil">
+                        <input type="text" name="merk_mobil" value="{{ $mobil->merk_mobil }}" class="form-control" readonly="readonly" placeholder="Merk Mobil">
                         @error('merk_mobil') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
                         <label for="exampleInputEmail">Tipe Mobil</label>
-                        <input type="text" name="tipe_mobil" class="form-control" placeholder="Edit Tipe Mobil" value="{{ $mobil->tipe_mobil}}" readonly="readonly">
+                        <input type="text" name="tipe_mobil" class="form-control" placeholder="Tipe Mobil" value="{{ $mobil->tipe_mobil}}" readonly="readonly">
                         @error('tipe_mobil') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
@@ -26,7 +38,7 @@
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputHarga">Harga</label>
-                        <input type="number" name="harga" value="{{ $mobil->harga }}" class="form-control" placeholder="Edit Harga Mobil" readonly="readonly">
+                        <input type="number" name="harga" value="{{$mobil->harga}}" class="form-control" placeholder="Harga Mobil" readonly="readonly">
                         @error('harga') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
