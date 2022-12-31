@@ -28,6 +28,7 @@ Route::get('/update','App\Http\Controllers\MobilController@update');
 
 Route::resource('/promo', PromoController::class);
 Route::get('/', 'App\Http\Controllers\PromoController@index');
+Route::get('/create','App\Http\Controllers\PromoController@create');
 
 Route::resource('/konsumen', KonsumenController::class);
 Route::get('/', 'App\Http\Controllers\KonsumenController@index');

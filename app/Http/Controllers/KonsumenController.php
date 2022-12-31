@@ -25,7 +25,7 @@ class KonsumenController extends Controller
      */
     public function create()
     {
-        //
+        return view('konsumen.create');
     }
 
     /**
