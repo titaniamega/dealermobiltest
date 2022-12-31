@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\KonsumenController;
+use App\Http\Controllers\KreditController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::get('/', 'App\Http\Controllers\PromoController@index');
 
 Route::resource('/konsumen', KonsumenController::class);
 Route::get('/', 'App\Http\Controllers\KonsumenController@index');
+
+Route::resource('/kredit', KreditController::class);
+Route::get('/', 'App\Http\Controllers\KreditController@index');
+Route::get('/create', 'App\Http\Controllers\KreditController@create');
 
 Route::group(['prefix' => 'admin'], function() {
   Route::get('/', 'DashboardController@index');
