@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Promo')
+@section('title', 'Paket Kredit')
 @section('content_header')
     <h1 class="m-0 text-dark">Data Paket Kredit Global</h1>
 @stop

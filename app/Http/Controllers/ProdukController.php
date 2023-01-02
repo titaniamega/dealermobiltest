@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Mobil;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
 
 
-class MobilController extends Controller
+class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class MobilController extends Controller
      */
       public function index()
     {
-        $data['mobils'] = Mobil::orderBy('id','desc')->paginate(7);
-        return view('mobil.index', $data);
+        $data['produk'] = Produk::orderBy('id','desc')->paginate(7);
+        return view('produk.index', $data);
     }
 
     /**
@@ -26,7 +26,7 @@ class MobilController extends Controller
      */
     public function create()
     {
-        return view('mobil.create');
+        return view('produk.create');
     }
 
     /**
@@ -38,26 +38,28 @@ class MobilController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'merk_mobil' => 'required',
-            'tipe_mobil' => 'required',
+            'nama_produk' => 'required',
             'harga' => 'required',
             'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'gambarslide' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'deskripsi' => 'required'
             ]);
-
         
             $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
             $request->gambar->move(public_path('images'), $nama_file);
-        
-            $mobil = new Mobil;
-            $mobil->merk_mobil = $request->merk_mobil;
-            $mobil->tipe_mobil = $request->tipe_mobil;
-            $mobil->harga = $request->harga;
-            $mobil->gambar = $nama_file;
-            $mobil->deskripsi = $request->deskripsi;
-            $mobil->save();
 
-            return redirect()->route('mobil.index')->with('success', 'Data berhasil ditambahkan');
+            $nama_file_slide = time() . '.' . $request->gambarslide->getClientOriginalExtension();
+            $request->gambarslide->move(public_path('slides'), $nama_file_slide);
+        
+            $produk = new Produk;
+            $produk->nama_produk= $request->nama_produk;
+            $produk->harga = $request->harga;
+            $produk->gambar = $nama_file;
+            $produk->gambarslide = $nama_file_slide;
+            $produk->deskripsi = $request->deskripsi;
+            $produk->save();
+
+            return redirect()->route('produk.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -68,8 +70,8 @@ class MobilController extends Controller
      */
     public function show($id)
     {
-        $mobil = Mobil::findOrFail($id);
-        return view('mobil.show',compact('mobil'));
+        $produk = Produk::findOrFail($id);
+        return view('produk.show',compact('produk'));
     }
 
     /**
@@ -80,8 +82,8 @@ class MobilController extends Controller
      */
     public function edit($id)
     {
-        $mobil = Mobil::findOrFail($id);
-        return view('mobil.edit', compact('mobil'));
+        $produk = Produk::findOrFail($id);
+        return view('produk.edit', compact('produk'));
     }
 
     
@@ -96,10 +98,10 @@ class MobilController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-        'merk_mobil' => 'required',
-        'tipe_mobil' => 'required',
+        'nama_produk' => 'required',
         'harga' => 'required',
         'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        'gambarslide' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         'deskripsi' => 'required'
         ]);
 
@@ -110,15 +112,14 @@ class MobilController extends Controller
                 $request->gambar->move(public_path('images'), $nama_file);
             }
 
-        $mobil = Mobil::find($id);
-        $mobil->merk_mobil = $request->merk_mobil;
-        $mobil->tipe_mobil = $request->tipe_mobil;
-        $mobil->harga = $request->harga;
-        $mobil->gambar = $nama_file;
-        $mobil->deskripsi = $request->deskripsi;
-        $mobil->save();
-        return redirect()->route('mobil.index')
-        ->with('Mobil berhasil diupdate');
+            $produk = new Produk;
+            $produk->nama_produk= $request->nama_produk;
+            $produk->harga = $request->harga;
+            $produk->gambar = $nama_file;
+            $produk->gambarslide = $nama_file_slide;
+            $produk->deskripsi = $request->deskripsi;
+            $produk->save();
+            return redirect()->route('produk.index')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -129,9 +130,9 @@ class MobilController extends Controller
      */
     public function destroy($id)
     {
-        $mobil = Mobil::findorFail($id);
-        $mobil->delete();
-        return redirect()->route('mobil.index')
+        $produk = Produk::findorFail($id);
+        $produk->delete();
+        return redirect()->route('produk.index')
         ->with('success', 'Data berhasil dihapus!');
     }
 

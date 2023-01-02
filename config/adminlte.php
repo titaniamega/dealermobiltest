@@ -335,7 +335,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Data Produk',
-                    'url'  => '/mobil',
+                    'url'  => '/produk',
                     'icon' => 'fas fa-fw fa-car',
                 ],
                 [

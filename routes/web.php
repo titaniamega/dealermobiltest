@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MobilController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\TipeController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\KreditController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/mobil', MobilController::class);
-Route::get('/', 'App\Http\Controllers\MobilController@index');
-Route::get('/create','App\Http\Controllers\MobilController@create');
-Route::get('/update','App\Http\Controllers\MobilController@update');
+Route::resource('/produk', ProdukController::class);
+Route::get('/', 'App\Http\Controllers\ProdukController@index');
+Route::get('/create','App\Http\Controllers\ProdukController@create');
+Route::get('/update','App\Http\Controllers\ProdukController@update');
+
+Route::resource('/tipe', TipeController::class);
+Route::get('/', 'App\Http\Controllers\TipeController@index');
+Route::get('/create','App\Http\Controllers\TipeController@create');
 
 Route::resource('/promo', PromoController::class);
 Route::get('/', 'App\Http\Controllers\PromoController@index');

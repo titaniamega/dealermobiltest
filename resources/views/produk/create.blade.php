@@ -5,7 +5,7 @@
     <h1 class="m-0 text-dark">Tambah Data Mobil</h1>
 @stop
 @section('content')
-    <form action="{{route('mobil.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('produk.store')}}" method="post" enctype="multipart/form-data">
         @csrf
     <div class="row">
         <div class="col-12">
@@ -14,14 +14,14 @@
                     <div class="form-group">
                     <div class="row">
                         <div class="col">
-                        <label for="exampleInputName">Merk Mobil</label>
-                        <input type="text" class="form-control @error('merk_mobil') is-invalid @enderror" id="exampleInputMerk" placeholder="Merk mobil" name="merk_mobil" value="{{old('merk_mobil')}}">
-                        @error('merk_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                        <label for="exampleInputpProduk">Nama Produk</label>
+                        <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="exampleInputProduk" placeholder="Nama Produk" name="nama_produk" value="{{old('nama_produk')}}">
+                        @error('nama_produk') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
-                        <label for="exampleInputEmail">Tipe Mobil</label>
-                        <input type="text" class="form-control @error('tipe_mobil') is-invalid @enderror" id="exampleInputTipe" placeholder="Tipe mobil" name="tipe_mobil" value="{{old('tipe_mobil')}}">
-                        @error('tipe_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                        <label for="exampleInputGambar">Gambar</label>
+                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" id="exampleInputGambar" placeholder="Gambar mobil" name="gambar">
+                        @error('gambar') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
                     </div>
@@ -33,9 +33,9 @@
                         @error('harga') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
-                        <label for="exampleInputGambar">Gambar</label>
-                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" id="exampleInputGambar" placeholder="Gambar mobil" name="gambar">
-                        @error('gambar') <span class="text-danger">{{$message}}</span> @enderror
+                        <label for="exampleInputGambarSlide">Gambar Slide</label>
+                        <input type="file" class="form-control @error('gambarslide') is-invalid @enderror" id="exampleInputGambarSlide" placeholder="Gambar slide" name="gambarslide">
+                        @error('gambarslide') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
                     </div>
@@ -52,7 +52,7 @@
                     </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{route('mobil.index')}}" class="btn btn-default">
+                    <a href="{{route('produk.index')}}" class="btn btn-default">
                         Batal
                     </a>
                 </div>

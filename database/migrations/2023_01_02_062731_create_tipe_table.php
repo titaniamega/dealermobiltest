@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('promo', function (Blueprint $table) {
+        Schema::create('tipe', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_produk');
-            $table->string('gambar');
-            $table->string('judul');
+            $table->string('nama_tipe');
+            $table->integer('harga');
+            $table->integer('harga_automatic');
+            $table->integer('minimal_angsuran');
+            $table->integer('bayar_pertama');
+            $table->text('bonus');
             $table->timestamps();
 
             $table->foreign('id_produk')
@@ -35,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promo');
+        Schema::dropIfExists('tipe');
     }
 };

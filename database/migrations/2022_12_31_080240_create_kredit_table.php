@@ -15,12 +15,18 @@ return new class extends Migration
     {
         Schema::create('kredit', function (Blueprint $table) {
             $table->id();
-            $table->string('produk');
+            $table->unsignedBigInteger('id_produk');
             $table->integer('harga_mulai');
             $table->integer('dp_mulai');
             $table->integer('cicilan_mulai');
             $table->integer('tenor');
             $table->timestamps();
+
+            $table->foreign('id_produk')
+            ->references('id')
+            ->on('produk')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('konsumen', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_produk');
             $table->string('gambar');
             $table->string('nama_konsumen');
-            $table->string('produk');
             $table->timestamps();
+            
+            $table->foreign('id_produk')
+            ->references('id')
+            ->on('produk')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

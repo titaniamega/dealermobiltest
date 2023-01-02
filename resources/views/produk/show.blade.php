@@ -7,10 +7,10 @@
     <h1 class="m-0 p-0 text-dark">Detail Mobil</h1>
     </div>
     <div class="p-2 mr-auto my-flex-item">
-    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$mobil->created_at->isoFormat('dddd, D MMMM Y') }} </p>
+    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }} </p>
     </div>
     <div class="p-2 mr-auto my-flex-item">
-    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$mobil->updated_at->isoFormat('dddd, D MMMM Y') }}
+    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}
     </div>
   </div>
 </div>
@@ -23,14 +23,14 @@
                     <div class="form-group">
                     <div class="row">
                         <div class="col">
-                        <label for="exampleInputName">Merk Mobil</label>
+                        <label for="exampleInputName">Model</label>
                         <input type="text" name="merk_mobil" value="{{ $mobil->merk_mobil }}" class="form-control" readonly="readonly" placeholder="Merk Mobil">
-                        @error('merk_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                        @error('nama_produk') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
-                        <label for="exampleInputEmail">Tipe Mobil</label>
+                        <label for="exampleInputEmail">Tipe</label>
                         <input type="text" name="tipe_mobil" class="form-control" placeholder="Tipe Mobil" value="{{ $mobil->tipe_mobil}}" readonly="readonly">
-                        @error('tipe_mobil') <span class="text-danger">{{$message}}</span> @enderror
+                        @error('harga) <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
                     </div>
