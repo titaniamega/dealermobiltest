@@ -13,10 +13,21 @@ class TipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['tipe'] = Tipe::orderBy('id','desc')->paginate(7);
-        return view('tipe.index', $data);
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->select('tipe.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('tipe.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('tipe.index', compact('tipe','produk','id_produk'));
     }
 
     /**
@@ -39,13 +50,10 @@ class TipeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_produk' => 'id_produk',
+            'id_produk' => 'required|exists:produk,id',
             'nama_tipe' => 'required',
             'harga' => 'required',
-            'harga_automatic',
-            'mimial_angsuran',
-            'bayar_pertama',
-            'bonus',
+      
             ]);
                
             $tipe = new Tipe;
@@ -56,7 +64,7 @@ class TipeController extends Controller
             $tipe->minimal_angsuran = $request->minimal_angsuran;
             $tipe->bayar_pertama = $request->bayar_pertama;
             $tipe->bonus = $request->bonus;
-            $produk->save();
+            $tipe->save();
 
             return redirect()->route('tipe.index')->with('success', 'Data tipe berhasil ditambahkan');
     }

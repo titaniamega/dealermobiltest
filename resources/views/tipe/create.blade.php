@@ -4,7 +4,7 @@
     <h1 class="m-0 text-dark">Tambah Tipe Produk</h1>
 @stop
 @section('content')
-    <form action="{{route('tipe.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('tipe.store')}}" method="post">
         @csrf
     <div class="row">
         <div class="col-12">
@@ -17,13 +17,13 @@
                         <select class="form-control" name="id_produk" id="select_produk" required>
                             <option value="" disabled selected>Pilih Model Produk</option>
                             @foreach($produk as $model)
-                            <option value="{{$model->id_produk}}"> {{$model->nama_produk}} </option>
+                            <option value="{{$model->id}}"> {{$model->nama_produk}} </option>
                             @endforeach
                         </select>
                         </div>
                         <div class="col">
                         <label for="exampleInputTipe">Nama Tipe</label>
-                        <input type="text" class="form-control @error('nama_tipe') is-invalid @enderror" id="exampleInputTipe" placeholder="Tipe Produk" name="nama_tipe">
+                        <input type="text" class="form-control @error('nama_tipe') is-invalid @enderror" id="exampleInputTipe" placeholder="Nama Tipe" name="nama_tipe" value="{{old('nama_tipe')}}">
                         @error('nama_tipe') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
@@ -59,14 +59,15 @@
                     <div class="form-group">
                     <div class="row">
                         <div class="col">
-                        <label for="exampleInputDeskripsi">Bonus</label>
-                        <textarea class="form-control" name="bonus" id="bonus" rows="4" cols="30" value="{{old('bonus')}}"> </textarea>
+                        <label for="exampleInputBonus">Bonus</label>
+                        <textarea class="form-control" name="bonus" id="exampleInputBonus" rows="4" cols="30"></textarea>
+                        @error('bonus') <span class="text-danger">{{$message}}</span> @enderror    
                         </div>
                     </div>
                     </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{route('produk.index')}}" class="btn btn-default">
+                    <a href="{{route('tipe.index')}}" class="btn btn-default">
                         Batal
                     </a>
                 </div>
