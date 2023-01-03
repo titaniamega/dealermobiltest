@@ -105,14 +105,23 @@ class ProdukController extends Controller
         'deskripsi' => 'required'
         ]);
 
-        $gambar = $request->hidden_gambar;
-        if($request->gambar != '')
-            {
-                $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
-                $request->gambar->move(public_path('images'), $nama_file);
+        if($request->hasFile('image')){
+            $file    =$request->file('image');
+            $nama_file = $file->getClientOriginalName();
+            $request->file('image')->move("images/", $nama_file);
+            } else {
+                $nama_file=$request->gambarlama;
+            }
+        
+        if($request->hasFile('image')){
+            $file    =$request->file('image');
+            $nama_file_slide = $file->getClientOriginalName();
+            $request->file('image')->move("slides/", $nama_file_slide);
+            } else {
+                $nama_file_slide=$request->gambarslidelama;
             }
 
-            $produk = new Produk;
+            $produk = Produk::find($id);
             $produk->nama_produk= $request->nama_produk;
             $produk->harga = $request->harga;
             $produk->gambar = $nama_file;

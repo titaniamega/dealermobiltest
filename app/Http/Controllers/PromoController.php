@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Promo;
-use App\Models\Prduk;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -13,10 +13,21 @@ class PromoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['promo'] = Promo::orderBy('id','desc')->paginate(7);
-        return view('promo.index', $data);
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $promo= Promo::join('produk','promo.id_produk','=','produk.id')
+        ->select('promo.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('promo.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('promo.index', compact('promo','produk','id_produk'));
     }
 
     /**
@@ -26,8 +37,8 @@ class PromoController extends Controller
      */
     public function create()
     {
-        
-        return view('promo.create');
+        $produk = Produk::all(['id','nama_produk']);
+        return view('promo.create',compact('produk'));
     }
 
     /**
@@ -38,7 +49,23 @@ class PromoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_produk' => 'required|exists:produk,id',
+            'judul' => 'required',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+      
+            ]);
+
+            $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
+            $request->gambar->move(public_path('images/promo'), $nama_file);
+               
+            $promo = new Promo;
+            $promo->id_produk= $request->id_produk;
+            $promo->judul = $request->judul;
+            $promo->gambar = $nama_file;
+            $promo->save();
+
+            return redirect()->route('promo.index')->with('success', 'Data promo berhasil ditambahkan');
     }
 
     /**
@@ -83,6 +110,8 @@ class PromoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $promo = Promo::find($id);
+        $promo->delete();
+        return redirect()->route('promo.index')->with('message', 'Data promo berhasil dihapus');
     }
 }

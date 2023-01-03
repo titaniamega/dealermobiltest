@@ -28,10 +28,10 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$registeredAt=$promos->created_at->isoFormat('dddd, D MMMM Y')}}</td>
                                 <td>
-                                <img src="{{url('images/'.$promos->gambar)}}" width="60">
+                                <img src="{{url('/images/promo/'.$promos->gambar)}}" width="60">
                                 </td>
                                 <td>{{$promos->judul}}</td>
-                                <td>{{$promos->produk}}</td>
+                                <td>{{$promos->nama_produk}}</td>
                                 <td>
                                     <a href="{{route('promo.show', $promos->id)}}" class="btn btn-primary btn-xs">
                                         Detail

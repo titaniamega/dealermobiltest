@@ -20,25 +20,31 @@
                         @error('nama_produk') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
-                        <label for="exampleInputGambar">Gambar</label>
-                        <input type="file" class="form-control @error('gambar') is-invalid @enderror" value="{{$produk->gambar}}" placeholder="Gambar produk" name="gambar">
-                        <img src="{{url('images/'.$produk->gambar)}}" width="100" height="100" class="img-thumbnail"/> 
-                        @error('gambar') <span class="text-danger">{{$message}}</span> @enderror
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-group">
-                    <div class="row">
-                        <div class="col">
                         <label for="exampleInputHarga">Harga</label>
                         <input type="number" class="form-control @error('harga') is-invalid @enderror" id="exampleInputHarga" placeholder="Harga mobil" name="harga" value="{{$produk->harga}}">
                         @error('harga') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
+                    </div>
+                    </div>
+                    <div class="form-group {{ $errors->has('produk') ?'has-error' : '' }}">
+                    <div class="row">
+                        <div class="col">
+                        <label for="exampleInputGambar">Gambar</label>
+                        <input type="hidden" name="gambarlama" value="{{ $produk->gambar }}" >
+                        <img src="{{url('images/'.$produk->gambar)}}" width="100"/>
+                        </div>
+                        <div class="form-group">
+                        <label for="gambar" class="control-label">Ubah Gambar</label><br>
+                        <input type="file" name="gambar">
+                        </div>
                         <div class="col">
                         <label for="exampleInputGambarSlide">Gambar Slide</label>
-                        <input type="file" class="form-control @error('gambarslide') is-invalid @enderror" value="{{$produk->gambarslide}}" placeholder="Gambar slide produk" name="gambarslide">
-                        <img src="{{url('slides/'.$produk->gambarslide)}}" width="100" height="100" class="img-thumbnail"/> 
-                        @error('gambarslide') <span class="text-danger">{{$message}}</span> @enderror
+                        <input type="hidden" name="gambarslidelama" value="{{ $produk->gambarslide }}" >
+                        <img src="{{url('slides/'.$produk->gambarslide)}}" width="100"/> 
+                        </div>
+                        <div class="form-group">
+                        <label for="gambarslide" class="control-label">Ubah Gambar</label><br>
+                        <input type="file" name="gambarslide">
                         </div>
                     </div>
                     </div>
