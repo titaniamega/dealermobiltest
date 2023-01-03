@@ -31,6 +31,7 @@ Route::get('/update','App\Http\Controllers\ProdukController@update');
 Route::resource('/tipe', TipeController::class);
 Route::get('/', 'App\Http\Controllers\TipeController@index');
 Route::get('/create','App\Http\Controllers\TipeController@create');
+Route::get('/update','App\Http\Controllers\TipeController@update');
 
 Route::resource('/promo', PromoController::class);
 Route::get('/', 'App\Http\Controllers\PromoController@index');
@@ -38,10 +39,13 @@ Route::get('/create','App\Http\Controllers\PromoController@create');
 
 Route::resource('/konsumen', KonsumenController::class);
 Route::get('/', 'App\Http\Controllers\KonsumenController@index');
+Route::get('/create','App\Http\Controllers\KonsumenController@create');
+
 
 Route::resource('/kredit', KreditController::class);
 Route::get('/', 'App\Http\Controllers\KreditController@index');
 Route::get('/create', 'App\Http\Controllers\KreditController@create');
+Route::get('/update', 'App\Http\Controllers\KreditController@update');
 
 Route::group(['prefix' => 'admin'], function() {
   Route::get('/', 'DashboardController@index');

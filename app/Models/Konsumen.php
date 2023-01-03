@@ -10,6 +10,6 @@ class Konsumen extends Model
     public $table = "konsumen";
 
     protected $fillable = [
-        'id', 'gambar', 'nama_konsumen', 'produk',
+        'id', 'id_produk', 'gambar', 'nama_konsumen',
     ];
 }

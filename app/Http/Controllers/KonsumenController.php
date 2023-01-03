@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Konsumen;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -12,10 +13,21 @@ class KonsumenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['konsumen'] = Konsumen::orderBy('id','desc')->paginate(7);
-        return view('konsumen.index', $data);
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $konsumen= Konsumen::join('produk','konsumen.id_produk','=','produk.id')
+        ->select('konsumen.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('konsumen.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('konsumen.index', compact('konsumen','produk','id_produk'));
     }
 
     /**
@@ -25,7 +37,8 @@ class KonsumenController extends Controller
      */
     public function create()
     {
-        return view('konsumen.create');
+        $produk = Produk::all(['id','nama_produk']);
+        return view('konsumen.create',compact('produk'));
     }
 
     /**
@@ -36,7 +49,23 @@ class KonsumenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_produk' => 'required|exists:produk,id',
+            'nama_konsumen' => 'required',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+      
+            ]);
+
+            $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
+            $request->gambar->move(public_path('images/konsumen'), $nama_file);
+               
+            $konsumen = new Konsumen;
+            $konsumen->id_produk= $request->id_produk;
+            $konsumen->nama_konsumen = $request->nama_konsumen;
+            $konsumen->gambar = $nama_file;
+            $konsumen->save();
+
+            return redirect()->route('konsumen.index')->with('success', 'Data konsumen berhasil ditambahkan');
     }
 
     /**

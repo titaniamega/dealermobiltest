@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Promo')
+@section('title', 'Konsumen')
 @section('content_header')
     <h1 class="m-0 text-dark">Data Konsumen</h1>
 @stop
@@ -26,20 +26,17 @@
                         @foreach($konsumen as $key => $konsumens)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$registeredAt=$promos->created_at->isoFormat('dddd, D MMMM Y')}}</td>
+                                <td>{{$registeredAt=$konsumens->created_at->isoFormat('dddd, D MMMM Y')}}</td>
                                 <td>
-                                <img src="{{url('images/'.$konsumens->gambar)}}" width="60">
+                                <img src="{{url('/images/konsumen/'.$konsumens->gambar)}}" width="60">
                                 </td>
-                                <td>{{$konsumens->judul}}</td>
-                                <td>{{$konsumens->produk}}</td>
+                                <td>{{$konsumens->nama_konsumen}}</td>
+                                <td>{{$konsumens->nama_produk}}</td>
                                 <td>
-                                    <a href="{{route('konsumen.show', $promos->id)}}" class="btn btn-primary btn-xs">
-                                        Detail
-                                    </a>
-                                    <a href="{{route('konsumen.edit', $promos->id)}}" class="btn btn-warning btn-xs">
+                                    <a href="{{route('konsumen.edit', $konsumens->id)}}" class="btn btn-warning btn-xs">
                                         Edit
                                     </a>
-                                    <a href="{{route('konsumen.destroy', $promos->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('konsumen.destroy', $konsumens->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
                                         Delete
                                     </a>
                                 </td>

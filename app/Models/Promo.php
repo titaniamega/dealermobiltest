@@ -10,7 +10,7 @@ class Promo extends Model
     public $table = "promo";
 
     protected $fillable = [
-        'id', 'gambar', 'judul', 'produk',
+        'id', 'gambar', 'judul', 'id_produk',
     ];
 }
 

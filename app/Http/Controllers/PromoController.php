@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Promo;
+use App\Models\Prduk;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -25,6 +26,7 @@ class PromoController extends Controller
      */
     public function create()
     {
+        
         return view('promo.create');
     }
 

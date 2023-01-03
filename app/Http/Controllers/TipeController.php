@@ -88,7 +88,10 @@ class TipeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $tipe= Tipe::findOrFail($id);
+        return view('tipe.edit', compact('tipe','produk'));
     }
 
     /**
@@ -100,7 +103,24 @@ class TipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_produk' => 'required|exists:produk,id',
+            'nama_tipe' => 'required',
+            'harga' => 'required',
+      
+            ]);
+               
+            $tipe = Tipe::find($id);
+            $tipe->id_produk= $request->id_produk;
+            $tipe->nama_tipe = $request->nama_tipe;
+            $tipe->harga = $request->harga;
+            $tipe->harga_automatic = $request->harga_automatic;
+            $tipe->minimal_angsuran = $request->minimal_angsuran;
+            $tipe->bayar_pertama = $request->bayar_pertama;
+            $tipe->bonus = $request->bonus;
+            $tipe->save();
+
+            return redirect()->route('tipe.index')->with('success', 'Data tipe berhasil diupdate');
     }
 
     /**
@@ -111,6 +131,8 @@ class TipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tipe = Tipe::find($id);
+        $tipe->delete();
+        return redirect()->route('kredit.index')->with('message', 'Data tipe berhasil dihapus');
     }
 }

@@ -27,19 +27,16 @@
                         @foreach($kredit as $key => $kredits)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$kredits->produk}}</td>
+                                <td>{{$kredits->nama_produk}}</td>
                                 <td>{{$kredits->harga_mulai}}</td>
                                 <td>{{$kredits->dp_mulai}}</td>
                                 <td>{{$kredits->cicilan_mulai}}</td>
                                 <td>{{$kredits->tenor}}</td>
                                 <td>
-                                    <a href="{{route('kredit.show', $promos->id)}}" class="btn btn-primary btn-xs">
-                                        Detail
-                                    </a>
-                                    <a href="{{route('kredit.edit', $promos->id)}}" class="btn btn-warning btn-xs">
+                                    <a href="{{route('kredit.edit', $kredits->id)}}" class="btn btn-warning btn-xs">
                                         Edit
                                     </a>
-                                    <a href="{{route('kredit.destroy', $promos->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('kredit.destroy', $kredits->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
                                         Delete
                                     </a>
                                 </td>
