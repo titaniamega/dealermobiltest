@@ -87,7 +87,10 @@ class PromoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $promo= Promo::findOrFail($id);
+        return view('promo.edit', compact('promo','produk'));
     }
 
     /**
@@ -99,7 +102,28 @@ class PromoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_produk' => 'required|exists:produk,id',
+            'judul' => 'required',
+            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+      
+            ]);
+
+            if($request->hasFile('gambar')){
+                $file =$request->file('gambar');
+                $nama_file = $file->getClientOriginalName();
+                $request->file('gambar')->move("images/promo", $nama_file);
+                } else {
+                    $nama_file=$request->gambarpromolama;
+                }
+               
+            $promo = Promo::find($id);
+            $promo->id_produk= $request->id_produk;
+            $promo->judul = $request->judul;
+            $promo->gambar = $nama_file;
+            $promo->save();
+
+            return redirect()->route('promo.index')->with('success', 'Data promo berhasil diupdate');
     }
 
     /**

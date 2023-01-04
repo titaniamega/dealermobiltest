@@ -6,7 +6,8 @@ use App\Http\Controllers\TipeController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\KreditController;
-
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +37,22 @@ Route::get('/update','App\Http\Controllers\TipeController@update');
 Route::resource('/promo', PromoController::class);
 Route::get('/', 'App\Http\Controllers\PromoController@index');
 Route::get('/create','App\Http\Controllers\PromoController@create');
+Route::get('/update','App\Http\Controllers\PromoController@update');
+
+Route::resource('/berita', BeritaController::class);
+Route::get('/', 'App\Http\Controllers\BeritaController@index');
+Route::get('/create','App\Http\Controllers\BeritaController@create');
+Route::get('/update','App\Http\Controllers\BeritaController@update');
+
 
 Route::resource('/konsumen', KonsumenController::class);
 Route::get('/', 'App\Http\Controllers\KonsumenController@index');
 Route::get('/create','App\Http\Controllers\KonsumenController@create');
+Route::get('/update','App\Http\Controllers\KonsumenController@update');
 
+Route::resource('/video', VideoController::class);
+Route::get('/', 'App\Http\Controllers\VideoController@index');
+Route::get('/create','App\Http\Controllers\VideoController@create');
 
 Route::resource('/kredit', KreditController::class);
 Route::get('/', 'App\Http\Controllers\KreditController@index');

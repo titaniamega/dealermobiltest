@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Konsumen;
+use App\Models\Berita;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
 
-class KonsumenController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +18,16 @@ class KonsumenController extends Controller
         $id_produk = $request->id_produk;
         $produk = Produk::all(['id','nama_produk']);
 
-        $konsumen= Konsumen::join('produk','konsumen.id_produk','=','produk.id')
-        ->select('konsumen.*','produk.nama_produk')
+        $berita= Berita::join('produk','berita.id_produk','=','produk.id')
+        ->select('berita.*','produk.nama_produk')
         ->where(function($query) use ($request){
             if($request->id_produk != "" )
-                $query->where('konsumen.id_produk',"=",$request->id_produk);
+                $query->where('berita.id_produk',"=",$request->id_produk);
         })
         ->orderBy('id', 'DESC')
         ->get();
 
-        return view('konsumen.index', compact('konsumen','produk','id_produk'));
+        return view('berita.index', compact('berita','produk','id_produk'));
     }
 
     /**
@@ -38,7 +38,7 @@ class KonsumenController extends Controller
     public function create()
     {
         $produk = Produk::all(['id','nama_produk']);
-        return view('konsumen.create',compact('produk'));
+        return view('berita.create', compact('produk'));
     }
 
     /**
@@ -51,21 +51,22 @@ class KonsumenController extends Controller
     {
         $request->validate([
             'id_produk' => 'required|exists:produk,id',
-            'nama_konsumen' => 'required',
-            'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-      
+            'judul_berita' => 'required',
+            'gambar_berita' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+
             ]);
 
-            $nama_file = time() . '.' . $request->gambar->getClientOriginalExtension();
-            $request->gambar->move(public_path('images/konsumen'), $nama_file);
+            $nama_file = time() . '.' . $request->gambar_berita->getClientOriginalExtension();
+            $request->gambar_berita->move(public_path('images/berita'), $nama_file);
                
-            $konsumen = new Konsumen;
-            $konsumen->id_produk= $request->id_produk;
-            $konsumen->nama_konsumen = $request->nama_konsumen;
-            $konsumen->gambar = $nama_file;
-            $konsumen->save();
+            $berita = new Berita;
+            $berita->id_produk= $request->id_produk;
+            $berita->judul_berita = $request->judul_berita;
+            $berita->gambar_berita = $nama_file;
+            $berita->keterangan = $request->keterangan;
+            $berita->save();
 
-            return redirect()->route('konsumen.index')->with('success', 'Data konsumen berhasil ditambahkan');
+            return redirect()->route('berita.index')->with('success', 'Data berita berhasil ditambahkan');
     }
 
     /**
@@ -89,8 +90,8 @@ class KonsumenController extends Controller
     {
         $produk = Produk::all(['id','nama_produk']);
 
-        $konsumen= Konsumen::findOrFail($id);
-        return view('konsumen.edit', compact('konsumen','produk'));
+        $berita= Berita::findOrFail($id);
+        return view('berita.edit', compact('berita','produk'));
     }
 
     /**
@@ -104,32 +105,29 @@ class KonsumenController extends Controller
     {
         $request->validate([
             'id_produk' => 'required|exists:produk,id',
-            'nama_konsumen' => 'required',
-            'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-      
+            'judul_berita' => 'required',
+            'gambar_berita' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+
             ]);
 
-            if($request->hasFile('gambar')){
-                $file =$request->file('gambar');
+            if($request->hasFile('gambar_berita')){
+                $file =$request->file('gambar_berita');
                 $nama_file = $file->getClientOriginalName();
-                $request->file('gambar')->move("images/konsumen", $nama_file);
+                $request->file('gambar_berita')->move("images/berita", $nama_file);
                 } else {
-                    $nama_file=$request->gambarkonsumenlama;
+                    $nama_file=$request->gambarberitalama;
                 }
                
-            $konsumen = Konsumen::find($id);
-            $konsumen->id_produk= $request->id_produk;
-            $konsumen->nama_konsumen = $request->nama_konsumen;
-            $konsumen->gambar = $nama_file;
-            $konsumen->save();
+            $berita = Berita::find($id);
+            $berita->id_produk= $request->id_produk;
+            $berita->judul_berita = $request->judul_berita;
+            $berita->gambar_berita = $nama_file;
+            $berita->keterangan = $request->keterangan;
+            $berita->save();
 
-            return redirect()->route('konsumen.index')->with('success', 'Data konsumen berhasil diupdate');
+            return redirect()->route('berita.index')->with('success', 'Data berita berhasil diupdate');
     }
 
-    public function format($content)
-    {
-        return substr($content, 0, 30) . "...";
-    }
     /**
      * Remove the specified resource from storage.
      *
@@ -138,6 +136,8 @@ class KonsumenController extends Controller
      */
     public function destroy($id)
     {
-        
+        $berita = Berita::find($id);
+        $berita->delete();
+        return redirect()->route('berita.index')->with('message', 'Data berita berhasil dihapus');
     }
 }

@@ -100,23 +100,23 @@ class ProdukController extends Controller
         $request->validate([
         'nama_produk' => 'required',
         'harga' => 'required',
-        'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        'gambarslide' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        'gambar' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        'gambarslide' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         'deskripsi' => 'required'
         ]);
 
-        if($request->hasFile('image')){
-            $file    =$request->file('image');
+        if($request->hasFile('gambar')){
+            $file    =$request->file('gambar');
             $nama_file = $file->getClientOriginalName();
-            $request->file('image')->move("images/", $nama_file);
+            $request->file('gambar')->move("images/", $nama_file);
             } else {
                 $nama_file=$request->gambarlama;
             }
         
-        if($request->hasFile('image')){
-            $file    =$request->file('image');
+        if($request->hasFile('gambarslide')){
+            $file    =$request->file('gambarslide');
             $nama_file_slide = $file->getClientOriginalName();
-            $request->file('image')->move("slides/", $nama_file_slide);
+            $request->file('gambarslide')->move("slides/", $nama_file_slide);
             } else {
                 $nama_file_slide=$request->gambarslidelama;
             }

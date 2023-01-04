@@ -330,6 +330,11 @@ return [
             'icon' => 'fas fa-fw fa-bullhorn',
         ],
         [
+            'text' => 'Berita',
+            'url'  => '/berita',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
             'text'    => 'Informasi Produk',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -346,13 +351,19 @@ return [
                 [
                     'text' => 'Paket Kredit Global',
                     'url'  => '/kredit',
+                    'icon' => 'fas fa-fw fa-tags',
+                ],
+                [
+                    'text' => 'Video',
+                    'url'  => '/video',
+                    'icon' => 'fas fa-fw fa-play',
                 ],
             ],
         ],
         [
             'text' => 'Konsumen',
             'url'  => '/konsumen',
-            'icon' => 'fas fa-fw fa-book',
+            'icon' => 'fas fa-fw fa-handshake',
         ],
         ['header' => 'labels'],
         [
