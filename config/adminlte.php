@@ -365,11 +365,11 @@ return [
             'url'  => '/konsumen',
             'icon' => 'fas fa-fw fa-handshake',
         ],
-        ['header' => 'labels'],
+        ['header' => 'MANAJEMEN USER'],
         [
-            'text'       => 'important',
+            'text'       => 'Data User',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => '/users',
         ],
         [
             'text'       => 'warning',

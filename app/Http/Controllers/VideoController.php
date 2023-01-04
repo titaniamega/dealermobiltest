@@ -59,7 +59,7 @@ class VideoController extends Controller
             $video= new Video;
             $video->id_produk= $request->id_produk;
             $video->judul_video = $request->judul_video;
-            $video->link_video = $request->judul_video;
+            $video->link_video = $request->link_video;
             $video->save();
 
             return redirect()->route('video.index')->with('success', 'Data berita berhasil ditambahkan');
@@ -84,7 +84,10 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $video= Video::findOrFail($id);
+        return view('video.edit', compact('video','produk'));
     }
 
     /**
@@ -107,6 +110,8 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $video = Video::find($id);
+        $video->delete();
+        return redirect()->route('video.index')->with('message', 'Video berhasil dihapus');
     }
 }
