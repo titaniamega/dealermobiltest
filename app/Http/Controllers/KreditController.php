@@ -92,7 +92,7 @@ class KreditController extends Controller
         $produk = Produk::all(['id','nama_produk']);
 
         $kredit= Kredit::findOrFail($id);
-        return view('kredit.edit', compact('kredit'));
+        return view('kredit.edit', compact('kredit','produk'));
     }
 
     /**
