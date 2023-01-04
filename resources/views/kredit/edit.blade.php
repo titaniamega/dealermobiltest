@@ -11,12 +11,18 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('kredit') ? 'has-error' : '' }}">
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputProduk">Model</label>
-                        <input class="form-control" name="id_produk" id="select_produk" value="{{$kredit->id_produk}}" readonly>
-                        </div>
+                        <select class="form-control" name="id_produk" id="select_produk" required focus>
+                        <option value="" disabled selected>Pilih Model Produk</option>
+                            @foreach($produk as $pro)
+                            <option value="{{$pro->id}}" {{ $pro->id == $kredit->id_produk ? 'selected' : ''}}>
+                                {{ $pro->nama_produk }}
+                            </option>
+                            @endforeach
+                        </select>
                         <div class="col">
                         <label for="exampleInputHargaMulai">Harga Mulai</label>
                         <input type="number" class="form-control @error('harga_mulai') is-invalid @enderror" id="exampleInputHargaMulai" placeholder="Harga mulai" name="harga_mulai" value="{{$kredit->harga_mulai}}" readonly>

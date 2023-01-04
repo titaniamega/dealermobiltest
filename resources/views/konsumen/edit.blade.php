@@ -11,14 +11,16 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('konsumen') ? 'has-error' : '' }}">
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputNama">Produk</label>
-                        <select class="form-control" name="id_produk" id="select_produk" required>
-                            <option value="" disabled selected>Pilih Model Produk</option>
-                            @foreach($produk as $model)
-                            <option value="{{$model->id}}"> {{$model->nama_produk}} </option>
+                        <select class="form-control" name="id_produk" id="select_produk" required focus>
+                        <option value="" disabled selected>Pilih Model Produk</option>
+                            @foreach($produk as $pro)
+                            <option value="{{$pro->id}}" {{ $pro->id == $konsumen->id_produk ? 'selected' : ''}}>
+                                {{ $pro->nama_produk }}
+                            </option>
                             @endforeach
                         </select>
                         </div>

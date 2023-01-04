@@ -4,21 +4,23 @@
     <h1 class="m-0 text-dark">Edit Video</h1>
 @stop
 @section('content')
-    <form action="{{route('video.update')}}" method="post">
+    <form action="{{route('video.update',$video->id)}}" method="post">
         @csrf
         @method('PUT')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('video') ? 'has-error' : '' }}">
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputProduk">Model</label>
-                        <select class="form-control" name="id_produk" id="select_produk" required>
-                            <option value="" disabled selected>Pilih Model Produk</option>
-                            @foreach($produk as $model)
-                            <option value="{{$model->id}}"> {{$model->nama_produk}} </option>
+                        <select class="form-control" name="id_produk" id="select_produk" required focus>
+                        <option value="" disabled selected>Pilih Model Produk</option>
+                            @foreach($produk as $pro)
+                            <option value="{{$pro->id}}" {{ $pro->id == $video->id_produk ? 'selected' : ''}}>
+                                {{ $pro->nama_produk }}
+                            </option>
                             @endforeach
                         </select>
                         </div>

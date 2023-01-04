@@ -53,6 +53,7 @@ Route::get('/update','App\Http\Controllers\KonsumenController@update');
 Route::resource('/video', VideoController::class);
 Route::get('/', 'App\Http\Controllers\VideoController@index');
 Route::get('/create','App\Http\Controllers\VideoController@create');
+Route::get('/update','App\Http\Controllers\VideoController@update');
 
 Route::resource('/kredit', KreditController::class);
 Route::get('/', 'App\Http\Controllers\KreditController@index');
