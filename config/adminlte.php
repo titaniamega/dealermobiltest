@@ -256,8 +256,8 @@ return [
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
-    'password_reset_url' => 'password/reset',
+    'register_url' => false,
+    'password_reset_url' => false,
     'password_email_url' => 'password/email',
     'profile_url' => false,
 
@@ -301,11 +301,11 @@ return [
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
-        [
-            // 'type' => 'sidebar-menu-search',
-            // 'text' => 'search',
-        ],
+        // // Sidebar items:
+        // [
+        //     // 'type' => 'sidebar-menu-search',
+        //     // 'text' => 'search',
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -315,46 +315,55 @@ return [
             'text'        => 'Beranda',
             'url'         => '/home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
+            'role'        => 'user,admin',
         ],
         ['header' => 'MENU'],
         [
             'text' => 'Profil Akun',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
+            'role' => 'user,admin',
         ],
         [
             'text' => 'Promo',
             'url'  => '/promo',
             'icon' => 'fas fa-fw fa-bullhorn',
+            'role' => 'user,admin',
         ],
         [
             'text' => 'Berita',
             'url'  => '/berita',
             'icon' => 'fas fa-fw fa-newspaper',
+            'role' => 'user,admin',
         ],
         [
             'text'    => 'Informasi Produk',
             'icon'    => 'fas fa-fw fa-share',
+            'role'    => 'user,admin',
             'submenu' => [
                 [
                     'text' => 'Data Produk',
                     'url'  => '/produk',
                     'icon' => 'fas fa-fw fa-car',
+                    'role' => 'user,admin',
                 ],
                 [
                     'text' => 'Tipe Produk',
                     'url'  => '/tipe',
                     'icon' => 'fas fa-fw fa-list',
+                    'role' => 'user,admin',
                 ],
                 [
                     'text' => 'Paket Kredit Global',
                     'url'  => '/kredit',
                     'icon' => 'fas fa-fw fa-tags',
+                    'role' => 'user,admin',
                 ],
                 [
                     'text' => 'Video',
                     'url'  => '/video',
                     'icon' => 'fas fa-fw fa-play',
+                    'role' => 'user,admin',
                 ],
             ],
         ],
@@ -362,12 +371,14 @@ return [
             'text' => 'Konsumen',
             'url'  => '/konsumen',
             'icon' => 'fas fa-fw fa-handshake',
+            'role' => 'user,admin',
         ],
         ['header' => 'MANAJEMEN AKUN'],
         [
             'text'       => 'Data User',
             'icon_color' => 'red',
             'url'        => '/akun',
+            'role'       => 'admin',
         ],
     ],
 
