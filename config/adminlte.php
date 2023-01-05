@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Dealer',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
@@ -312,11 +312,9 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 1,
-            'label_color' => 'success',
+            'text'        => 'Beranda',
+            'url'         => '/home',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
         ],
         ['header' => 'MENU'],
         [
@@ -365,21 +363,11 @@ return [
             'url'  => '/konsumen',
             'icon' => 'fas fa-fw fa-handshake',
         ],
-        ['header' => 'MANAJEMEN USER'],
+        ['header' => 'MANAJEMEN AKUN'],
         [
             'text'       => 'Data User',
             'icon_color' => 'red',
-            'url'        => '/users',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => '/akun',
         ],
     ],
 

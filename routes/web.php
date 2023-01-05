@@ -8,6 +8,7 @@ use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\KreditController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\AkunController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,13 @@ Route::resource('/kredit', KreditController::class);
 Route::get('/', 'App\Http\Controllers\KreditController@index');
 Route::get('/create', 'App\Http\Controllers\KreditController@create');
 Route::get('/update', 'App\Http\Controllers\KreditController@update');
+
+Route::resource('/akun', AkunController::class);
+Route::get('/update', 'App\Http\Controllers\KreditController@update');
+
+Route::get('/admin', 'AdminController@index');
+Route::get('/user', 'UserController@index');
+
 
 Route::group(['prefix' => 'admin'], function() {
   Route::get('/', 'DashboardController@index');

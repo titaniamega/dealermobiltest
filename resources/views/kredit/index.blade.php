@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('kredit.create')}}" class="btn btn-primary mb-2">
+                    <a href="{{route('kredit.create')}}" class="btn btn-outline-primary mb-2">
                         Tambah Data Paket Kredit
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
@@ -33,10 +33,10 @@
                                 <td>{{$kredits->cicilan_mulai}}</td>
                                 <td>{{$kredits->tenor}}</td>
                                 <td>
-                                    <a href="{{route('kredit.edit', $kredits->id)}}" class="btn btn-warning btn-xs">
+                                    <a href="{{route('kredit.edit', $kredits->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit
                                     </a>
-                                    <a href="{{route('kredit.destroy', $kredits->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('kredit.destroy', $kredits->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash " aria-hidden="true"></i>
                                         Delete
                                     </a>
                                 </td>

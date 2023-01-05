@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('berita.create')}}" class="btn btn-primary mb-2">
+                    <a href="{{route('berita.create')}}" class="btn btn-outline-primary mb-2">
                         Tambah Berita
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
@@ -33,13 +33,13 @@
                                 <td>{{$beritas->judul_berita}}</td>
                                 <td width="200">{{Str::limit($beritas->keterangan, 50)}}</td>
                                 <td>
-                                    <a href="{{route('berita.show', $beritas->id)}}" class="btn btn-primary btn-xs">
+                                    <a href="{{route('berita.show', $beritas->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>
-                                    <a href="{{route('berita.edit', $beritas->id)}}" class="btn btn-warning btn-xs">
+                                    <a href="{{route('berita.edit', $beritas->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit
                                     </a>
-                                    <a href="{{route('berita.destroy', $beritas->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('berita.destroy', $beritas->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash " aria-hidden="true"></i>
                                         Delete
                                     </a>
                                 </td>

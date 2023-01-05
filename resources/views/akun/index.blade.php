@@ -1,42 +1,41 @@
 @extends('adminlte::page')
-@section('title', 'Konsumen')
+@section('title', 'Manajemen Akun')
 @section('content_header')
-    <h1 class="m-0 text-dark">Data Konsumen</h1>
+    <h1 class="m-0 text-dark">Manajemen Akun</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('konsumen.create')}}" class="btn btn-outline-primary mb-2">
-                        Tambah Data Konsumen
+                    <a href="{{route('akun.create')}}" class="btn btn-outline-primary mb-2">
+                        Tambah Akun
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Tanggal</th>
-                            <th>Gambar</th>
-                            <th>Nama Konsumen</th>
-                            <th>Produk</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($konsumen as $key => $konsumens)
+                        @foreach($akun as $key => $akuns)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$registeredAt=$konsumens->created_at->isoFormat('dddd, D MMMM Y')}}</td>
+                                <td>{{$akuns->name}}</td>
+                                <td>{{$akuns->email}}</td>
+                                <td>{{$akuns->role}}</td>
                                 <td>
-                                <img src="{{url('/images/konsumen/'.$konsumens->gambar)}}" width="60">
-                                </td>
-                                <td>{{$konsumens->nama_konsumen}}</td>
-                                <td>{{$konsumens->nama_produk}}</td>
-                                <td>
-                                    <a href="{{route('konsumen.edit', $konsumens->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit" aria-hidden="true"></i>
+                                    <a href="{{route('akun.show', $akuns->id)}}" class="btn btn-outline-primary btn-xs">
+                                        Detail
+                                    </a>
+                                    <a href="{{route('akun.edit', $akuns->id)}}" class="btn btn-outline-warning btn-xs">
                                         Edit
                                     </a>
-                                    <a href="{{route('konsumen.destroy', $konsumens->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash " aria-hidden="true"></i>
+                                    <a href="{{route('akun.destroy', $akuns->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs">
                                         Delete
                                     </a>
                                 </td>

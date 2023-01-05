@@ -8,7 +8,12 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('produk.create')}}" class="btn btn-primary mb-2">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <a href="{{route('produk.create')}}" class="btn btn-outline-primary mb-2">
                         Tambah Data Produk
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
@@ -33,13 +38,13 @@
                                 <img src="{{url('images/'.$produk->gambar)}}" width="60">
                                 </td>
                                 <td>
-                                    <a href="{{route('produk.show', $produk->id)}}" class="btn btn-primary btn-xs">
+                                    <a href="{{route('produk.show', $produk->id)}}" class="btn btn-outline-primary btn-xs"> <i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>
-                                    <a href="{{route('produk.edit', $produk->id)}}" class="btn btn-warning btn-xs">
+                                    <a href="{{route('produk.edit', $produk->id)}}" class="btn btn-outline-warning btn-xs"> <i class="fa fa-edit" aria-hidden="true"></i>
                                         Edit
                                     </a>
-                                    <a href="{{route('produk.destroy', $produk->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger btn-xs">
+                                    <a href="{{route('produk.destroy', $produk->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"> <i class="fa fa-trash " aria-hidden="true"></i>
                                         Delete
                                     </a>
                                 </td>
