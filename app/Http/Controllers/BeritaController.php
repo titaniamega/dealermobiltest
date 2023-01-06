@@ -77,7 +77,10 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $berita= Berita::findOrFail($id);
+        return view('berita.show', compact('berita','produk'));
     }
 
     /**

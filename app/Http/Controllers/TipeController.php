@@ -77,7 +77,10 @@ class TipeController extends Controller
      */
     public function show($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $tipe= Tipe::findOrFail($id);
+        return view('tipe.show', compact('tipe','produk'));
     }
 
     /**

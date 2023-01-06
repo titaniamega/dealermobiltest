@@ -26,7 +26,7 @@
                         </div>
                         <div class="col">
                         <label for="exampleInputJudulVideo">Judul Video</label>
-                        <input type="text" class="form-control @error('judul_video') is-invalid @enderror" id="exampleInputJudulVideo" placeholder="Judul Video" name="judul_video" value="{{old('judul_video')}}">
+                        <input type="text" class="form-control @error('judul_video') is-invalid @enderror" id="exampleInputJudulVideo" placeholder="Judul Video" name="judul_video" value="{{$video->judul_video}}">
                         @error('judul_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputLink">Link Video</label>
-                        <input type="text" class="form-control @error('link_video') is-invalid @enderror" id="exampleInputLink" placeholder="Link Video" name="link_video" value="{{old('link_video')}}">
+                        <input type="text" class="form-control @error('link_video') is-invalid @enderror" id="exampleInputLink" placeholder="Link Video" name="link_video" value="{{$video->link_video}}">
                         @error('link_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>

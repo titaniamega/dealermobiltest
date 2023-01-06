@@ -62,7 +62,7 @@ class VideoController extends Controller
             $video->link_video = $request->link_video;
             $video->save();
 
-            return redirect()->route('video.index')->with('success', 'Data berita berhasil ditambahkan');
+            return redirect()->route('video.index')->with('success', 'Data video berhasil ditambahkan');
     }
 
     /**
@@ -73,7 +73,10 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        //
+        $produk = Produk::all(['id','nama_produk']);
+
+        $video= Video::findOrFail($id);
+        return view('video.show', compact('video','produk'));
     }
 
     /**
@@ -99,7 +102,20 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_produk' => 'required|exists:produk,id',
+            'judul_video' => 'required',
+            'link_video' => 'required',
+
+            ]);
+
+            $video = Video::find($id);
+            $video->id_produk= $request->id_produk;
+            $video->judul_video = $request->judul_video;
+            $video->link_video = $request->link_video;
+            $video->save();
+
+            return redirect()->route('video.index')->with('success', 'Data video berhasil diupdate');
     }
 
     /**

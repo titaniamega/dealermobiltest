@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('akun.create')}}" class="btn btn-primary mb-2">
+                    <a href="{{route('akun.create')}}" class="btn btn-outline-primary mb-2">
                         Tambah Akun
                     </a>
                     <table class="table table-striped table-bordered martop-sm">
@@ -21,14 +21,15 @@
                         <td> Email </td> <td>{{$akun->email}}</td>
                     </tr>
                     <tr>
-                        <td> Role </td> <td>{{$akun->password}}</td>
+                        <td> Role </td> <td>{{$akun->role}}</td>
                     </tr>
                     <table>
-                    <a href="{{ route('akun.edit', $akun->id_user) }}" 
+                </div>
+                <div class="card-footer">
+                <a href="{{ route('akun.edit', $akun->id) }}" 
                     class="btn btn-warning btn-sm">Ubah</a>
                     <a href="{{ route('akun.index') }}" 
                     class="btn btn-default btn-sm">Kembali</a>
-
                 </div>
             </div>
         </div>
