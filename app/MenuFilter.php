@@ -4,6 +4,7 @@ namespace App;
 use JeroenNoten\LaravelAdminLte\Menu\Builder;
 use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
 use Auth;
+use App\Models\User;
 
 class MenuFilter implements FilterInterface
 {
@@ -12,7 +13,7 @@ class MenuFilter implements FilterInterface
       if(isset($item['role']))
          $role = explode(',',$item['role']);
       
-      if(empty($role) ||  in_array(Auth::user()->role,$role)) {
+      if(empty($role) || in_array(Auth::user()->role,$role)) {
          return $item;
       }
 
