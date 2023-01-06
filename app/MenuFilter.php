@@ -1,14 +1,14 @@
 <?php
 namespace App;
 
-use JeroenNoten\LaravelAdminLte\Menu\Builder;
+
 use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
 use Auth;
 use App\Models\User;
 
 class MenuFilter implements FilterInterface
 {
-   public function transform($item, Builder $builder){
+   public function transform($item){
       $role = array();
       if(isset($item['role']))
          $role = explode(',',$item['role']);

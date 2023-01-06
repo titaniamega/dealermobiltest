@@ -306,11 +306,7 @@ return [
         //     // 'type' => 'sidebar-menu-search',
         //     // 'text' => 'search',
         // ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+      
         [
             'text'        => 'Beranda',
             'url'         => '/home',
@@ -373,7 +369,10 @@ return [
             'icon' => 'fas fa-fw fa-handshake',
             'role' => 'user,admin',
         ],
-        ['header' => 'MANAJEMEN AKUN'],
+        [
+            'header' => 'MANAJEMEN AKUN',
+            'role'       => 'admin',
+        ],
         [
             'text'       => 'Data User',
             'icon_color' => 'red',
@@ -395,13 +394,15 @@ return [
     */
 
     'filters' => [
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+        // JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+        App\MenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+
     ],
 
     /*
