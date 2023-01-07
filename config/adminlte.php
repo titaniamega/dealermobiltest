@@ -315,8 +315,8 @@ return [
         ],
         ['header' => 'MENU'],
         [
-            'text' => 'Profil Akun',
-            'url'  => 'admin/settings',
+            'text' => 'Contact',
+            'url'  => '/contact',
             'icon' => 'fas fa-fw fa-user',
             'role' => 'user,admin',
         ],

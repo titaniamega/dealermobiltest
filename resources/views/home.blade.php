@@ -1,7 +1,5 @@
 @extends('adminlte::page')
-
 @section('title', 'Dealer')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Selamat Datang</h1>
 @stop
@@ -11,7 +9,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">Anda berhasil login!</p>
+                    
                 </div>
             </div>
         </div>

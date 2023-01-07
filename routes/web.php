@@ -11,7 +11,8 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UmumController;
 
 
 /*
@@ -24,6 +25,8 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/','UmumController@index');
 Route::get('/','HomeController@index');
 
 Auth::routes();
@@ -37,7 +40,8 @@ Route::group(
       Route::resource('/berita', BeritaController::class);
       Route::resource('/konsumen', KonsumenController::class);
       Route::resource('/video', VideoController::class);
-      Route::resource('/kredit', KreditController::class);     
+      Route::resource('/kredit', KreditController::class);
+      Route::resource('/contact', ContactController::class);        
     }
   );
 

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('contact_person', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->nullable();
             $table->string('telepon')->nullable();
             $table->string('telepon2')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->string('email')->unique();
-            $table->string('nama_delaer')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('nama_dealer')->nullable();
             $table->text('alamat_kantor')->nullable();
             $table->string('foto_profil')->nullable();
             $table->timestamps();
