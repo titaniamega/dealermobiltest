@@ -6512,6 +6512,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .carousel {
+  width:640px;
+  height:360px;
   position: relative;
 }
 
@@ -6537,6 +6539,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   display: none;
   float: left;
   width: 100%;
+  height: 100% !important;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

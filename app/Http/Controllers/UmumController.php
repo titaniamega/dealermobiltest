@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Tipe;
 
 class UmumController extends Controller
 {
@@ -13,11 +14,18 @@ class UmumController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
+    {   
         $id_produk = $request->id_produk;
-        $produk = Produk::all(['id','nama_produk']);
+        $produk = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi']);
         
         return view('umum.index',compact('produk'));
+    }
+
+    public function produk(Request $request)
+    {   
+        $produk = DB::table('produk')->get();
+
+        return view('umum.produk',compact('produk'));
     }
 
     /**

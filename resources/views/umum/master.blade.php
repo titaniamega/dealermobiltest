@@ -11,29 +11,54 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{url('vendor/start/css/styles.css')}}" rel="stylesheet" />
+        <link href="{{url('vendor/adminlte/dist/css/adminlte.css')}}" rel="stylesheet" />
     </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{{url('/')}}">SIKaveling</a>
+        
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url('/umum')}}">Dealer Mobil Indonesia</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    </ul>
-                    <div class="d-flex">
-                       <a href="{{url('/home')}}" class="btn btn-default">Login</a>
-                     </div>
+                    <div class="navbar-nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{url('/umum/')}}">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{url('/umum/produk/')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produk
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach($produk as $pro)
+                                <li><a class="dropdown-item" href="{{url('#')}}">{{$pro->nama_produk}}</a></li>
+                            @endforeach
+                            </ul>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/harga')}}">Harga</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">Promo</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">Video</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-right">
+                            <li><a class="nav-link" aria-current="page" href="{{url('#')}}">Hubungi</a></li>
+                            <li><a class="nav-link" aria-current="page" href="{{url('#')}}">Telepon</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
+    <body>
         @yield('content')
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
+        <footer class="py-3 bg-dark">
             <div class="container">
-                <p class="m-0 mb-3 text-center text-white">Untuk Pemesanan Kaveling Hubungi : Tania <a href="https://wa.me/6281328807449">+6281328807449 (WA) </a></p>
-                <p class="m-0 text-center text-white">Copyright &copy; SIKaveling {{date('Y')}}</p>
+                <p class="m-0 text-center text-white">Copyright &copy; Dealer Mobil Indonesia {{date('Y')}} All Rights Reserved</p>
             </div>
         </footer>
         <!-- Bootstrap core JS-->

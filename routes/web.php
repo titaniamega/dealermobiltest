@@ -26,7 +26,8 @@ use App\Http\Controllers\UmumController;
 |
 */
 
-Route::get('/','UmumController@index');
+Route::resource('/umum', UmumController::class);
+Route::get('/umum/produk','UmumController@produk')->name("umum.produk");
 Route::get('/','HomeController@index');
 
 Auth::routes();

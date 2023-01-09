@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Contatc')
+@section('title', 'Contact')
 @section('content_header')
     <h1 class="m-0 text-dark">Informasi Contact</h1>
 @stop
