@@ -3,7 +3,8 @@
       <!-- Header-->
       <header class="bg-dark py-3" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 my-5">
-            
+            <h1 class="display-4 fw-bolder">Daftar Mobil</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Semua Tipe Terbaru Terbaik Sesuai Pilihan Anda berlaku {{date('Y')}}</p>
             </div>
         </header>     
         <!-- Section-->

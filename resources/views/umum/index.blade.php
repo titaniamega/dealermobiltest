@@ -3,12 +3,7 @@
       <!-- Header-->
       <header class="bg-dark py-3" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 my-5">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                 <img src="..." class="d-block w-100" alt="...">
@@ -59,5 +54,27 @@
                     @endforeach
                 </div>
             </div>
-    </section>
+        </section>
+
+        <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+                <h1 class="display-4 fw-bolder">Video Review</h1>
+                <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                   @foreach($video as $v)
+                     <div class="col mb-5 col-md-4">
+                           <div class="card h-100">
+                              <img class="card-img-top" src="{{"https://i.ytimg.com/vi/".preg_replace('/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/m', '$1', $v->link_video)."/hqdefault.jpg" }}" alt="..." />
+                                 <div class="card-body p-3">
+                                 <div class="text-center">
+                                    <h5 class="fw-bolder">{{$v->judul_video}}</h5>
+                                 </div>
+                              </div>
+                           </div>
+                     </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+   
 @stop

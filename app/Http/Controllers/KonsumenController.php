@@ -126,10 +126,7 @@ class KonsumenController extends Controller
             return redirect()->route('konsumen.index')->with('success', 'Data konsumen berhasil diupdate');
     }
 
-    public function format($content)
-    {
-        return substr($content, 0, 30) . "...";
-    }
+    
     /**
      * Remove the specified resource from storage.
      *

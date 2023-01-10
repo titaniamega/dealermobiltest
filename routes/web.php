@@ -26,8 +26,12 @@ use App\Http\Controllers\UmumController;
 |
 */
 
-Route::resource('/umum', UmumController::class);
-Route::get('/umum/produk','UmumController@produk')->name("umum.produk");
+Route::get('/umum', [UmumController::class,'index']);
+Route::get('/umum/produk',[UmumController::class,'produk'])->name("umum.produk");
+Route::get('/umum/harga',[UmumController::class,'harga'])->name("umum.harga");
+Route::get('/umum/promo',[UmumController::class,'promo'])->name("umum.promo");
+Route::get('/umum/video',[UmumController::class,'video'])->name("umum.video");
+Route::get('/umum/galeri',[UmumController::class,'galeri'])->name("umum.galeri");
 Route::get('/','HomeController@index');
 
 Auth::routes();
