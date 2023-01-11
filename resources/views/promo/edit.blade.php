@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Edit Data Promo')
 @section('content_header')
+<script src='https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js'></script>
     <h1 class="m-0 text-dark">Edit Data Promo</h1>
 @stop
 @section('content')
@@ -41,6 +42,21 @@
                         <div class="form-group">
                         <label for="gambar" class="control-label">Ubah Gambar</label><br>
                         <input type="file" name="gambar">
+                        </div>
+                        <div class="col">
+                        <label for="date">Tanggal Berlaku</label>
+                        <input type="date" class="form-control" id="date" name="masa_berlaku" placeholder="Masa Berlaku" value="{{$promo->masa_berlaku}}">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                        <label for="exampleInputKeterangan">Keterangan</label>
+                        <textarea class="ckeditor form-control" name="keterangan" id="keterangan" rows="10" cols="30" value="{{$promo->keterangan}}">{!! $promo->keterangan !!}</textarea>
+                        <script>
+                        CKEDITOR.replace('ckeditor');
+                        </script>
                         </div>
                     </div>
                     </div>

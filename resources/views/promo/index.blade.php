@@ -19,6 +19,8 @@
                             <th>Gambar</th>
                             <th>Judul</th>
                             <th>Produk</th>
+                            <th>Keterangan</th>
+                            <th>Berlaku Sampai</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -32,6 +34,8 @@
                                 </td>
                                 <td>{{$promos->judul}}</td>
                                 <td>{{$promos->nama_produk}}</td>
+                                <td>{!! Str::limit($promos->keterangan, 20) !!}</td>
+                                <td>{{$promos->masa_berlaku?->isoFormat('dddd, D MMMM Y')}}</td>
                                 <td>
                                     <a href="{{route('promo.edit', $promos->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit

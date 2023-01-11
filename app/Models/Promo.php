@@ -10,8 +10,10 @@ class Promo extends Model
     public $table = "promo";
 
     protected $fillable = [
-        'id', 'gambar', 'judul', 'id_produk',
+        'id', 'gambar', 'judul', 'id_produk', 'keterangan',
+    ];
+    
+    protected $casts = [
+        'masa_berlaku' => 'date',
     ];
 }
-
-

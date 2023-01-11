@@ -44,10 +44,19 @@
                             <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">Promo</a>
                             </li>
                             <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/berita')}}">Berita</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kredit')}}">Kredit</a>
+                            </li>
+                            <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">Video</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{url('/umum/galeri')}}">Galeri</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kontak')}}">Kontak</a>
                             </li>
                         </ul>
                       

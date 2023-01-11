@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use BenSampo\Embed\Rules\EmbeddableUrl;
+use BenSampo\Embed\Services\YouTube;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Tipe;
 use App\Models\Video;
-
+use App\Models\Promo;
+use App\Models\Konsumen;
+use App\Models\Berita;
 
 class UmumController extends Controller
 {
@@ -48,24 +52,89 @@ class UmumController extends Controller
         return view('umum.harga', compact('tipe','produk','id_produk'));
     }
 
-    public function promo()
+    public function promo(Request $request)
     {   
-        $promo = DB::table('promo')->get();
-        
-        return view('umum.promo',compact('promo'));
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $promo= Promo::join('produk','promo.id_produk','=','produk.id')
+        ->select('promo.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('promo.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('umum.promo', compact('promo','produk','id_produk'));
     }
-    public function video()
+    public function video(Request $request)
+    {    
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $video= Video::join('produk','video.id_produk','=','produk.id')
+        ->select('video.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('video.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('umum.video', compact('video','produk','id_produk'));
+    }
+
+    public function galeri(Request $request)
+    {    
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $konsumen= Konsumen::join('produk','konsumen.id_produk','=','produk.id')
+        ->select('konsumen.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('konsumen.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('umum.galeri', compact('konsumen','produk','id_produk'));
+    }
+
+    public function detailPromo($id)
     {   
-        $video = DB::table('video')->get();
-        
-        return view('umum.video',compact('video'));
+        $produk = Produk::all(['id','nama_produk']);
+
+        $promo = Promo::findOrFail($id);
+        return view('umum.detailPromo', compact('promo','produk'));
     }
-    public function galeri()
+
+    public function berita(Request $request)
     {   
-        $galeri = DB::table('konsumen')->get();
-        
-        return view('umum.galeri',compact('galeri'));
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $berita= Berita::join('produk','berita.id_produk','=','produk.id')
+        ->select('berita.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('berita.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        return view('umum.berita', compact('berita','produk','id_produk'));
     }
+
+    public function detailBerita($id)
+    {   
+        $produk = Produk::all(['id','nama_produk']);
+
+        $berita = Berita::findOrFail($id);
+        return view('umum.detailBerita', compact('berita','produk'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

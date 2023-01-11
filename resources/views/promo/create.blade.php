@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Tambah Data Promo')
 @section('content_header')
+    <script src='https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js'></script>
     <h1 class="m-0 text-dark">Tambah Data Promo</h1>
 @stop
 @section('content')
@@ -35,6 +36,21 @@
                         <input type="file" class="form-control @error('promo') is-invalid @enderror" id="exampleInputGambarPromo" placeholder="Gambar promo" name="gambar">
                         @error('promo') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
+                        <div class="col">
+                        <label for="date">Tanggal Berlaku</label>
+                        <input type="date" class="form-control" id="date" name="masa_berlaku" placeholder="Masa Berlaku">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                        <label for="exampleInputKeterangan">Keterangan</label>
+                        <textarea class="ckeditor form-control" name="keterangan" id="keterangan" rows="10" cols="30" value="{{old('keterangan')}}"> </textarea>
+                        <script>
+                        CKEDITOR.replace('ckeditor');
+                        </script>
+                        </div>
                     </div>
                     </div>
                 <div class="card-footer">
@@ -46,4 +62,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+          $(document).ready(function() {            
+            $('#date').datepicker({                      
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+            }); 
+          });
+    </script>
+
 @stop

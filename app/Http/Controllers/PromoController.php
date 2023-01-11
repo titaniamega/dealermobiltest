@@ -63,6 +63,8 @@ class PromoController extends Controller
             $promo->id_produk= $request->id_produk;
             $promo->judul = $request->judul;
             $promo->gambar = $nama_file;
+            $promo->keterangan = $request->keterangan;
+            $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
             return redirect()->route('promo.index')->with('success', 'Data promo berhasil ditambahkan');
@@ -121,6 +123,8 @@ class PromoController extends Controller
             $promo->id_produk= $request->id_produk;
             $promo->judul = $request->judul;
             $promo->gambar = $nama_file;
+            $promo->keterangan = $request->keterangan;
+            $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
             return redirect()->route('promo.index')->with('success', 'Data promo berhasil diupdate');
