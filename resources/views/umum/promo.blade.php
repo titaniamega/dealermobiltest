@@ -14,7 +14,7 @@
                 @foreach($promo as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                 <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
                                  <div class="badge bg-success position-absolute" style="top: 0.5rem; left: 0.5rem">
                                  {{$p->masa_berlaku?->isoFormat('D MMMM Y')}}
                                  </div>
@@ -33,4 +33,16 @@
                 </div>
             </div>
     </section>
+      <style>
+            .card{
+            padding: 2.0em .5em .5em;
+            border-radius: 7px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            }
+            .card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }            
+      </style>
 @stop

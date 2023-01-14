@@ -12,22 +12,35 @@
         <!-- Section-->
         <section class="py-4">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    @foreach($video as $v)
-                     <div class="col mb-5">
-                           <div class="card h-100">
-                                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$v->nama_produk}}</div>
-                                <x-embed url="{{$v->link_video}}" />                      
-                                <div class="card-body p-1">
-                                 <div class="text-center">                                 
-                                    <h5 class="fw-bolder">{{$v->judul_video}}</h5>
-                                 </div>
-                              </div>
-                           </div>
-                     </div>
-                    @endforeach
-                     </div>
+                <div class="justify-content-center">
+                    <div class="row">
+                        @foreach($video as $v)
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$v->nama_produk}}</div>
+                                    <x-embed url="{{$v->link_video}}" />                      
+                                    <div class="card-body p-1">
+                                    <div class="text-center">                                 
+                                        <h5 class="fw-bolder">{{$v->judul_video}}</h5>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-    </section>
+        </section>
+        <style>
+            .card{
+            padding: 2.0em .5em .5em;
+            border-radius: 7px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            }
+            .card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }         
+        </style> 
 @stop

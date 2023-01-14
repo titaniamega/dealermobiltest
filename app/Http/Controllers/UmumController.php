@@ -11,6 +11,7 @@ use App\Models\Video;
 use App\Models\Promo;
 use App\Models\Konsumen;
 use App\Models\Berita;
+use App\Models\Kredit;
 
 class UmumController extends Controller
 {
@@ -28,11 +29,40 @@ class UmumController extends Controller
         return view('umum.index',compact('produk','video'));
     }
 
-    public function produk()
+    public function produk(Request $request)
     {   
-        $produk = DB::table('produk')->get();
+        
+        $produk = Produk::all(['id','nama_produk','gambar','gambarslide','harga',]);
 
-        return view('umum.produk',compact('produk'));
+        $produk = Produk::join('kredit','produk.id','=','kredit.id_produk')
+        ->select('kredit.*','kredit.harga_mulai','kredit.dp_mulai','kredit.tenor')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "")
+                $query->where('produk.id',"=",$request->id);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->select('tipe.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('tipe.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
+
+        $kredit= Kredit::join('produk','kredit.id_produk','=','produk.id')
+        ->select('kredit.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('kredit.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();    
+
+
+        return view('umum.produk',compact('produk','tipe'));
     }
 
     public function harga(Request $request)

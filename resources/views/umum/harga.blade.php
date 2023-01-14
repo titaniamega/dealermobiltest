@@ -41,15 +41,9 @@
                     @endphp
                         </tbody>
                     </table>
-                    <!--Table-->
-
-                    </div>
-                    
+                    </div>  
                 </div>
             </div>
-
         </section>
-
-            
-        
+   
 @stop

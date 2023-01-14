@@ -14,21 +14,24 @@
                    @foreach($produk as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                 <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
                               <!-- Product image-->
                               <img class="card-img-top" src="{{url('images/'.$p->gambar)}}" alt="..." />
                               <!-- Product details-->
                               <div class="card-body p-3">
-                                 <div class="text-center">
+                                 <div>
                                        <!-- Product name-->
                                        <h5 class="fw-bolder">{{$p->nama_produk}}</h5>
                                        <!-- Product price-->
-                                        @currency($p->harga)
+                                       <ul> 
+                                          <li> Harga Mulai : @currency($p->harga_mulai) </li>
+                                          <li> DP Mulai : @currency($p->dp_mulai) </li>
+                                       </ul>
                                  </div>
                               </div>
                               <!-- Product actions-->
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="">Selengkapnya</a></div>
+                                 <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="">Lihat Selengkapnya</a></div>
                               </div>
                            </div>
                      </div>

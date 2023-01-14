@@ -66,6 +66,8 @@
         </nav>
     <body>
         @yield('content')
+
+        
         <!-- Footer-->
         <footer class="py-3 bg-dark">
             <div class="container">
