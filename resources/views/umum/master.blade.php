@@ -129,6 +129,9 @@
                     <p>
                         <a href="{{url('/umum/berita')}}" class="text-white">Berita</a>
                     </p>
+                    <p>
+                        <a href="{{url('/umum/video')}}" class="text-white">Video</a>
+                    </p>
                     </div>
                     <!-- Grid column -->
 
@@ -140,7 +143,7 @@
                         class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 60px; background-color: #7c4dff; height: 2px"
                         />
-                    
+                       
                     </div>
                     <!-- Grid column -->
 

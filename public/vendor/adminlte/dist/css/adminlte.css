@@ -6512,8 +6512,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .carousel {
-  width:640px;
-  height:360px;
+  width:100%;
   position: relative;
 }
 

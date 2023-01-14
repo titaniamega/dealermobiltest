@@ -25,8 +25,9 @@ class UmumController extends Controller
         $id_produk = $request->id_produk;
         $produk = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi']);
         $video = Video::all(['id','judul_video','link_video',]);
+        $promo = Promo::all(['id','judul','gambar','masa_berlaku',]);
         
-        return view('umum.index',compact('produk','video'));
+        return view('umum.index',compact('produk','video','promo'));
     }
 
     public function produk(Request $request)

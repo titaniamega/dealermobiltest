@@ -1,13 +1,29 @@
 @extends('umum.master')
 @section('content')
       <!-- Header-->
-      <x-embed-styles />
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Welcome</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Dealer Mobil Indonesia</p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <x-embed-styles />
+
+        <section style="padding-top : 64px !important">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+            @foreach($produk as $key => $pro)
+                <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                <img class="d-block w-100" src="{{url('slides/'.$pro->gambarslide)}}">
+                </div>
+            @endforeach
             </div>
-        </header>     
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        </section>
         
          <!-- Section-->
          <section class="py-1">
@@ -89,6 +105,55 @@
                                 </div>
                             </div>                   
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section-->
+        <section class="py-4">
+            <div class="container px-4 px-lg-5 mt-5">
+                    <h1 class="display-4 fw-bolder">Promo</h1>
+                    <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #7c4dff; height: 2px"
+                        />
+                    <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @foreach($promo as $p)
+                     <div class="col mb-5">
+                           <div class="card h-100">
+                                 <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                 <div class="badge bg-success position-absolute" style="top: 0.5rem; left: 0.5rem">
+                                 {{$p->masa_berlaku?->isoFormat('D MMMM Y')}}
+                                 </div>
+                              <img class="card-img-top" src="{{url('images/promo/'.$p->gambar)}}" alt="..."  />                         
+                              <div class="card-body p-1">
+                                 <div class="text-center">                                 
+                                       <h5 class="fw-bolder">{{$p->judul}}</h5>
+                                 </div>
+                              </div>
+                              <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                 <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
+                              </div>
+                           </div>
+                     </div>
+                    @endforeach
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section-->
+        <section class="bg-dark">
+            <div class="container px-4 px-lg-5 mt-5">               
+                <div class="justify-content-center">
+                    <h1 class="py-3 display-4 fw-bolder">Mengapa Memilih Kami?</h1>
+                    <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #7c4dff; height: 2px"
+                        />
+                    <p class="lead fw-normal text-white-50 mb-0"><strong>Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
+                   
                 </div>
             </div>
         </section>
