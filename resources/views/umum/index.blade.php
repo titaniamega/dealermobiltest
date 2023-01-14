@@ -13,6 +13,10 @@
          <section class="py-1">
             <div class="container px-4 px-lg-5 mt-5">
                 <h1 class="display-4 fw-bolder">Rekomendasi Produk</h1>
+                <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #7c4dff; height: 2px"
+                        />
                 <p class="lead fw-normal text-black-50 mb-0"><strong>Mobil Baru Pilihan Dengan Harga Terbaik</p><br>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                    @foreach($produk as $p)
@@ -45,7 +49,12 @@
         <section class="bg-dark">
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
-                    <h1 class="py-3 display-4 fw-bolder text-center">Layanan Kami</h1>
+                    <h1 class="py-3 display-4 fw-bolder">Layanan Kami</h1>
+                    <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #7c4dff; height: 2px"
+                        />
+                    <p class="lead fw-normal text-white-50 mb-0"><strong>Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
                     <div class="row">                       
                             <div class="col-md-3">
                                 <div class="card bg-light h-80">
@@ -88,6 +97,10 @@
         <section class="py-4">
             <div class="container px-4 px-lg-5 mt-5">
                     <h1 class="display-4 fw-bolder">Video Review</h1>
+                    <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 100%; background-color: #7c4dff; height: 2px"
+                        />
                     <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                 <div class="justify-content-center">
                     <div class="row">
