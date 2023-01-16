@@ -8,9 +8,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('akun.create')}}" class="btn btn-outline-primary mb-2">
-                        Tambah Akun
-                    </a>
                     <table class="table table-striped table-bordered martop-sm">
                     <tr>
                         <td> ID User</td> <td>{{$akun->id}}</td>

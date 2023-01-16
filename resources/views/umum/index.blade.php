@@ -58,7 +58,10 @@
                      </div>
                     @endforeach
                 </div>
-            </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick='OpenProduk()' value='Tampilkan Lainnya'>Tampilkan Lainnya</button>
+                    </div>
+                </div>
         </section>
 
         <!-- Section-->
@@ -152,7 +155,7 @@
                         class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 100%; background-color: #7c4dff; height: 2px"
                         />
-                    
+
                                            
                 </div>
             </div>

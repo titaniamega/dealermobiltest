@@ -9,13 +9,14 @@
             <div class="card">
                 <div class="card-body">
                     <a href="{{route('tipe.create')}}" class="btn btn-outline-primary mb-2">
-                        Tambah Tipe Produk
+                    <i class="fa fa-plus-circle"></i> Tambah Tipe Produk
                     </a>
                     @if ($message = Session::get('message'))
                         <div class="alert alert-success martop-sm">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
+                    <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
@@ -56,6 +57,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

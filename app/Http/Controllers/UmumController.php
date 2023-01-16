@@ -42,7 +42,10 @@ class UmumController extends Controller
                 $query->where('produk.id',"=",$request->id);
         })
         ->orderBy('id', 'DESC')
+        ->offset(0)
+        ->limit(3)
         ->get();
+        
 
         $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
         ->select('tipe.*','produk.nama_produk')

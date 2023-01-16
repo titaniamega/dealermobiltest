@@ -9,14 +9,15 @@
             <div class="card">
                 <div class="card-body">
                     <a href="{{route('promo.create')}}" class="btn btn-outline-primary mb-2">
-                        Tambah Promo
+                    <i class="fa fa-plus-circle"></i> Tambah Promo
                     </a>
                     @if ($message = Session::get('message'))
                         <div class="alert alert-success martop-sm">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <table class="table table-hover table-bordered table-stripped" id="example2">
+                    <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-stripped" id="dataPromo">
                         <thead>
                         <tr>
                             <th>No</th>
@@ -53,20 +54,32 @@
                         @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @stop
 @push('js')
-    <form action="" id="delete-form" method="post">
-        @method('delete')
-        @csrf
-    </form>
-    <script>
-        $('#example2').DataTable({
-            "responsive": true,
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#dataPromo").DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
+            })
         });
+
         function notificationBeforeDelete(event, el) {
             event.preventDefault();
             if (confirm('Apakah anda yakin akan menghapus data ? ')) {
@@ -75,4 +88,9 @@
             }
         }
     </script>
+
+    <form action="" id="delete-form" method="post">
+        @method('delete')
+        @csrf
+    </form>
 @endpush

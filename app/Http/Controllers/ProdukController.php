@@ -19,6 +19,11 @@ class ProdukController extends Controller
         return view('produk.index', $data);
     }
 
+    public function getData()
+    {
+        $produk = Produk::select(['id','nama_produk','harga','gambar','gambarslide','created_at','deskripsi']);
+        return Datatables::of($produk)->make();
+    }
     /**
      * Show the form for creating a new resource.
      *

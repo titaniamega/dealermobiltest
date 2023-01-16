@@ -1,9 +1,6 @@
 @extends('adminlte::page')
 @section('title', 'Produk')
 @section('content_header')
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <h1 class="m-0 text-dark">Produk</h1>
 @stop
 @section('content')
@@ -16,17 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{route('produk.create')}}" class="btn btn-outline-primary mb-2">
-                        Tambah Data Produk
+                    <a href="{{route('produk.create')}}" class="btn btn-outline-primary mb-2"> 
+                    <i class="fa fa-plus-circle"></i> Tambah Data Produk
                     </a>
-                    
                     @if ($message = Session::get('message'))
                         <div class="alert alert-success martop-sm">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-
-                    <table class="table table-hover table-bordered table-stripped" id="tbl_list">
+                    <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-stripped" id="dataProduk" width="100%">
                         <thead>
                         <tr>
                             <th>No</th>
@@ -62,27 +58,29 @@
                         @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @stop
-@push('js')
-    <form action="" id="delete-form" method="post">
-        @method('delete')
-        @csrf
-    </form>
-    <script type="text/javascript">
-    $(function () {
-        $('#tbl_list').DataTable({
-            "paging": true,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-            });
-    });
-        
+@section('js')
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    
+        <script>
+            $(function () {
+                $('#dataProduk').DataTable({
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
+        });
+        </script>
+
+        <script>
         function notificationBeforeDelete(event, el) {
             event.preventDefault();
             if (confirm('Apakah anda yakin akan menghapus data ? ')) {
@@ -90,5 +88,10 @@
                 $("#delete-form").submit();
             }
         }
-    </script>
-@endpush
+        </script>
+
+    <form action="" id="delete-form" method="post">
+        @method('delete')
+        @csrf
+    </form>
+@stop
