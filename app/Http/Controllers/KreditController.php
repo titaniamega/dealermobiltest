@@ -66,7 +66,7 @@ class KreditController extends Controller
             $kredit->tenor = $request->tenor;
             $kredit->save();
 
-            return redirect()->route('kredit.index')->with('success', 'Data kredit berhasil ditambahkan');
+            return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil ditambahkan');
     }
 
     /**
@@ -121,7 +121,7 @@ class KreditController extends Controller
             $kredit->tenor = $request->tenor;
             $kredit->save();
 
-            return redirect()->route('kredit.index')->with('success', 'Data kredit berhasil diupdate');
+            return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil diupdate');
     }
 
     /**

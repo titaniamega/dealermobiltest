@@ -66,7 +66,7 @@ class BeritaController extends Controller
             $berita->keterangan = $request->keterangan;
             $berita->save();
 
-            return redirect()->route('berita.index')->with('success', 'Data berita berhasil ditambahkan');
+            return redirect()->route('berita.index')->with('message', 'Data berita berhasil ditambahkan');
     }
 
     /**
@@ -128,7 +128,7 @@ class BeritaController extends Controller
             $berita->keterangan = $request->keterangan;
             $berita->save();
 
-            return redirect()->route('berita.index')->with('success', 'Data berita berhasil diupdate');
+            return redirect()->route('berita.index')->with('message', 'Data berita berhasil diupdate');
     }
 
     /**

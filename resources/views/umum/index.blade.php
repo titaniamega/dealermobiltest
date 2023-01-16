@@ -152,8 +152,8 @@
                         class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 100%; background-color: #7c4dff; height: 2px"
                         />
-                    <p class="lead fw-normal text-white-50 mb-0"><strong>Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
-                   
+                    
+                                           
                 </div>
             </div>
         </section>

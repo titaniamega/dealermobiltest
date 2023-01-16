@@ -1,6 +1,9 @@
 @extends('adminlte::page')
 @section('title', 'Produk')
 @section('content_header')
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <h1 class="m-0 text-dark">Produk</h1>
 @stop
 @section('content')
@@ -16,7 +19,14 @@
                     <a href="{{route('produk.create')}}" class="btn btn-outline-primary mb-2">
                         Tambah Data Produk
                     </a>
-                    <table class="table table-hover table-bordered table-stripped" id="example2">
+                    
+                    @if ($message = Session::get('message'))
+                        <div class="alert alert-success martop-sm">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
+                    <table class="table table-hover table-bordered table-stripped" id="tbl_list">
                         <thead>
                         <tr>
                             <th>No</th>
@@ -62,10 +72,17 @@
         @method('delete')
         @csrf
     </form>
-    <script>
-        $('#example2').DataTable({
+    <script type="text/javascript">
+    $(function () {
+        $('#tbl_list').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
             "responsive": true,
-        });
+            });
+    });
+        
         function notificationBeforeDelete(event, el) {
             event.preventDefault();
             if (confirm('Apakah anda yakin akan menghapus data ? ')) {

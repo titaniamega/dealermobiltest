@@ -62,7 +62,7 @@ class VideoController extends Controller
             $video->link_video = $request->link_video;
             $video->save();
 
-            return redirect()->route('video.index')->with('success', 'Data video berhasil ditambahkan');
+            return redirect()->route('video.index')->with('message', 'Data video berhasil ditambahkan');
     }
 
     /**
@@ -115,7 +115,7 @@ class VideoController extends Controller
             $video->link_video = $request->link_video;
             $video->save();
 
-            return redirect()->route('video.index')->with('success', 'Data video berhasil diupdate');
+            return redirect()->route('video.index')->with('message', 'Data video berhasil diupdate');
     }
 
     /**

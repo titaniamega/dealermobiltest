@@ -67,7 +67,7 @@ class PromoController extends Controller
             $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
-            return redirect()->route('promo.index')->with('success', 'Data promo berhasil ditambahkan');
+            return redirect()->route('promo.index')->with('message', 'Data promo berhasil ditambahkan');
     }
 
     /**
@@ -127,7 +127,7 @@ class PromoController extends Controller
             $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
-            return redirect()->route('promo.index')->with('success', 'Data promo berhasil diupdate');
+            return redirect()->route('promo.index')->with('message', 'Data promo berhasil diupdate');
     }
 
     /**

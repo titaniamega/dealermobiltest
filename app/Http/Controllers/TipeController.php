@@ -66,7 +66,7 @@ class TipeController extends Controller
             $tipe->bonus = $request->bonus;
             $tipe->save();
 
-            return redirect()->route('tipe.index')->with('success', 'Data tipe berhasil ditambahkan');
+            return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil ditambahkan');
     }
 
     /**
@@ -123,7 +123,7 @@ class TipeController extends Controller
             $tipe->bonus = $request->bonus;
             $tipe->save();
 
-            return redirect()->route('tipe.index')->with('success', 'Data tipe berhasil diupdate');
+            return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil diupdate');
     }
 
     /**
