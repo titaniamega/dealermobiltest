@@ -22,7 +22,7 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="dataProduk" width="100%">
+                    <table class="table table-hover table-bordered table-stripped" id="dataProduk">
                         <thead>
                         <tr>
                             <th>No</th>
@@ -65,9 +65,6 @@
     </div>
 @stop
 @section('js')
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    
         <script>
             $(function () {
                 $('#dataProduk').DataTable({
