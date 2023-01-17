@@ -10,35 +10,27 @@
         <!-- Section-->
         <section class="py-3">
             <div class="container px-4 px-lg-5 mt-5">
-            <h4 class="mb-4">Ketik dibawah ini untuk mencari</h4>
+            <h4 class="mb-4">Ketik di bawah ini untuk mencari</h4>
                 <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Cari" aria-label="Search" />
+                <input type="search" id="btn-search" class="form-control" placeholder="Cari" aria-label="Search" />
                 </div>
             </div>
 
             <div class="container px-4 px-lg-5 mt-5">
                     <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="data">
+                    <table class="table table-hover table-bordered table-stripped" id="dataHarga">
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col" class="text-center">TIPE</th>
                         <th scope="col" class="text-center">HARGA</th>
+                        <th scope="col" class="text-center">PRODUK</th>
                         </tr>
                     </thead>
                     <tbody>
-                    @php
-                    $id = null;
-                        for($i=0;$i<sizeof($tipe);){
-                        if($tipe[$i]->id_produk == $id){
-                            echo "<tr><td>". $tipe[$i]->nama_tipe."</td><td>Rp. ". number_format($tipe[$i]->harga)." </td></tr>" ;
-                            $i++;
-                        }elseif($tipe[$i]->id_produk != $id){
-                            $id = $tipe[$i]->id_produk;
-                            echo "<tr><td class='table-active' colspan='2'> <strong> ". $tipe[$i]->nama_produk."</td></tr>" ;
-                            }
-                        }
-                    @endphp
-                        </tbody>
+                    @foreach($tipe as $key => $tipe)
+                        <tr><td>{{$tipe->nama_tipe}}</td><td>@currency($tipe->harga)</td><td><strong> {{$tipe->nama_produk}}</td></tr>      
+                    @endforeach
+                    </tbody>
                     </table>
                     </div>  
                 </div>
@@ -47,14 +39,28 @@
 @stop
 @section('js')
         <script>
-            $(function () {
-                $('#data').DataTable({
-                    "paging": true,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
-        });
+           $(document).ready(function() {
+                var table = $('#dataHarga').DataTable( {
+                    order: [[2, 'asc']],
+                    rowGroup: {
+                        dataSrc: 2
+                    },
+                    "bPaginate": false,
+                    "bInfo": false,
+                } );
+                $('.dataTables_filter').hide();
+                $('#btn-search').on( 'keyup', function () {
+                        table.search(this.value, true, false, true).draw();
+                    
+                    });
+            } );
         </script>
 @stop
+
+@section('css')
+        <style>
+            table th:nth-child(3), td:nth-child(3) {
+            display: none;
+            }
+        </style>
+@endsection

@@ -13,6 +13,8 @@ use App\Models\Promo;
 use App\Models\Konsumen;
 use App\Models\Berita;
 use App\Models\Kredit;
+use DataTables;
+
 
 class UmumController extends Controller
 {

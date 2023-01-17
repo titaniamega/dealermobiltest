@@ -432,9 +432,19 @@ return [
                     'location' => 'https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/rowgroup/1.3.0/js/dataTables.rowGroup.min.js',
+                ],
+                [
                     'type' => 'css',
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/rowgroup/1.3.0/css/rowGroup.dataTables.min.css',
                 ],
             ],
         ],
