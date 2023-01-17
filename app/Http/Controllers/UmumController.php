@@ -34,9 +34,20 @@ class UmumController extends Controller
         ->all();
 
         $video = Video::all(['id','judul_video','link_video',]);
+        $videoindex = Video::all(['id','judul_video','link_video',])
+        ->sortByDesc('id')
+        ->skip(0)
+        ->take(3)
+        ->all();
+
         $promo = Promo::all(['id','judul','gambar','masa_berlaku',]);
+        $promoindex = Promo::all(['id','judul','gambar','masa_berlaku',])
+        ->sortByDesc('id')
+        ->skip(0)
+        ->take(4)
+        ->all();
         
-        return view('umum.index',compact('produk','video','promo','produkindex'));
+        return view('umum.index',compact('produk','video','promo','produkindex','promoindex','videoindex'));
     }
 
     public function produk(Request $request)
@@ -75,11 +86,12 @@ class UmumController extends Controller
             if($request->id_produk != "" )
                 $query->where('promo.id_produk',"=",$request->id_produk);
         })
-        ->orderBy('id', 'DESC')
+        ->orderBy('nama_produk', 'DESC')
         ->get();
 
         return view('umum.promo', compact('promo','produk','id_produk'));
     }
+
     public function video(Request $request)
     {    
         $id_produk = $request->id_produk;

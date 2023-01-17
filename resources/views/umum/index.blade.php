@@ -56,7 +56,7 @@
                     @endforeach
                 </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                    <a class="btn btn-primary" href="{{url('/umum/produk/')}}" role="button">Tampilkan Lainnya</a>
+                    <a class="btn btn-primary btn-block" href="{{url('/umum/produk/')}}" role="button">Tampilkan Lainnya</a>
                     </div>
                 </div>
         </section>
@@ -117,9 +117,9 @@
                         class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 100%; background-color: #7c4dff; height: 2px"
                         />
-                    <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
+                    <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Promo Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                @foreach($promo as $p)
+                @foreach($promoindex as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
                                  <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
@@ -138,9 +138,15 @@
                            </div>
                      </div>
                     @endforeach
+                    </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <a class="btn btn-primary btn-block" href="{{url('/umum/promo/')}}" role="button">Tampilkan Lainnya</a>
+                    </div>
+                </div>
                 </div>
                 </div>
             </div>
+                
         </section>
 
         <!-- Section-->
@@ -148,12 +154,7 @@
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
                     <h1 class="py-3 display-4 fw-bolder">Mengapa Memilih Kami?</h1>
-                    <hr
-                        class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 100%; background-color: #7c4dff; height: 2px"
-                        />
-
-                                           
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px" />                    
                 </div>
             </div>
         </section>
@@ -169,7 +170,7 @@
                     <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                 <div class="justify-content-center">
                     <div class="row">
-                        @foreach($video as $v)
+                        @foreach($videoindex as $v)
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$v->nama_produk}}</div>
@@ -182,6 +183,10 @@
                                 </div>
                             </div>
                         @endforeach
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <a class="btn btn-primary btn-block" href="{{url('/umum/video/')}}" role="button">Tampilkan Lainnya</a>
+                    </div>
                     </div>
                 </div>
             </div>
