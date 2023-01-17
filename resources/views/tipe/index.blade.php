@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="example2">
+                    <table class="table table-hover table-bordered table-stripped" id="dataTipe">
                         <thead>
                         <tr>
                             <th>No</th>
@@ -69,7 +69,7 @@
         @csrf
     </form>
     <script>
-        $('#example2').DataTable({
+        $('#dataTipe').DataTable({
             "responsive": true,
         });
         function notificationBeforeDelete(event, el) {

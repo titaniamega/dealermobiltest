@@ -17,10 +17,11 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="example2">
+                    <table class="table table-hover table-bordered table-stripped" id="dataAkun">
                         <thead>
                         <tr>
                             <th>No</th>
+                            <th>Terdaftar</th>
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Role</th>
@@ -31,6 +32,7 @@
                         @foreach($akun as $key => $akuns)
                             <tr>
                                 <td>{{$key+1}}</td>
+                                <td>{{$akuns->created_at}}</td>
                                 <td>{{$akuns->name}}</td>
                                 <td>{{$akuns->email}}</td>
                                 <td>{{$akuns->role}}</td>
@@ -61,7 +63,7 @@
         @csrf
     </form>
     <script>
-        $('#example2').DataTable({
+        $('#dataAkun').DataTable({
             "responsive": true,
         });
         function notificationBeforeDelete(event, el) {
