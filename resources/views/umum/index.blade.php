@@ -70,7 +70,7 @@
                     <p class="lead fw-normal text-white-50 mb-0"><strong>Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
 
                     <div class="row">                       
-                            <div class="col-md-3 px-2">
+                            <div class="col-md-3 px-3">
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/cash.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 px-2">
+                            <div class="col-md-3 px-3">
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/megaphone.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             </div>    
-                            <div class="col-md-3 px-2">
+                            <div class="col-md-3 px-3">
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/car.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
@@ -94,11 +94,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 px-2">
+                            <div class="col-md-3 px-3">
                                 <div class="card bg-light">
                                     <img src="{{ ('images/icon/coupon.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Cashback Jutaan & Hadiah Menarik</h5>
+                                        <h5 class="card-text">Cashback & Hadiah Menarik</h5>
                                     </div>
                                 </div>
                             </div>                   
