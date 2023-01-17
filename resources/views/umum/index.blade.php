@@ -112,10 +112,7 @@
         <section class="py-4">
             <div class="container px-4 px-lg-5 mt-5">
                     <h1 class="display-4 fw-bolder">Promo</h1>
-                    <hr
-                        class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 100%; background-color: #7c4dff; height: 2px"
-                        />
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
                     <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Promo Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach($promoindex as $p)

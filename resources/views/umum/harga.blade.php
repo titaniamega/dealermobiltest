@@ -30,7 +30,7 @@
                     $id = null;
                         for($i=0;$i<sizeof($tipe);){
                         if($tipe[$i]->id_produk == $id){
-                            echo "<tr><td>". $tipe[$i]->nama_tipe."</td><td> ". $tipe[$i]->harga." </td></tr>" ;
+                            echo "<tr><td>". $tipe[$i]->nama_tipe."</td><td> ". currency($tipe[$i]->harga)." </td></tr>" ;
                             $i++;
                         }elseif($tipe[$i]->id_produk != $id){
                             $id = $tipe[$i]->id_produk;

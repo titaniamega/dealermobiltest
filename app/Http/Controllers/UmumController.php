@@ -126,6 +126,23 @@ class UmumController extends Controller
         return view('umum.galeri', compact('konsumen','produk','id_produk'));
     }
 
+    public function kredit(Request $request)
+    {    
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+
+        $kredit= Kredit::join('produk','kredit.id_produk','=','produk.id')
+        ->select('kredit.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('kredit.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();    
+
+        return view('umum.kredit', compact('kredit','produk','id_produk'));
+    }
+
     public function detailPromo($id)
     {   
         $produk = Produk::all(['id','nama_produk']);
