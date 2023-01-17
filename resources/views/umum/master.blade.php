@@ -84,9 +84,7 @@
 
             <!-- Footer -->
             <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
-            <!-- Section: Social media -->
             <section class="d-flex justify-content-between"> </section>
-            <!-- Section: Social media -->
 
             <!-- Section: Links  -->
             <section class="">
