@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Database\Eloquent\Collection;
 use BenSampo\Embed\Rules\EmbeddableUrl;
 use BenSampo\Embed\Services\YouTube;
 use Illuminate\Support\Facades\DB;
@@ -23,50 +24,27 @@ class UmumController extends Controller
     public function index(Request $request)
     {   
         $id_produk = $request->id_produk;
+
         $produk = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi']);
+
+        $produkindex = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi'])
+        ->sortByDesc('id')
+        ->skip(0)
+        ->take(4)
+        ->all();
+
         $video = Video::all(['id','judul_video','link_video',]);
         $promo = Promo::all(['id','judul','gambar','masa_berlaku',]);
         
-        return view('umum.index',compact('produk','video','promo'));
+        return view('umum.index',compact('produk','video','promo','produkindex'));
     }
 
     public function produk(Request $request)
     {   
         
-        $produk = Produk::all(['id','nama_produk','gambar','gambarslide','harga',]);
+        $produk = Produk::all(['id','nama_produk','gambar','gambarslide','harga']);
 
-        $produk = Produk::join('kredit','produk.id','=','kredit.id_produk')
-        ->select('kredit.*','kredit.harga_mulai','kredit.dp_mulai','kredit.tenor')
-        ->where(function($query) use ($request){
-            if($request->id_produk != "")
-                $query->where('produk.id',"=",$request->id);
-        })
-        ->orderBy('id', 'DESC')
-        ->offset(0)
-        ->limit(3)
-        ->get();
-        
-
-        $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
-        ->select('tipe.*','produk.nama_produk')
-        ->where(function($query) use ($request){
-            if($request->id_produk != "" )
-                $query->where('tipe.id_produk',"=",$request->id_produk);
-        })
-        ->orderBy('id', 'DESC')
-        ->get();
-
-        $kredit= Kredit::join('produk','kredit.id_produk','=','produk.id')
-        ->select('kredit.*','produk.nama_produk')
-        ->where(function($query) use ($request){
-            if($request->id_produk != "" )
-                $query->where('kredit.id_produk',"=",$request->id_produk);
-        })
-        ->orderBy('id', 'DESC')
-        ->get();    
-
-
-        return view('umum.produk',compact('produk','tipe'));
+        return view('umum.produk',compact('produk'));
     }
 
     public function harga(Request $request)
@@ -167,6 +145,14 @@ class UmumController extends Controller
 
         $berita = Berita::findOrFail($id);
         return view('umum.detailBerita', compact('berita','produk'));
+    }
+
+    public function detailProduk($id)
+    {   
+        $produk = Produk::all(['id','nama_produk']);
+
+        $produk = Produk::findOrFail($id);
+        return view('umum.detailProduk', compact('produk'));
     }
 
     /**

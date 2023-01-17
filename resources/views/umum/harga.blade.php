@@ -18,8 +18,7 @@
 
             <div class="container px-4 px-lg-5 mt-5">
                     <div class="table-responsive">
-                    <!--Table-->
-                    <table class="table">
+                    <table class="table table-hover table-bordered table-stripped" id="data">
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col" class="text-center">TIPE</th>
@@ -31,7 +30,7 @@
                     $id = null;
                         for($i=0;$i<sizeof($tipe);){
                         if($tipe[$i]->id_produk == $id){
-                            echo "<tr><td>". $tipe[$i]->nama_tipe."</td><td>". $tipe[$i]->harga."</td></tr>" ;
+                            echo "<tr><td>". $tipe[$i]->nama_tipe."</td><td> ". $tipe[$i]->harga."</td></tr>" ;
                             $i++;
                         }elseif($tipe[$i]->id_produk != $id){
                             $id = $tipe[$i]->id_produk;
@@ -45,5 +44,17 @@
                 </div>
             </div>
         </section>
-   
+@stop
+@section('js')
+        <script>
+            $(function () {
+                $('#data').DataTable({
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
+        });
+        </script>
 @stop

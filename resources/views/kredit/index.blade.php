@@ -34,9 +34,9 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$kredits->nama_produk}}</td>
-                                <td>{{$kredits->harga_mulai}}</td>
-                                <td>{{$kredits->dp_mulai}}</td>
-                                <td>{{$kredits->cicilan_mulai}}</td>
+                                <td>@currency($kredits->harga_mulai)</td>
+                                <td>@currency($kredits->dp_mulai)</td>
+                                <td>@currency($kredits->cicilan_mulai)</td>
                                 <td>{{$kredits->tenor}}</td>
                                 <td>
                                     <a href="{{route('kredit.edit', $kredits->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>

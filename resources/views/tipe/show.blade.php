@@ -33,16 +33,16 @@
                         <td> Tipe Produk</td> <td>{{$tipe->nama_tipe}}</td>
                     </tr>
                     </tr>
-                        <td> Harga </td> <td>{{$tipe->harga}}</td>
+                        <td> Harga </td> <td>@currency($tipe->harga)</td>
                     </tr>
                     </tr>
-                        <td> Harga Automatic </td> <td>{{$tipe->harga_automatic}}</td>
+                        <td> Harga Automatic </td> <td>@currency($tipe->harga_automatic)</td>
                     </tr>
                     <tr>
-                        <td> Minimal Angsuran </td> <td> {{$tipe->minimal_angsuran}}</td>
+                        <td> Minimal Angsuran </td> <td>@currency($tipe->minimal_angsuran)</td>
                     </tr>
                     </tr>
-                        <td> Bayar Pertama </td> <td> {{$tipe->bayar_pertama}}</td>
+                        <td> Bayar Pertama </td> <td>@currency($tipe->bayar_pertama)</td>
                     </tr>
                     <tr>
                         <td> Bonus </td> <td> {{$tipe->bonus}}</td>

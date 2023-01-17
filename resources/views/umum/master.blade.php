@@ -48,7 +48,7 @@
                                 <li><a class="dropdown-item" href="{{url('/umum/produk/')}}">Semua Produk</a></li>
                                 <div class="dropdown-divider"></div>
                                 @foreach($produk as $pro)
-                                    <li><a class="dropdown-item" href="{{url('#')}}">{{$pro->nama_produk}}</a></li>
+                                    <li><a class="dropdown-item" href="#">{{$pro->nama_produk}}</a></li>
                                 @endforeach
                                 </ul>
                             </li>
