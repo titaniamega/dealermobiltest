@@ -30,26 +30,67 @@
         </script>
         <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/rowgroup/1.3.0/css/rowGroup.bootstrap4.min.css" rel="stylesheet" />
+        <style>
+            @media (min-width: 1200px) {
+            .responsive-font {
+                font-size: 50px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font {
+                font-size: 30px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-ex {
+                font-size: 17px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-ex {
+                font-size: 15px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-in {
+                font-size: 25px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-in {
+                font-size: 20px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+        </style>
         @yield('css')
     </head>
         
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container-fluid px-4 px-lg-5">
+            <div class="container-fluid px-4 px-lg-5 responsive-font-ex">
                 <a class="navbar-brand" href="{{url('/umum')}}">Dealer Mobil Indonesia</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/umum/')}}">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{url('/umum/')}}">HOME</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Produk
+                                PRODUK
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{url('/umum/produk/')}}">Semua Produk</a></li>
+                                <li><a class="dropdown-item" href="{{url('/umum/produk/')}}">SEMUA PRODUK</a></li>
                                 <div class="dropdown-divider"></div>
                                 @foreach($produk as $pro)
                                     <li><a class="dropdown-item" href="#">{{$pro->nama_produk}}</a></li>
@@ -57,25 +98,25 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/harga')}}">Harga</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/harga')}}">HARGA</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">Promo</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">PROMO</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/berita')}}">Berita</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/berita')}}">BERITA</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/kredit')}}">Kredit</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kredit')}}">KREDIT</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">Video</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">VIDEO</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/galeri')}}">Galeri</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/galeri')}}">GALERI</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/kontak')}}">Kontak</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kontak')}}">KONTAK</a>
                             </li>
                         </ul>
                       
@@ -85,9 +126,8 @@
         </nav>
     <body>
         @yield('content')
-
             <!-- Footer -->
-            <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+            <footer class="text-center text-lg-start text-white responsive-font-ex" style="background-color: #1c2331">
             <section class="d-flex justify-content-between"> </section>
 
             <!-- Section: Links  -->
@@ -188,4 +228,5 @@
         <script src="https://cdn.datatables.net/rowgroup/1.3.0/js/dataTables.rowGroup.min.js"></script>
         @yield('js')
     </body>
+
 </html>

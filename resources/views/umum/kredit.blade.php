@@ -1,19 +1,14 @@
 @extends('umum.master')
 @section('content')
       <!-- Header-->
-      <x-embed-styles />
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Kredit Dealer Mobil Indonesia</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Syarat & Ketentuan Kredit di Dealer Mobil Indonesia</p>
-            </div>
-        </header>     
+      <x-embed-styles />   
         
         <!-- Section-->
-        <section class="py-4">
+        <section class="py-4" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="justify-content-center">
-                <h3 class="responsive-font">Persyaratan Kredit Mobil Baru ALL BRAND</h3>
+                <h3 class="responsive-font text-center">Persyaratan Kredit Mobil Baru</h3>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
                 </div>
                 <p style="text-align: justify;" class="responsive-font-in"><strong>Persyaratan Kredit Untuk Perorangan &nbsp;:</strong></p>
                     <ol style="text-align: justify;" class="responsive-font-ex">
@@ -41,7 +36,7 @@
                     </div>
         </section>
 <style>
-    @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .responsive-font {
     font-size: 40px;
     font-family: "Montserrat", sans-serif !important;
@@ -50,7 +45,7 @@
 /* If the screen size is smaller than 1200px, set the font-size to 80px */
 @media (max-width: 1199.98px) {
   .responsive-font {
-    font-size: 30px;
+    font-size: 35px;
     font-family: "Montserrat", sans-serif !important;
   }
 }

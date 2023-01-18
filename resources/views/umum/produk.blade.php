@@ -1,15 +1,12 @@
 @extends('umum.master')
 @section('content')
-      <!-- Header-->
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Daftar Mobil</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Semua Tipe Terbaru Terbaik Sesuai Pilihan Anda berlaku {{date('Y')}}</p>
-            </div>
-        </header>     
+  
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
+            <div class="text-center">
+                <h1 class="responsive-font">Daftar Produk</h1>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach($produk as $p)
                      <div class="col mb-5">
@@ -47,6 +44,46 @@
             .card:hover{
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }            
+            }    
+            
+            @media (min-width: 1200px) {
+            .responsive-font {
+            font-size: 50px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font {
+            font-size: 30px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-ex {
+            font-size: 17px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-ex {
+            font-size: 15px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-in {
+            font-size: 25px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-in {
+            font-size: 20px;
+            font-family: "Montserrat", sans-serif !important;
+            }
+            }     
       </style>
 @stop

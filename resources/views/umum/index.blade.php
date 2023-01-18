@@ -28,9 +28,9 @@
          <!-- Section-->
          <section class="py-1">
             <div class="container px-4 px-lg-5 mt-5">
-                <h1 class="display-4 fw-bolder">Rekomendasi Produk</h1>
+                <h1 class="responsive-font text-center">Rekomendasi Produk</h1>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
-                <p class="lead fw-normal text-black-50 mb-0"><strong>Mobil Baru Pilihan Dengan Harga Terbaik</p><br>
+                <p class="responsive-font-ex text-center">Mobil Baru Pilihan Dengan Harga Terbaik</p><br>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                    @foreach($produkindex as $p)
                      <div class="col mb-5">
@@ -62,12 +62,12 @@
         </section>
 
         <!-- Section-->
-        <section class="bg-dark">
+        <section class="bg-dark py-2">
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
-                    <h1 class="py-3 display-4 fw-bolder">Layanan Kami</h1>
+                    <h1 class="responsive-font text-center">Layanan Kami</h1>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
-                    <p class="lead fw-normal text-white-50 mb-0"><strong>Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
+                    <p class="responsive-font-ex text-center">Memberikan yang Terbaik Untuk Mendapatkan Mobil Impian Anda.</p><br>
 
                     <div class="row">                       
                             <div class="col-md-3 px-3">
@@ -111,9 +111,9 @@
         <!-- Section-->
         <section class="py-4">
             <div class="container px-4 px-lg-5 mt-5">
-                    <h1 class="display-4 fw-bolder">Promo</h1>
+                    <h1 class="responsive-font text-center">Promo</h1>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
-                    <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Promo Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
+                    <p class="responsive-font-ex text-center">Lihat Promo Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach($promoindex as $p)
                      <div class="col mb-5">
@@ -149,7 +149,7 @@
         <section class="bg-dark">
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
-                    <h1 class="py-3 display-4 fw-bolder">Mengapa Memilih Kami?</h1>
+                    <h1 class="responsive-font text-center">Mengapa Memilih Kami?</h1>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px" />                    
                 </div>
             </div>
@@ -158,12 +158,12 @@
         <!-- Section-->
         <section class="py-4">
             <div class="container px-4 px-lg-5 mt-5">
-                    <h1 class="display-4 fw-bolder">Video Review</h1>
+                    <h1 class="responsive-font text-center">Video Review</h1>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
                         style="width: 100%; background-color: #7c4dff; height: 2px"
                         />
-                    <p class="lead fw-normal text-black-50 mb-0"><strong>Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
+                    <p class="responsive-font-ex text-center">Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p><br>
                 <div class="justify-content-center">
                     <div class="row">
                         @foreach($videoindex as $v)
@@ -198,6 +198,47 @@
             .card:hover{
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }            
+            }
+          
+            @media (min-width: 1200px) {
+            .responsive-font {
+                font-size: 50px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font {
+                font-size: 30px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-ex {
+                font-size: 17px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-ex {
+                font-size: 15px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            @media (min-width: 1200px) {
+            .responsive-font-in {
+                font-size: 25px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+            /* If the screen size is smaller than 1200px, set the font-size to 80px */
+            @media (max-width: 1199.98px) {
+            .responsive-font-in {
+                font-size: 20px;
+                font-family: "Montserrat", sans-serif !important;
+            }
+            }
+                    
         </style>    
 @stop

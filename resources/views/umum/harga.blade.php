@@ -1,16 +1,13 @@
 @extends('umum.master')
-@section('content')
-      <!-- Header-->
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Daftar Harga Mobil</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Lihat dan Cek Price List Daftar Harga Mobil Semua Tipe Terbaru Terbaik Sesuai Pilihan Anda berlaku  {{date('M Y')}}</p>
-            </div>
-        </header>     
+@section('content')   
         <!-- Section-->
-        <section class="py-3">
+        <section class="py-3" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
-            <h4 class="mb-4">Ketik di bawah ini untuk mencari</h4>
+            <h1 class="responsive-font text-center">Daftar Harga Mobil</h1>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
+            <p class="responsive-font-ex">Lihat dan Cek Price List Daftar Harga Mobil Semua Tipe Terbaru Terbaik Sesuai Pilihan Anda berlaku  {{date('M Y')}} </p>
+            <p class="responsive-font-ex">* Harga Sewaktu waktu Dapat Berubah Tanpa Pemberitahuan Sebelumnya.</p> 
+            <h4 class="responsive-font-in">Ketik di bawah ini untuk mencari</h4>
                 <div class="form-outline">
                 <input type="search" id="btn-search" class="form-control" placeholder="Cari" aria-label="Search" />
                 </div>

@@ -1,15 +1,10 @@
 @extends('umum.master')
 @section('content')
-      <!-- Header-->
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Galeri Konsumen</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p>
-            </div>
-        </header>     
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
+            <h1 class="responsive-font text-center">Galeri Konsumen</h1>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach($konsumen as $k)
                      <div class="col mb-5">

@@ -1,17 +1,11 @@
 @extends('umum.master')
 @section('content')
-      <!-- Header-->
       <x-embed-styles />
-      <header class="bg-dark py-3" style="padding-top : 64px !important">
-            <div class="container px-4 px-lg-5 my-5">
-            <h1 class="display-4 fw-bolder">Video Review</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Lihat Video Representasi & Review Mobil Baru yang Dapat Membantu & Memudahkan Anda dalam Memilih Mobil Impian Anda.</p>
-            </div>
-        </header>     
-        
         <!-- Section-->
-        <section class="py-4">
+        <section class="py-4" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
+                <h1 class="responsive-font text-center">Video Review</h1>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
                 <div class="justify-content-center">
                     <div class="row">
                         @foreach($video as $v)
