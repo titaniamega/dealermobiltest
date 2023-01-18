@@ -14,8 +14,7 @@
             </div>
 
             <div class="container px-4 px-lg-5 mt-5">
-                    <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="dataHarga">
+                    <table class="table table-hover table-bordered table-stripped" id="dataHarga" width="100%">
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col" class="text-center">TIPE</th>
@@ -29,7 +28,6 @@
                         @endforeach
                     </tbody>
                     </table>
-                    </div>
             </div>
         </section>
 @stop
