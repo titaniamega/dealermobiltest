@@ -82,15 +82,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/umum/')}}">HOME</a>
-                            </li>
+                        
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                PRODUK
+                                Produk
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{url('/umum/produk/')}}">SEMUA PRODUK</a></li>
+                                <li><a class="dropdown-item" href="{{url('/umum/produk/')}}">Semua Produk</a></li>
                                 <div class="dropdown-divider"></div>
                                 @foreach($produk as $pro)
                                     <li><a class="dropdown-item" href="#">{{$pro->nama_produk}}</a></li>
@@ -98,25 +96,25 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/harga')}}">HARGA</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/harga')}}">Harga</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">PROMO</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/promo')}}">Promo</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/berita')}}">BERITA</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/berita')}}">Berita</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/kredit')}}">KREDIT</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kredit')}}">Kredit</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">VIDEO</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/video')}}">Video</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/galeri')}}">GALERI</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/galeri')}}">Galeri</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{url('/umum/kontak')}}">KONTAK</a>
+                            <a class="nav-link" aria-current="page" href="{{url('/umum/kontak')}}">Kontak</a>
                             </li>
                         </ul>
                       
