@@ -5,7 +5,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="text-center">
                 <h1 class="responsive-font">{{$berita->judul_berita}}</h1>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
                 <p class="fw-bolder text-black-100 mb-1">Posted on {{$registeredAt=$berita->updated_at->isoFormat('dddd, D MMMM Y')}}</p>
                 </div>
             </div>

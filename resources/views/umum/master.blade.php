@@ -75,7 +75,7 @@
     </head>
         
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #ff0000;">
             <div class="container-fluid px-4 px-lg-5 responsive-font-ex">
                 <a class="navbar-brand" href="{{url('/umum')}}">Dealer Mobil Indonesia</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -139,7 +139,7 @@
                     <h6 class="text-uppercase fw-bold">TENTANG KAMI</h6>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #7c4dff; height: 2px"
+                        style="width: 60px; background-color: #ff0000; height: 2px"
                         />
                     <p>
                     Pembelian Mobil Baru Toyota Area Pemasaran Solo Dan Sekitarnya. 
@@ -155,7 +155,7 @@
                     <h6 class="text-uppercase fw-bold">MENU</h6>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #7c4dff; height: 2px"
+                        style="width: 60px; background-color: #ff0000; height: 2px"
                         />
                     <p>
                         <a href="{{url('/umum/produk')}}" class="text-white">Produk</a>
@@ -181,7 +181,7 @@
                     <h6 class="text-uppercase fw-bold">LOKASI</h6>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #7c4dff; height: 2px"
+                        style="width: 60px; background-color: #ff0000; height: 2px"
                         />
                        
                     </div>
@@ -193,7 +193,7 @@
                     <h6 class="text-uppercase fw-bold">Kontak Kami</h6>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
-                        style="width: 60px; background-color: #7c4dff; height: 2px"
+                        style="width: 60px; background-color: #ff0000; height: 2px"
                         />
                     <p><i class="fas fa-home mr-3"></i> Indonesia</p>
                     <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>

@@ -1,14 +1,11 @@
 @extends('umum.master')
 @section('content')
-      <!-- Header-->
-      <x-embed-styles />   
-        
         <!-- Section-->
         <section class="py-4" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="justify-content-center">
                 <h3 class="responsive-font text-center">Persyaratan Kredit Mobil Baru</h3>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #7c4dff; height: 2px"/>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
                 </div>
                 <p style="text-align: justify;" class="responsive-font-in"><strong>Persyaratan Kredit Untuk Perorangan &nbsp;:</strong></p>
                     <ol style="text-align: justify;" class="responsive-font-ex">
@@ -35,45 +32,5 @@
                         <a class="btn btn-primary" href="#" role="button">Simulasi Kredit</a>
                     </div>
         </section>
-<style>
-@media (min-width: 1200px) {
-  .responsive-font {
-    font-size: 40px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-/* If the screen size is smaller than 1200px, set the font-size to 80px */
-@media (max-width: 1199.98px) {
-  .responsive-font {
-    font-size: 35px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-@media (min-width: 1200px) {
-  .responsive-font-ex {
-    font-size: 15px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-/* If the screen size is smaller than 1200px, set the font-size to 80px */
-@media (max-width: 1199.98px) {
-  .responsive-font-ex {
-    font-size: 15px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-@media (min-width: 1200px) {
-  .responsive-font-in {
-    font-size: 25px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-/* If the screen size is smaller than 1200px, set the font-size to 80px */
-@media (max-width: 1199.98px) {
-  .responsive-font-in {
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif !important;
-  }
-}
-</style>
+
 @stop
