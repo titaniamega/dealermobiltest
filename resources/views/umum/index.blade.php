@@ -62,7 +62,7 @@
         </section>
 
         <!-- Section-->
-        <section class="bg-dark mt-2">
+        <section class="py-2 mt-5" style= "background-color: #E5E4E2;">
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
                     <h1 class="responsive-font text-center">Layanan Kami</h1>
@@ -102,13 +102,13 @@
                                 </div>
                             </div>                   
                         </div>
-                
+                    </div>
                 </div>          
             </div>
         </section>
 
         <!-- Section-->
-        <section class="py-4">
+        <section class="mt-5">
             <div class="container px-4 px-lg-5 mt-5">
                     <h1 class="responsive-font text-center">Promo</h1>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
@@ -145,7 +145,7 @@
         </section>
 
         <!-- Section-->
-        <section class="bg-dark">
+        <section class="py-2 mt-5" style= "background-color: #E5E4E2;">
             <div class="container px-4 px-lg-5 mt-5">               
                 <div class="justify-content-center">
                     <h1 class="responsive-font text-center">Mengapa Memilih Kami?</h1>
@@ -197,47 +197,6 @@
             .card:hover{
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }
-          
-            @media (min-width: 1200px) {
-            .responsive-font {
-                font-size: 50px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-            /* If the screen size is smaller than 1200px, set the font-size to 80px */
-            @media (max-width: 1199.98px) {
-            .responsive-font {
-                font-size: 30px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-            @media (min-width: 1200px) {
-            .responsive-font-ex {
-                font-size: 17px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-            /* If the screen size is smaller than 1200px, set the font-size to 80px */
-            @media (max-width: 1199.98px) {
-            .responsive-font-ex {
-                font-size: 15px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-            @media (min-width: 1200px) {
-            .responsive-font-in {
-                font-size: 25px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-            /* If the screen size is smaller than 1200px, set the font-size to 80px */
-            @media (max-width: 1199.98px) {
-            .responsive-font-in {
-                font-size: 20px;
-                font-family: "Montserrat", sans-serif !important;
-            }
-            }
-                    
+            }      
         </style>    
 @stop

@@ -11,7 +11,7 @@
                 @foreach($berita as $b)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$b->nama_produk}}</div>
+                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$b->nama_produk}}</div>
                                  <div class="badge bg-light position-absolute" style="top: 0.5rem; left: 0.5rem">
                                  {{$b->updated_at->isoFormat('D MMMM Y')}}
                                  </div>
@@ -24,7 +24,7 @@
                               </div>
                               <!-- Product actions-->
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="{{route('umum.detailBerita',$b->id)}}">Baca Berita</a></div>
+                                 <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('umum.detailBerita',$b->id)}}">Baca Berita</a></div>
                               </div>
                            </div>
                      </div>
