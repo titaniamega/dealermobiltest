@@ -24,13 +24,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($tipe as $key => $tipe)
+                        @foreach($tipe as $key => $tipe)
                         <tr><td>{{$tipe->nama_tipe}}</td><td>@currency($tipe->harga)</td><td><strong> {{$tipe->nama_produk}}</td></tr>      
-                    @endforeach
+                        @endforeach
                     </tbody>
                     </table>
-                    </div>  
-                </div>
+                    </div>
             </div>
         </section>
 @stop
