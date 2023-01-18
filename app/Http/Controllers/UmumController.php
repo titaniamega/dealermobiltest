@@ -180,8 +180,6 @@ class UmumController extends Controller
 
     public function detailProduk($id)
     {   
-        $produk = Produk::all(['id','nama_produk']);
-
         $produk = Produk::findOrFail($id);
         return view('umum.detailProduk', compact('produk'));
     }

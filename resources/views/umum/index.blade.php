@@ -95,7 +95,7 @@
                             </div>
                             <div class="col-md-3 px-3">
                                 <div class="card bg-light">
-                                    <img src="{{ ('images/icon/coupon.png') }}" class="card-img-top">
+                                    <img src="{{ url('images/icon/coupon.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
                                         <h5 class="card-text">Cashback & Hadiah Menarik</h5>
                                     </div>

@@ -9,8 +9,8 @@
                 @foreach($promo as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
-                                 <div class="badge bg-success position-absolute" style="top: 0.5rem; left: 0.5rem">
+                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                 <div class="badge bg-danger position-absolute" style="top: 0.5rem; left: 0.5rem">
                                  {{$p->masa_berlaku?->isoFormat('D MMMM Y')}}
                                  </div>
                               <img class="card-img-top" src="{{url('images/promo/'.$p->gambar)}}" alt="..."  />                         
@@ -20,7 +20,7 @@
                                  </div>
                               </div>
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
+                                 <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
                               </div>
                            </div>
                      </div>
