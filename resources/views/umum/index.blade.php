@@ -73,7 +73,7 @@
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/cash.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Melayani Cash Dan Kredit</h5>
+                                        <h5 class="card-text responsive-font-ex">Melayani Cash Dan Kredit</h5>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/megaphone.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Banyak Promo & Diskon</h5>
+                                        <h5 class="card-text responsive-font-ex">Banyak Promo & Diskon</h5>
                                     </div>
                                 </div>
                             </div>    
@@ -89,7 +89,7 @@
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/car.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Bisa Test Drive Mobil Sepuasnya</h5>
+                                        <h5 class="card-text responsive-font-ex">Bisa Test Drive Mobil Sepuasnya</h5>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="card bg-light">
                                     <img src="{{ url('images/icon/coupon.png') }}" class="card-img-top">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Cashback & Hadiah Menarik</h5>
+                                        <h5 class="card-text responsive-font-ex">Cashback & Hadiah Menarik</h5>
                                     </div>
                                 </div>
                             </div>                   
@@ -151,6 +151,29 @@
                     <h1 class="responsive-font text-center">Mengapa Memilih Kami?</h1>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px" />                    
                 </div>
+                <div class="container py-3">
+                <div class="row py-5">
+                    <div class="col-12 text-center">
+                    <div class="row">
+                    <div class="col-lg-4 col-md-6 vv profile-circel-image-200">
+                    <img src="{{url('images/icon/time.png')}}" class="img-fluid rounded-circle">
+                    <h5 class="mb-3 mt-5 responsive-font-in">Proses Mudah & Cepat</h5>
+                    <p class="mb-4 text-muted responsive-font-ex">Transaksi Lebih Mudah dan Tanpa Ribet</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 vv profile-circel-image-200">
+                    <img src="{{url('images/icon/checked.png')}}" class="rounded img-fluid rounded-circle">
+                    <h5 class="mb-3 mt-5 responsive-font-in">Sales Resmi</h5>
+                    <p class="mb-4 text-muted responsive-font-ex">Percayakan Kepada Dealer dan Sales Resmi</p>
+                    </div>
+                <div class="col-lg-4 col-md-6 vv profile-circel-image-200">
+                    <img src="{{url('images/icon/money-bag.png')}}" class="rounded img-fluid rounded-circle">
+                    <h5 class="mb-3 mt-5 responsive-font-in">Harga Terbaik</h5>
+                    <p class="mb-4 text-muted responsive-font-ex">Membantu Anda Mendapatkan Harga Terbaik</p>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </section>
 
@@ -197,6 +220,19 @@
             .card:hover{
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }
+            .profile-circel-image-200 img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            }
+            .vv img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            }
+            .vv img:hover {
+            opacity: 0.8;
+            box-shadow: 0px 0px 5px 8px rgba(0,0,0,0.08);
             }      
         </style>    
 @stop

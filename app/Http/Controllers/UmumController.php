@@ -54,10 +54,17 @@ class UmumController extends Controller
 
     public function produk(Request $request)
     {   
-        
         $produk = Produk::all(['id','nama_produk','gambar','gambarslide','harga']);
 
         return view('umum.produk',compact('produk'));
+    }
+
+    public function detailProduk($id)
+    {   
+        $produk = Produk::all(['id','nama_produk']);
+        
+        $produk = Produk::findOrFail($id);
+        return view('umum.detailProduk', compact('produk'));
     }
 
     public function harga(Request $request)
@@ -178,11 +185,7 @@ class UmumController extends Controller
         return view('umum.detailBerita', compact('berita','produk'));
     }
 
-    public function detailProduk($id)
-    {   
-        $produk = Produk::findOrFail($id);
-        return view('umum.detailProduk', compact('produk'));
-    }
+    
 
     /**
      * Show the form for creating a new resource.

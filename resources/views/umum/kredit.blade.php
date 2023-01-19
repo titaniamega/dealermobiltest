@@ -25,12 +25,10 @@
                         <li>Foto copy Akte Perusahaan</li>
                         <li>Foto copy KTP direksi</li>
                     </ol>
-                <p style="text-align: justify;" class="responsive-font-ex"><strong>NB: Semua persyaratan kredit baik perorangan atau perusahaan dapat berubah sewaktu-waktu tergantung kebijakan masing-masing Leasing.</strong></p>        
+                <p style="text-align: justify;" class="responsive-font-ex"><strong>NB: Semua persyaratan kredit baik perorangan atau perusahaan dapat berubah sewaktu-waktu tergantung kebijakan masing-masing Leasing.</strong></p>
+                <a class="btn btn-danger" href="#" role="button">Simulasi Kredit</a>    
+                </div>     
             </div>
-                    </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <a class="btn btn-primary" href="#" role="button">Simulasi Kredit</a>
-                    </div>
         </section>
 
 @stop
