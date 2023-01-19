@@ -34,6 +34,7 @@ Route::get('/umum/video',[UmumController::class,'video'])->name("umum.video");
 Route::get('/umum/galeri',[UmumController::class,'galeri'])->name("umum.galeri");
 Route::get('/umum/berita',[UmumController::class,'berita'])->name("umum.berita");
 Route::get('/umum/kredit',[UmumController::class,'kredit'])->name("umum.kredit");
+Route::get('/umum/kontak',[UmumController::class,'kontak'])->name("umum.kontak");
 Route::get('/umum/detailPromo/{id}',[UmumController::class,'detailPromo'])->name("umum.detailPromo");
 Route::get('/umum/detailBerita/{id}',[UmumController::class,'detailBerita'])->name("umum.detailBerita");
 Route::get('/umum/detailProduk/{id}',[UmumController::class,'detailProduk'])->name("umum.detailProduk");

@@ -13,6 +13,7 @@ use App\Models\Promo;
 use App\Models\Konsumen;
 use App\Models\Berita;
 use App\Models\Kredit;
+use App\Models\Contact;
 use DataTables;
 
 
@@ -179,13 +180,21 @@ class UmumController extends Controller
 
     public function detailBerita($id)
     {   
+        $id_produk = $request->id_produk;
         $produk = Produk::all(['id','nama_produk']);
 
         $berita = Berita::findOrFail($id);
         return view('umum.detailBerita', compact('berita','produk'));
     }
 
-    
+    public function kontak(Request $request)
+    {   
+        $id_produk = $request->id_produk;
+        $produk = Produk::all(['id','nama_produk']);
+        $contact_person = Contact::all();
+
+        return view('umum.kontak', compact('contact_person','produk'));
+    }
 
     /**
      * Show the form for creating a new resource.
