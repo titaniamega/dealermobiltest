@@ -60,12 +60,21 @@ class UmumController extends Controller
         return view('umum.produk',compact('produk'));
     }
 
-    public function detailProduk($id)
+    public function detailProduk($id, Request $request)
     {   
         $produk = Produk::all(['id','nama_produk']);
-        
-        $produk = Produk::findOrFail($id);
-        return view('umum.detailProduk', compact('produk'));
+        $produkDet = Produk::findOrFail($id);
+
+        $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->select('tipe.*','produk.nama_produk')
+        ->where(function($query) use ($id){
+            if($id != "" )
+                $query->where('tipe.id_produk',"=",$id);
+        })
+        ->orderBy('nama_produk', 'DESC')
+        ->get();
+
+        return view('umum.detailProduk', compact('produk','produkDet','tipe'));
     }
 
     public function harga(Request $request)

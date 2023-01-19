@@ -1,5 +1,6 @@
 @extends('umum.master')
 @section('content')
+
         <!-- Section-->
         <section class="py-5" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
@@ -72,9 +73,8 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach   
                 </div>
-                <div>
             </div>
     </section>
 
