@@ -187,7 +187,7 @@ class UmumController extends Controller
         return view('umum.berita', compact('berita','produk','id_produk'));
     }
 
-    public function detailBerita($id)
+    public function detailBerita($id, Request $request)
     {   
         $id_produk = $request->id_produk;
         $produk = Produk::all(['id','nama_produk']);

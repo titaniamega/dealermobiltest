@@ -1,7 +1,7 @@
 @extends('umum.master')
 @section('content')     
         <!-- Section-->
-        <section class="py-0" style="padding-top : 64px !important">
+        <section class="py-4" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="text-center">
                 <h1 class="responsive-font">{{$berita->judul_berita}}</h1>
