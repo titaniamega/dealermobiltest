@@ -15,7 +15,7 @@
                                     <x-embed url="{{$v->link_video}}" />                      
                                     <div class="card-body p-1">
                                     <div class="text-center">                                 
-                                        <h5 class="fw-bolder">{{$v->judul_video}}</h5>
+                                        <h5 class="fw-bolder"><a class="text-danger" href="{{route('umum.detailVideo',$v->id)}}">{{$v->judul_video}}</a></h5>
                                     </div>
                                     </div>
                                 </div>

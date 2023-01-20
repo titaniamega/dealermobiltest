@@ -38,6 +38,7 @@ Route::get('/umum/kontak',[UmumController::class,'kontak'])->name("umum.kontak")
 Route::get('/umum/detailPromo/{id}',[UmumController::class,'detailPromo'])->name("umum.detailPromo");
 Route::get('/umum/detailBerita/{id}',[UmumController::class,'detailBerita'])->name("umum.detailBerita");
 Route::get('/umum/detailProduk/{id}',[UmumController::class,'detailProduk'])->name("umum.detailProduk");
+Route::get('/umum/detailVideo/{id}',[UmumController::class,'detailVideo'])->name("umum.detailVideo");
 Route::get('/','HomeController@index');
 
 Auth::routes();
