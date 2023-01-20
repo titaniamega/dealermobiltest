@@ -131,19 +131,19 @@ class UmumController extends Controller
     public function detailVideo($id, Request $request)
     {   
         $produk = Produk::all(['id','nama_produk']);
-        $produkDet = Produk::findOrFail($id);
         $videoDet = Video::findOrFail($id);
+        $produkDet = Produk::findOrFail($videoDet->id_produk);
 
         $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
         ->select('tipe.*','produk.nama_produk')
-        ->where(function($query) use ($id){
-            if($id != "" )
-                $query->where('tipe.id_produk',"=",$id);
+        ->where(function($query) use ($videoDet){
+            if( $videoDet->id_produk != "" )
+                $query->where('tipe.id_produk',"=", $videoDet->id_produk);
         })
         ->orderBy('nama_produk', 'DESC')
         ->get();
 
-        return view('umum.detailVideo', compact('produk','produkDet','tipe','videoDet'));
+        return view('umum.detailVideo', compact('produk','videoDet','produkDet','tipe'));
     }
 
     public function galeri(Request $request)
