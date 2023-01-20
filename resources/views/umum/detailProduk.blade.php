@@ -13,6 +13,19 @@
                   <img src="{{url('images/'.$produkDet->gambar)}}" width="500" class="img-fluid">
                 </div>
             </div>
+            <div class="container px-4 px-lg-5 mt-5">
+            <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
+            <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
+                    <ul style="text-align: justify;" class="responsive-font-ex">
+                    @foreach($produkKredit as $kredit)
+                        <li>Harga Mulai : @currency($kredit->harga_mulai) Jutaan</li>
+                        <li>DP Mulai : @currency($kredit->dp_mulai) Jutaan </li>
+                        <li>Cicilan Mulai : @currency($kredit->cicilan_mulai) Jutaan</li>
+                        <li>Tenor Hingga : {{$kredit->tenor}} Tahun</li>
+                        <li>Bonus : </li>
+                    @endforeach
+                    </ul>
+            </div>
             <div class="container px-4 px-lg-5 mt-5 responsive-font-ex">
             <p class="responsive-font-in text-danger">HARGA {{$produkDet->nama_produk}} DI KOTA INDONESIA </p>
             <p class="responsive-font-ex">Daftar Harga Mobil Baru {{$produkDet->nama_produk}}, Belum Dikurangi Cashback yang berlaku di Indonesia</p>
