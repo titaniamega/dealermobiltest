@@ -65,14 +65,7 @@ class UmumController extends Controller
         $produk = Produk::all(['id','nama_produk']);
         $produkDet = Produk::findOrFail($id);
 
-        $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
-        ->select('tipe.*','produk.nama_produk')
-        ->where(function($query) use ($id){
-            if( $id != "" )
-                $query->where('tipe.id_produk',"=", $id);
-        })
-        ->orderBy('nama_produk', 'DESC')
-        ->get();
+        $tipe = Tipe::where('id_produk','=',$id)->get();
 
         $produkTipe = DB::table('produk')
             ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')

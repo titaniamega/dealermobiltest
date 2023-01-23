@@ -17,12 +17,12 @@
             <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
             <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
                     <ul style="text-align: justify;" class="responsive-font-ex">
-                    @foreach($produkTipe as $tipe)
-                        <li>Harga Mulai : @currency($tipe->harga) Jutaan</li>
-                        <li>DP Mulai : @currency($tipe->dp_mulai) Jutaan </li>
-                        <li>Cicilan Mulai : @currency($tipe->cicilan_mulai) Jutaan</li>
-                        <li>Tenor Hingga : {{$tipe->tenor}} Tahun</li>
-                        <li>Bonus : {{$tipe->bonus}}</li>
+                    @foreach($produkTipe as $tp)
+                        <li>Harga Mulai : @currency($tp->harga) Jutaan</li>
+                        <li>DP Mulai : @currency($tp->dp_mulai) Jutaan </li>
+                        <li>Cicilan Mulai : @currency($tp->cicilan_mulai) Jutaan</li>
+                        <li>Tenor Hingga : {{$tp->tenor}} Tahun</li>
+                        <li>Bonus : {{$tp->bonus}}</li>
                     @endforeach
                     </ul>
             </div>
@@ -38,8 +38,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($tipe as $key => $tipe)
-                        <tr><td>{{$tipe->nama_tipe}}</td><td>@currency($tipe->harga)</td><td><strong> {{$tipe->nama_produk}}</td></tr>      
+                        @foreach($tipe as $key => $t)
+                        <tr><td>{{$t->nama_tipe}}</td><td>@currency($t->harga)</td><td><strong> {{$t->nama_produk}}</td></tr>      
                         @endforeach
                     </tbody>
                     </table>
