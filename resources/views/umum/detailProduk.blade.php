@@ -17,12 +17,12 @@
             <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
             <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
                     <ul style="text-align: justify;" class="responsive-font-ex">
-                    @foreach($produkKredit as $kredit)
-                        <li>Harga Mulai : @currency($kredit->harga_mulai) Jutaan</li>
-                        <li>DP Mulai : @currency($kredit->dp_mulai) Jutaan </li>
-                        <li>Cicilan Mulai : @currency($kredit->cicilan_mulai) Jutaan</li>
-                        <li>Tenor Hingga : {{$kredit->tenor}} Tahun</li>
-                        <li>Bonus : </li>
+                    @foreach($produkTipe as $tipe)
+                        <li>Harga Mulai : @currency($tipe->harga) Jutaan</li>
+                        <li>DP Mulai : @currency($tipe->dp_mulai) Jutaan </li>
+                        <li>Cicilan Mulai : @currency($tipe->cicilan_mulai) Jutaan</li>
+                        <li>Tenor Hingga : {{$tipe->tenor}} Tahun</li>
+                        <li>Bonus : {{$tipe->bonus}}</li>
                     @endforeach
                     </ul>
             </div>
@@ -56,6 +56,5 @@
             table th:nth-child(3), td:nth-child(3) {
             display: none;
             }
-            
       </style>
 @endsection

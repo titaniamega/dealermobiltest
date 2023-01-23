@@ -136,6 +136,7 @@ class TipeController extends Controller
     {
         $tipe = Tipe::find($id);
         $tipe->delete();
+        
         return redirect()->route('kredit.index')->with('message', 'Data tipe berhasil dihapus');
     }
 }

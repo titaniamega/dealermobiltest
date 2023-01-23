@@ -64,14 +64,6 @@ class UmumController extends Controller
     {   
         $produk = Produk::all(['id','nama_produk']);
         $produkDet = Produk::findOrFail($id);
-        $kredit= Kredit::join('produk','kredit.id_produk','=','produk.id')
-        ->select('kredit.*','produk.nama_produk')
-        ->where(function($query) use ($request){
-            if($request->id_produk != "" )
-                $query->where('kredit.id_produk',"=",$request->id_produk);
-        })
-        ->orderBy('id', 'DESC')
-        ->get();
 
         $tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
         ->select('tipe.*','produk.nama_produk')
@@ -81,18 +73,22 @@ class UmumController extends Controller
         })
         ->orderBy('nama_produk', 'DESC')
         ->get();
-        
-        $produkKredit = DB::table('produk')
-            ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
-            ->select('produk.*','kredit.harga_mulai','kredit.dp_mulai','kredit.cicilan_mulai','kredit.tenor')
-            ->where(function($query) use ($request){
-                if( $request->id != "" )
-                    $query->where('produk.id',"=", $request->id);
-            })
-            ->orderBy('id', 'DESC')
-            ->get();
 
-        return view('umum.detailProduk', compact('produk','produkDet','tipe','kredit','produkKredit'));
+        $produkTipe = DB::table('produk')
+            ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+            ->selectRaw('produk.*, min(tipe.harga) as harga, bonus as bonus')
+            ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
+            ->selectRaw('min(kredit.dp_mulai) as dp_mulai , min(kredit.cicilan_mulai) as cicilan_mulai ,
+            max(kredit.tenor) as tenor')
+            ->where(function($query) use ($id){
+                if( $id != "" )
+                    $query->where('tipe.id_produk',"=", $id);
+            })
+            ->orderBy('produk.id','DESC')
+            ->groupBy('produk.id')
+            ->get();
+        
+        return view('umum.detailProduk', compact('produk','produkDet','tipe','produkTipe'));
     }
 
     public function harga(Request $request)
