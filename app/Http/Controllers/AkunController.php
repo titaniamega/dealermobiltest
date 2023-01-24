@@ -105,6 +105,10 @@ class AkunController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $akun = User::find($id);
+        $akun->delete();
+        activity()->log('Menghapus data user');
+
+        return redirect()->route('akun.index')->with('message', 'Data akun berhasil dihapus');
     }
 }

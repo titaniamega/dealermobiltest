@@ -14,8 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contact = DB::table('contact_person')->orderBy('id', 'DESC')->get();
-        return view('contact.index',compact('contact'));
+        return view('contact.index');
     }
 
     /**
@@ -41,10 +40,9 @@ class ContactController extends Controller
             'foto_profil' => 'image|nullable|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             
-            $contact = Contact::findOrFail($request->id);
-
+            $contact = Contact::find($request->id);
             if(!empty($contact)){
-                $contact-> $contact->nama = $request->nama;
+                $contact->nama = $request->nama;
                 $contact->telepon = $request->telepon;
                 $contact->telepon2 = $request->telepon2;
                 $contact->whatsapp = $request->whatsapp;
@@ -62,7 +60,6 @@ class ContactController extends Controller
               }
             } else {
                 $contact = new Contact();
-
                 $contact->nama = $request->nama;
                 $contact->telepon = $request->telepon;
                 $contact->telepon2 = $request->telepon2;
@@ -140,7 +137,7 @@ class ContactController extends Controller
             }
             
             $contact->save();
-            return redirect()->route('contact.index')->with('success', 'Data contact person berhasil diupdate');
+            return redirect()->route('contact.create')->with('message', 'Data contact person berhasil diupdate');
     }
 
     /**

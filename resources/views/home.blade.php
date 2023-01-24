@@ -15,22 +15,22 @@
         </div>
     </div>
 
-    <div class="table-responsive">
+                <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataLog">
                         <tbody>
-                            <tr  class="text-center">
+                            <tr class="text-center bg-info">
                             <td> User </td>
                             <td> Role </td>
                             <td> Activity </td>
                             <td> Time </td>
                             </tr>
                         @foreach($activity_log as $item)
-                            <tr>
+                            <tr class="text-center">
                                 <td>
-                                    <span class="badge badge-success">{{$item->user->name}}</span>
+                                    <span class="badge badge-secondary">{{$item->user->name}}</span>
                                 </td>
                                 <td>
-                                    <span class="badge badge-success">{{$item->user->role}}</span>
+                                    <span class="badge badge-info">{{$item->user->role}}</span>
                                 </td>
                                 <td>
                                     <span class="badge badge-success">{{$item->description}}</span>
@@ -42,5 +42,5 @@
                         @endforeach
                         </tbody>
                     </table>
-                    </div>
+                </div>
 @stop

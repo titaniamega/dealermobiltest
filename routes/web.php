@@ -53,7 +53,7 @@ Route::group(
       Route::resource('/konsumen', KonsumenController::class);
       Route::resource('/video', VideoController::class);
       Route::resource('/kredit', KreditController::class);
-      Route::resource('/contact', ContactController::class);        
+      Route::resource('/contact', ContactController::class);    
     }
   );
 
