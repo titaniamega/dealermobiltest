@@ -59,6 +59,8 @@ class ProdukController extends Controller
             $produk->deskripsi = $request->deskripsi;
             $produk->save();
 
+            activity()->log('Menambah data produk');
+
             return redirect()->route('produk.index')->with('message', 'Produk baru berhasil ditambahkan');
     }
 
@@ -128,6 +130,8 @@ class ProdukController extends Controller
             $produk->gambarslide = $nama_file_slide;
             $produk->deskripsi = $request->deskripsi;
             $produk->save();
+
+            activity()->log('Mengupdate data produk');
             return redirect()->route('produk.index')->with('message', 'Data produk berhasil diupdate');
     }
 
@@ -141,9 +145,7 @@ class ProdukController extends Controller
     {
         $produk = Produk::findorFail($id);
         $produk->delete();
-        return redirect()->route('produk.index')
-        ->with('message', 'Data barang berhasil dihapus');
+        activity()->log('Menghapus data produk');
+        return redirect()->route('produk.index')->with('message', 'Data barang berhasil dihapus');
     }
-
-   
 }

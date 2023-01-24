@@ -66,6 +66,7 @@ class BeritaController extends Controller
             $berita->keterangan = $request->keterangan;
             $berita->save();
 
+            activity()->log('Menambahkan data berita');
             return redirect()->route('berita.index')->with('message', 'Data berita berhasil ditambahkan');
     }
 
@@ -127,7 +128,8 @@ class BeritaController extends Controller
             $berita->gambar_berita = $nama_file;
             $berita->keterangan = $request->keterangan;
             $berita->save();
-
+            
+            activity()->log('Mengupdate data berita');
             return redirect()->route('berita.index')->with('message', 'Data berita berhasil diupdate');
     }
 
@@ -141,6 +143,8 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($id);
         $berita->delete();
+
+        activity()->log('Menghapus data berita');
         return redirect()->route('berita.index')->with('message', 'Data berita berhasil dihapus');
     }
 }

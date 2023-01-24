@@ -316,7 +316,7 @@ return [
         ['header' => 'MENU'],
         [
             'text' => 'Contact',
-            'url'  => '/contact',
+            'url'  => '/contact/create',
             'icon' => 'fas fa-fw fa-user',
             'role' => 'user,admin',
         ],

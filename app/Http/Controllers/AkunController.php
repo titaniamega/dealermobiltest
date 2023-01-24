@@ -47,6 +47,7 @@ class AkunController extends Controller
         $akun->password = Hash::make($request->password);
         $akun->role = $request->role;
         $akun->save();
+        activity()->log('Menambahkan data user');
         return redirect()->route('akun.index')->with('message', 'Data user berhasil ditambahkan');
     }
 
@@ -91,9 +92,9 @@ class AkunController extends Controller
         $akun->role = $request->role;
 
         $akun->save();
+        activity()->log('Mengubah data user');
 
         return redirect()->route('akun.index')->with('message', 'Data user berhasil diubah');
-
     }
 
     /**

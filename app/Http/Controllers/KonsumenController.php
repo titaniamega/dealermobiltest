@@ -65,6 +65,7 @@ class KonsumenController extends Controller
             $konsumen->gambar = $nama_file;
             $konsumen->save();
 
+            activity()->log('Menambah data konsumen');
             return redirect()->route('konsumen.index')->with('message', 'Data konsumen berhasil ditambahkan');
     }
 
@@ -123,6 +124,7 @@ class KonsumenController extends Controller
             $konsumen->gambar = $nama_file;
             $konsumen->save();
 
+            activity()->log('Mengupdate data konsumen');
             return redirect()->route('konsumen.index')->with('message', 'Data konsumen berhasil diupdate');
     }
 

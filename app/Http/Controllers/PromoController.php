@@ -67,6 +67,8 @@ class PromoController extends Controller
             $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
+            activity()->log('Menambah data promo');
+
             return redirect()->route('promo.index')->with('message', 'Data promo berhasil ditambahkan');
     }
 
@@ -127,6 +129,7 @@ class PromoController extends Controller
             $promo->masa_berlaku = $request->masa_berlaku;
             $promo->save();
 
+            activity()->log('Mengupdate data promo');
             return redirect()->route('promo.index')->with('message', 'Data promo berhasil diupdate');
     }
 
@@ -140,6 +143,7 @@ class PromoController extends Controller
     {
         $promo = Promo::find($id);
         $promo->delete();
+        activity()->log('Menghapus data promo');
         return redirect()->route('promo.index')->with('message', 'Data promo berhasil dihapus');
     }
 }

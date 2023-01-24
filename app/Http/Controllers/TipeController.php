@@ -66,6 +66,8 @@ class TipeController extends Controller
             $tipe->bonus = $request->bonus;
             $tipe->save();
 
+            activity()->log('Menambah data tipe');
+
             return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil ditambahkan');
     }
 
@@ -123,6 +125,8 @@ class TipeController extends Controller
             $tipe->bonus = $request->bonus;
             $tipe->save();
 
+            activity()->log('Mengupdate data tipe');
+
             return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil diupdate');
     }
 
@@ -137,6 +141,7 @@ class TipeController extends Controller
         $tipe = Tipe::find($id);
         $tipe->delete();
         
+        activity()->log('Menghapus data tipe');
         return redirect()->route('kredit.index')->with('message', 'Data tipe berhasil dihapus');
     }
 }

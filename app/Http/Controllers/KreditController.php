@@ -66,6 +66,8 @@ class KreditController extends Controller
             $kredit->tenor = $request->tenor;
             $kredit->save();
 
+            activity()->log('Menambah data kredit');
+
             return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil ditambahkan');
     }
 
@@ -121,6 +123,8 @@ class KreditController extends Controller
             $kredit->tenor = $request->tenor;
             $kredit->save();
 
+            activity()->log('Mengupdate data kredit');
+
             return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil diupdate');
     }
 
@@ -134,6 +138,8 @@ class KreditController extends Controller
     {
         $kredit = Kredit::find($id);
         $kredit->delete();
+
+        activity()->log('Menghapus data kredit');
         return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil dihapus');
 
     }

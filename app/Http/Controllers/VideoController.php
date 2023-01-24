@@ -62,6 +62,8 @@ class VideoController extends Controller
             $video->link_video = $request->link_video;
             $video->save();
 
+            activity()->log('Menambah data video');
+
             return redirect()->route('video.index')->with('message', 'Data video berhasil ditambahkan');
     }
 
@@ -115,6 +117,7 @@ class VideoController extends Controller
             $video->link_video = $request->link_video;
             $video->save();
 
+            activity()->log('Mengupdate data video');
             return redirect()->route('video.index')->with('message', 'Data video berhasil diupdate');
     }
 
@@ -128,6 +131,7 @@ class VideoController extends Controller
     {
         $video = Video::find($id);
         $video->delete();
+        activity()->log('Menghapus data video');
         return redirect()->route('video.index')->with('message', 'Video berhasil dihapus');
     }
 }

@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        $contact= Contact::latest()->first();
+        $contact= Contact::first();
         return view('contact.create', compact('contact'));
     }
 
@@ -41,27 +41,48 @@ class ContactController extends Controller
             'foto_profil' => 'image|nullable|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             
-            $contact = Contact::findOrFail($id);
-         
-            $contact->nama = $request->nama;
-            $contact->telepon = $request->telepon;
-            $contact->telepon2 = $request->telepon2;
-            $contact->whatsapp = $request->whatsapp;
-            $contact->email = $request->email;
-            $contact->nama_dealer = $request->nama_dealer;
-            $contact->alamat_kantor = $request->alamat_kantor;
-            if($request->hasFile('foto_profil')){
-                $nama_file = time() . '.' . $request->foto_profil->getClientOriginalExtension();
+            $contact = Contact::findOrFail($request->id);
 
-                $request->foto_profil->move(public_path('images/profil'), $nama_file);
+            if(!empty($contact)){
+                $contact-> $contact->nama = $request->nama;
+                $contact->telepon = $request->telepon;
+                $contact->telepon2 = $request->telepon2;
+                $contact->whatsapp = $request->whatsapp;
+                $contact->email = $request->email;
+                $contact->nama_dealer = $request->nama_dealer;
+                $contact->alamat_kantor = $request->alamat_kantor;
+                if($request->hasFile('foto_profil')){
+                    $nama_file = time() . '.' . $request->foto_profil->getClientOriginalExtension();
+    
+                    $request->foto_profil->move(public_path('images/profil'), $nama_file);
+    
+                    $contact->foto_profil = $nama_file;
+                }else{
+                    $contact->foto_profil = null;
+              }
+            } else {
+                $contact = new Contact();
 
-                $contact->foto_profil = $nama_file;
-            }else{
-                $contact->foto_profil = null;
+                $contact->nama = $request->nama;
+                $contact->telepon = $request->telepon;
+                $contact->telepon2 = $request->telepon2;
+                $contact->whatsapp = $request->whatsapp;
+                $contact->email = $request->email;
+                $contact->nama_dealer = $request->nama_dealer;
+                $contact->alamat_kantor = $request->alamat_kantor;
+                if($request->hasFile('foto_profil')){
+                    $nama_file = time() . '.' . $request->foto_profil->getClientOriginalExtension();
+
+                    $request->foto_profil->move(public_path('images/profil'), $nama_file);
+
+                    $contact->foto_profil = $nama_file;
+                }else{
+                    $contact->foto_profil = null;
+                }
             }
-            
+         
             $contact->save();
-            return redirect()->route('contact.index')->with('success', 'Data contact person berhasil ditambahkan');
+            return redirect()->route('contact.create')->with('message', 'Data contact person berhasil ditambahkan');
     }
 
     /**
