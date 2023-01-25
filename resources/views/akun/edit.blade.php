@@ -36,7 +36,8 @@
                         </div>
                         <div class="col">
                         <label for="exampleInputPass" class="control-label">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" value="{{ $user->password }}" required>
+                        <input type="hidden" class="form-control" name="password_old" placeholder="Password" value="{{ $user->password }}">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                         @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>

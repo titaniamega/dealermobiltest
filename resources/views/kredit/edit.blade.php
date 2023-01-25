@@ -26,7 +26,7 @@
                         </div>
                         <div class="col">
                         <label for="exampleInputHargaMulai">Harga Mulai</label>
-                        <input type="number" class="form-control @error('harga_mulai') is-invalid @enderror" id="exampleInputHargaMulai" placeholder="Harga mulai" name="harga_mulai" value="{{$kredit->harga_mulai}}" readonly>
+                        <input type="number" class="form-control @error('harga_mulai') is-invalid @enderror" id="exampleInputHargaMulai" placeholder="Harga mulai" name="harga_mulai" value="{{$kredit->harga_mulai}}">
                         @error('harga_mulai') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>

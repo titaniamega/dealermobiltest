@@ -94,7 +94,7 @@ class AkunController extends Controller
         $akun->save();
         activity()->log('Mengubah data user');
 
-        return redirect()->route('akun.index')->with('message', 'Data user berhasil diubah');
+        return redirect()->route('akun.index')->with('message', 'Data akun berhasil diupdate');
     }
 
     /**
