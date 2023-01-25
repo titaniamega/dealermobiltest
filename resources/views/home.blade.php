@@ -10,15 +10,13 @@
             <div class="card">
                 <div class="card-body">
                     @if ($message = Session::get('message'))
-                        <div class="alert alert-warning martop-sm">
+                        <div class="alert alert-success martop-sm">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <div class="row">
-                        <div class="col-8">
-                        Timeline Log Aktivitas
-                        </div>
-                        <div class="col-4">
+                    <div class="d-flex justify-content-between">
+                        <div>Timeline Log Aktivitas</div>
+                        <div>
                         <a href="{{route('home.destroy')}}" class="btn btn-outline-danger btn-sm mb-2 ms-auto">
                         <i class="fa fa-trash"></i> Hapus Log
                         </a>
@@ -42,7 +40,7 @@
                                     <h5><span class="badge badge-success">{{$item->user->role}}</span></h5>
                                 </td>
                                 <td>
-                                    <h5><span class="badge badge-info">{{$item->description}}</span></h5>
+                                    <h5><span class="badge badge-light">{{$item->description}}</span></h5>
                                 </td>
                                 <td>
                                     <h5><span class="badge badge-warning">{{$lastUpdated=$item->created_at->diffForHumans()}}</span></h5>
