@@ -1,6 +1,5 @@
 @extends('umum.master')
 @section('content')
-
         <!-- Section-->
         <section class="py-5" style="padding-top : 64px !important">
             <div class="container px-4 px-lg-5 mt-5">
@@ -11,7 +10,7 @@
                 @foreach($contact_person as $contact)
                     <div class="col-lg-6">
                     <div class="card-shadow">
-                        <img src="{{url('images/profil/'.$contact->foto_profil)}}" class="img-fluid">
+                        <img src="{{url('images/profil/'.$contact->foto_profil)}}" class="img-fluid" width="300px">
                     </div>
                     </div>
                     <div class="col-lg-6">
@@ -34,7 +33,7 @@
                             <div class="col-lg-12">
                             <div class="form-group mt-2">
                                 <h6 class="font-weight-medium responsive-font-ex">Whatsapp</h6>
-                                <h4 class="font-weight-medium responsive-font-ex mt-2"><strong>{{$contact->whatsaap}}</strong></h4>
+                                <h4 class="font-weight-medium responsive-font-ex mt-2"><strong>{{$contact->whatsapp}}</strong></h4>
                             </div>
                             </div>
                             <div class="col-lg-12">

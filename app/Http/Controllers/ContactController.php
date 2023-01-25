@@ -51,9 +51,7 @@ class ContactController extends Controller
                 $contact->alamat_kantor = $request->alamat_kantor;
                 if($request->hasFile('foto_profil')){
                     $nama_file = time() . '.' . $request->foto_profil->getClientOriginalExtension();
-    
                     $request->foto_profil->move(public_path('images/profil'), $nama_file);
-    
                     $contact->foto_profil = $nama_file;
                 }else{
                     $contact->foto_profil = null;
@@ -69,15 +67,12 @@ class ContactController extends Controller
                 $contact->alamat_kantor = $request->alamat_kantor;
                 if($request->hasFile('foto_profil')){
                     $nama_file = time() . '.' . $request->foto_profil->getClientOriginalExtension();
-
                     $request->foto_profil->move(public_path('images/profil'), $nama_file);
-
                     $contact->foto_profil = $nama_file;
                 }else{
                     $contact->foto_profil = null;
                 }
             }
-         
             $contact->save();
             return redirect()->route('contact.create')->with('message', 'Data contact person berhasil ditambahkan');
     }

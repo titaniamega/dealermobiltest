@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputWhatsapp" class="control-label">Whatsapp</label>
-                        <input type="text" class="form-control" name="whatsaap" placeholder="Whatsapp" value="{{$contact?->whatsapp}}">
+                        <input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp" value="{{$contact?->whatsapp}}">
                         @error('whatsaap') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="col">
@@ -67,21 +67,17 @@
                     <div class="form-group">
                     <div class="row">
                         <div class="col">
-                        <label for="exampleInputFotoProfil">Foto Profil</label>
-                        <input type="hidden" name="fotoprrofillama" value="{{ $contact?->foto_profil}}" >
+                        <input type="hidden" name="foto_profil" value="{{ $contact?->foto_profil }}" >
                         <img src="{{url('images/profil/'.$contact?->foto_profil)}}" width="100"/>
                         </div>
                         <div class="col">
                         <label for="gambar" class="control-label">Ganti Foto</label><br>
-                        <input type="file" name="gambar">
+                        <input type="file" name="foto_profil">
                         </div>
                     </div>
                     </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{route('contact.create')}}" class="btn btn-default">
-                        Batal
-                    </a>
                 </div>
             </div>
         </div>

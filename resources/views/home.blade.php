@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Dealer')
 @section('content_header')
-    <h1 class="m-0 text-dark">Selamat Datang</h1>
+    <h1 class="m-0 text-dark">Selamat Datang, </h1>
 @stop
 
 @section('content')
@@ -9,12 +9,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                Log Activity    
-                </div>
-            </div>
-        </div>
-    </div>
-
+                    <a href="{{route('promo.create')}}" class="btn btn-outline-danger btn-sm mb-2">
+                    <i class="fa fa-trash"></i> Hapus Timeline Aktivitas
+                    </a>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataLog">
                         <tbody>
@@ -27,20 +24,23 @@
                         @foreach($activity_log as $item)
                             <tr class="text-center">
                                 <td>
-                                    <span class="badge badge-secondary">{{$item->user->name}}</span>
+                                    <h5><span class="badge badge-light">{{$item->user->name}}</span></h5>
                                 </td>
                                 <td>
-                                    <span class="badge badge-info">{{$item->user->role}}</span>
+                                    <h5><span class="badge badge-success">{{$item->user->role}}</span></h5>
                                 </td>
                                 <td>
-                                    <span class="badge badge-success">{{$item->description}}</span>
+                                    <h5><span class="badge badge-info">{{$item->description}}</span></h5>
                                 </td>
                                 <td>
-                                    <span class="badge badge-danger">{{$item->created_at}}</span>
+                                    <h5><span class="badge badge-warning">{{$lastUpdated=$item->created_at->diffForHumans()}}</span></h5>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
 @stop
