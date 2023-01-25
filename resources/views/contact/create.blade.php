@@ -11,6 +11,11 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
+                    @if ($message = Session::get('message'))
+                        <div class="alert alert-success martop-sm">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                         <div class="col">
                         <input type="hidden" name="id" value="{{$contact?->id}}">
                         </div>

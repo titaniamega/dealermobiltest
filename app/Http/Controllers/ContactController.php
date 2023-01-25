@@ -73,7 +73,8 @@ class ContactController extends Controller
             }
             
             $contact->save();
-            return redirect()->route('contact.create')->with('message', 'Data contact person berhasil ditambahkan');
+            activity()->log('Update data contact');
+            return redirect()->route('contact.create')->with('message', 'Data contact person berhasil diupdate');
     }
 
     /**

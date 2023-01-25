@@ -9,6 +9,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    @if ($message = Session::get('message'))
+                        <div class="alert alert-warning martop-sm">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-8">
                         Timeline Log Aktivitas
