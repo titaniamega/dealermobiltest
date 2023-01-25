@@ -41,6 +41,7 @@ Route::get('/umum/detailProduk/{id}',[UmumController::class,'detailProduk'])->na
 Route::get('/umum/detailVideo/{id}',[UmumController::class,'detailVideo'])->name("umum.detailVideo");
 Route::get('/','HomeController@index');
 
+
 Auth::routes();
 
 Route::group(
@@ -54,7 +55,7 @@ Route::group(
       Route::resource('/video', VideoController::class);
       Route::resource('/kredit', KreditController::class);
       Route::resource('/contact', ContactController::class);
-      Route::get('/home/destroy',[HomeController::class,'destroy'])->name("home.destroy");      
+      Route::get('/home/destroy',[HomeController::class,'destroy'])->name("home.destroy");
     }
   );
 
@@ -69,6 +70,7 @@ Route::group(
       Route::get('/home', 'App\Http\Controllers\HomeController@index');
       Route::get('/users', 'App\Http\Controllers\UserController@index');
       Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+      Route::get('/home',[HomeController::class,'index'])->name("home"); 
   }
 );
 

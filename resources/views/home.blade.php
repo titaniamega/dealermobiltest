@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 <div class="table-responsive">
-                    <table class="table table-hover table-bordered table-stripped" id="dataLog">
+                    <table class="table table-hover table-bordered table-stripped">
                         <tbody>
                             <tr class="text-center bg-info">
                             <td> User </td>
