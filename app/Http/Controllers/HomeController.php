@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\ActivityLog;
 use Spatie\ActivityLog\Traits\LogsActivity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -29,5 +30,11 @@ class HomeController extends Controller
         $activity_log = ActivityLog::with('user')->limit(10)->orderBy('id','DESC')->get();
 
         return view('home',compact('user','activity_log'));
+    }
+
+    public function destroy()
+    {
+        DB::table('activity_log')->delete();
+        return redirect()->route('home')->with('message', 'Log aktivitas berhasil dihapus');
     }
 }

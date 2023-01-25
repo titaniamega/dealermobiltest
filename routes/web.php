@@ -30,7 +30,7 @@ Route::get('/umum', [UmumController::class,'index']);
 Route::get('/umum/produk',[UmumController::class,'produk'])->name("umum.produk");
 Route::get('/umum/harga',[UmumController::class,'harga'])->name("umum.harga");
 Route::get('/umum/promo',[UmumController::class,'promo'])->name("umum.promo");
-Route::get('/umum/video',[UmumController::class,'video'])->name("umum.video");
+Route::get('/umum/video',[UmumController::class,'video' ])->name("umum.video");
 Route::get('/umum/galeri',[UmumController::class,'galeri'])->name("umum.galeri");
 Route::get('/umum/berita',[UmumController::class,'berita'])->name("umum.berita");
 Route::get('/umum/kredit',[UmumController::class,'kredit'])->name("umum.kredit");
@@ -53,7 +53,8 @@ Route::group(
       Route::resource('/konsumen', KonsumenController::class);
       Route::resource('/video', VideoController::class);
       Route::resource('/kredit', KreditController::class);
-      Route::resource('/contact', ContactController::class);    
+      Route::resource('/contact', ContactController::class);
+      Route::get('/home/destroy',[HomeController::class,'destroy'])->name("home.destroy");      
     }
   );
 

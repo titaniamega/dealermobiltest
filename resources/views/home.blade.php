@@ -9,9 +9,16 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="{{route('promo.create')}}" class="btn btn-outline-danger btn-sm mb-2">
-                    <i class="fa fa-trash"></i> Hapus Timeline Aktivitas
-                    </a>
+                    <div class="row">
+                        <div class="col-8">
+                        Timeline Log Aktivitas
+                        </div>
+                        <div class="col-4">
+                        <a href="{{route('home.destroy')}}" class="btn btn-outline-danger btn-sm mb-2 ms-auto">
+                        <i class="fa fa-trash"></i> Hapus Log
+                        </a>
+                        </div>
+                    </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataLog">
                         <tbody>
