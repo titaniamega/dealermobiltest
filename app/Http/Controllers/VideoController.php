@@ -146,6 +146,7 @@ class VideoController extends Controller
         }
 
         $video->save();
+        activity()->log('Mengupdate status video');
         return redirect()->route('video.index')->with('message', 'Status video berhasil diupdate');
     }
 }
