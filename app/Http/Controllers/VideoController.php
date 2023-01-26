@@ -139,10 +139,10 @@ class VideoController extends Controller
     {
         $video = Video::find($id);
         
-        if ($video->is_aktif == 'ya') {
-            $video->is_aktif == 'tidak';
+        if ($video->is_aktif = 'ya') {
+            $video->is_aktif = 'tidak';
         }else{
-            $video->is_aktif == 'ya';
+            $video->is_aktif = 'ya';
         }
         
         $video->save();
