@@ -28,10 +28,7 @@
                         <td> ID Berita</td> <td>{{$berita->id}}</td>
                     </tr>
                     <tr>
-                        @php
-                        $produk=\App\models\Produk::all();
-                        @endphp
-                        <td> Nama Produk </td> <td>{{$berita->id_produk}}</td>
+                        <td> Nama Produk </td> <td>{{$berita->nama_produk}}</td>
                     </tr>
                     <tr>
                         <td> Judul Berita </td> <td>{{$berita->judul_berita}}</td>

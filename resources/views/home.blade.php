@@ -18,7 +18,7 @@
                         <div>Timeline Log Aktivitas</div>
                         <div>
                         <a href="{{route('home.destroy')}}" class="btn btn-outline-danger btn-sm mb-2 ms-auto">
-                        <i class="fa fa-trash"></i> Hapus Log
+                        <i class="fa fa-trash"></i> Hapus Log Aktivitas
                         </a>
                         </div>
                     </div>

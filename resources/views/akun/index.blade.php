@@ -37,13 +37,13 @@
                                 <td>{{$akuns->email}}</td>
                                 <td>{{$akuns->role}}</td>
                                 <td>
-                                    <a href="{{route('akun.show', $akuns->id)}}" class="btn btn-outline-primary btn-xs">
+                                    <a href="{{route('akun.show', $akuns->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>
-                                    <a href="{{route('akun.edit', $akuns->id)}}" class="btn btn-outline-warning btn-xs">
+                                    <a href="{{route('akun.edit', $akuns->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit
                                     </a>
-                                    <a href="{{route('akun.destroy', $akuns->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs">
+                                    <a href="{{route('akun.destroy', $akuns->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash " aria-hidden="true"></i>
                                         Delete
                                     </a>
                                 </td>

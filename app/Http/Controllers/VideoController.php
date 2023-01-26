@@ -134,4 +134,18 @@ class VideoController extends Controller
         activity()->log('Menghapus data video');
         return redirect()->route('video.index')->with('message', 'Video berhasil dihapus');
     }
+
+    public function updateStatus($id)
+    {
+        $video = Video::find($id);
+        
+        if ($video->is_aktif == 'ya') {
+            $video->is_aktif == 'tidak';
+        }else{
+            $video->is_aktif == 'ya';
+        }
+        
+        $video->save();
+        return redirect()->route('video.index')->with('message', 'Status video berhasil diupdate');
+    }
 }

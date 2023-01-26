@@ -56,6 +56,7 @@ Route::group(
       Route::resource('/kredit', KreditController::class);
       Route::resource('/contact', ContactController::class);
       Route::get('/home/destroy',[HomeController::class,'destroy'])->name("home.destroy");
+      Route::get('/video/updateStatus/{id}',[VideoController::class,'updateStatus'])->name("video.updateStatus");
     }
   );
 

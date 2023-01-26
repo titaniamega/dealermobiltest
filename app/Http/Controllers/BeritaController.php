@@ -76,9 +76,18 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $produk = Produk::all(['id','nama_produk']);
+
+        $berita= Berita::join('produk','berita.id_produk','=','produk.id')
+        ->select('berita.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('berita.id_produk',"=",$request->id_produk);
+        })
+        ->orderBy('id', 'DESC')
+        ->get();
 
         $berita= Berita::findOrFail($id);
         return view('berita.show', compact('berita','produk'));

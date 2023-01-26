@@ -35,11 +35,13 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$registeredAt=$videos->created_at->isoFormat('dddd, D MMMM Y')}}</td>
                                 <td>
-                                <img src="{{"https://i.ytimg.com/vi/".preg_replace('/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/m', '$1', $videos->link_video)."/hqdefault.jpg" }}" width="100"/>
+                                    <img src="{{"https://i.ytimg.com/vi/".preg_replace('/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/m', '$1', $videos->link_video)."/hqdefault.jpg" }}" width="100"/>
                                 </td>
                                 <td>{{$videos->judul_video}}</td>
                                 <td>{{$videos->nama_produk}}</td>
-                                <td width="70"></td>
+                                <td>
+                                    <input data-id="{{$videos->id}}" onchange="window.location.href='{{ URL::route('video.updateStatus', $videos->id); }}'" class="toggle-class" type="checkbox" data-onstyle="info" data-offstyle="danger" data-toggle="toggle" data-on="Aktif" data-off="Nonaktif" data-size="xs" {{ $videos->is_aktif == "ya" ? 'checked' : '' }}>
+                                </td>
                                 <td>
                                     <a href="{{route('video.show', $videos->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
@@ -62,6 +64,9 @@
     </div>
 @stop
 @push('js')
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
     <form action="" id="delete-form" method="post">
         @method('delete')
         @csrf
