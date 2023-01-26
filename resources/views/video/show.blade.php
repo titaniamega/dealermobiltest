@@ -1,31 +1,28 @@
 @extends('adminlte::page')
 @section('title', 'Detail Video')
 @section('content_header')
-  <div class="row">
-    <div class="col-sm">
-    <h1 class="m-0 p-0 text-dark">Detail Video</h1>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$video->created_at->isoFormat('dddd, D MMMM Y') }} </p>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$video->updated_at->isoFormat('dddd, D MMMM Y') }}
-    </div>
-    <div class="col-sm">
-        <a href="{{route('video.index')}}" class="btn btn-outline-primary">
-        Data Video
-        </a>
-    </div>
-  </div>
+        <h1>Detail Video</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="col-md-12">
+                        <div class="row mb-2">
+                            <div class="col-md-6 mb-2">
+                            <label>Tanggal : </label>
+                            <input disabled class="form-control" value="{{ $registeredAt=$video->created_at->isoFormat('dddd, D MMMM Y') }}">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <label>Tanggal Diperbarui : </label>
+                            <input disabled class="form-control" value="{{ $registeredAt=$video->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                            </div>
+                        </div>
+                    </div>  
                 <table class="table table-striped table-bordered martop-sm">
                     <tr>
-                        <td> ID Video </Video></td> <td>{{$video->id}}</td>
+                        <td> ID Video </Video> </td> <td>{{$video->id}}</td>
                     </tr>
                         <td> Judul Video </td> <td>{{$video->judul_video}}</td>
                     </tr>

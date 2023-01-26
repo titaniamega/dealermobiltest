@@ -1,28 +1,25 @@
 @extends('adminlte::page')
 @section('title', 'Detail Berita')
 @section('content_header')
-  <div class="row">
-    <div class="col-sm">
-    <h1 class="m-0 p-0 text-dark">Detail Berita</h1>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$berita->created_at->isoFormat('dddd, D MMMM Y') }} </p>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$berita->updated_at->isoFormat('dddd, D MMMM Y') }}
-    </div>
-    <div class="col-sm">
-        <a href="{{route('berita.index')}}" class="btn btn-outline-primary">
-        Data Berita
-        </a>
-    </div>
-  </div>
+    <h1>Detail Berita</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                        <div class="col-md-12">
+                            <div class="row mb-2">
+                                <div class="col-md-6 mb-2">
+                                <label>Tanggal : </label>
+                                <input disabled class="form-control" value="{{ $registeredAt=$berita->created_at->isoFormat('dddd, D MMMM Y') }}">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                <label>Tanggal Diperbarui : </label>
+                                <input disabled class="form-control" value="{{ $registeredAt=$berita->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                                </div>
+                            </div>
+                        </div>
                 <table class="table table-striped table-bordered martop-sm">
                     <tr>
                         <td> ID Berita</td> <td>{{$berita->id}}</td>

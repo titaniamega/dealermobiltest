@@ -28,23 +28,23 @@ class UmumController extends Controller
     {   
         $id_produk = $request->id_produk;
 
-        $produk = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi']);
-
-        $produkindex = Produk::all(['id','nama_produk','harga','gambar','gambarslide','deskripsi'])
+        $produk = Produk::all();
+        $produkindex = Produk::all()
         ->sortByDesc('id')
         ->skip(0)
         ->take(4)
         ->all();
 
-        $video = Video::all(['id','judul_video','link_video',]);
-        $videoindex = Video::all(['id','judul_video','link_video',])
+        $video = Video::all();
+        $videoindex = Video::all()
+        ->where('is_aktif','=','ya')
         ->sortByDesc('id')
         ->skip(0)
         ->take(3)
         ->all();
 
-        $promo = Promo::all(['id','judul','gambar','masa_berlaku',]);
-        $promoindex = Promo::all(['id','judul','gambar','masa_berlaku',])
+        $promo = Promo::all();
+        $promoindex = Promo::all()
         ->sortByDesc('id')
         ->skip(0)
         ->take(4)

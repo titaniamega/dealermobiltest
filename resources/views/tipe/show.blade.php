@@ -1,28 +1,25 @@
 @extends('adminlte::page')
 @section('title', 'Detail Tipe')
 @section('content_header')
-  <div class="row">
-    <div class="col-sm">
-    <h1 class="m-0 p-0 text-dark">Detail Tipe</h1>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }} </p>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}
-    </div>
-    <div class="col-sm">
-        <a href="{{route('tipe.index')}}" class="btn btn-outline-primary">
-        Data Tipe
-        </a>
-    </div>
-  </div>
+    <h1>Detail Tipe</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="col-md-12">
+                        <div class="row mb-2">
+                            <div class="col-md-6 mb-2">
+                            <label>Tanggal : </label>
+                            <input disabled class="form-control" value="{{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }}">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <label>Tanggal Diperbarui : </label>
+                            <input disabled class="form-control" value="{{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                            </div>
+                        </div>
+                    </div>
                 <table class="table table-striped table-bordered martop-sm">
                     <tr>
                         <td> ID Tipe </Video></td> <td>{{$tipe->id}}</td>

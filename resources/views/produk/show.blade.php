@@ -1,24 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Detail Produk')
 @section('content_header')
-
-  <div class="row">
-    <div class="col-sm">
-    <h1 class="m-0 p-0 text-dark">Detail Produk</h1>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal : {{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }} </p>
-    </div>
-    <div class="col-sm">
-    <p class="m-0 p-0 fst-normal">Tanggal Diperbarui : {{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}
-    </div>
-    <div class="col-sm">
-        <a href="{{route('produk.index')}}" class="btn btn-primary">
-        Data Produk
-        </a>
-    </div>
-  </div>
-
+    <h1>Detail Produk</h1>
 @stop
 @section('content')
     <div class="row">
@@ -26,6 +9,18 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="row mb-2">
+                                <div class="col-md-6 mb-2">
+                                <label>Tanggal : </label>
+                                <input disabled class="form-control" value="{{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }}">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                <label>Tanggal Diperbarui : </label>
+                                <input disabled class="form-control" value="{{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                                </div>
+                            </div>
+                        </div>
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputName">Model</label>
