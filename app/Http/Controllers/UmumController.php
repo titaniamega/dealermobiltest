@@ -129,6 +129,7 @@ class UmumController extends Controller
             if($request->id_produk != "" )
                 $query->where('video.id_produk',"=",$request->id_produk);
         })
+        ->where('is_aktif','=','ya')
         ->orderBy('id', 'DESC')
         ->get();
 

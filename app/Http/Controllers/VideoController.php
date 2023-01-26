@@ -139,12 +139,12 @@ class VideoController extends Controller
     {
         $video = Video::find($id);
         
-        if ($video->is_aktif = 'ya') {
+        if ($video->is_aktif == 'ya') {
             $video->is_aktif = 'tidak';
         }else{
             $video->is_aktif = 'ya';
         }
-        
+
         $video->save();
         return redirect()->route('video.index')->with('message', 'Status video berhasil diupdate');
     }

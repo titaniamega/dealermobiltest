@@ -36,7 +36,7 @@
                         <td> Link Video </td> <td> {{$video->link_video}}</td>
                     </tr>
                     <tr>
-                        <td> Status </td> <td> </td>
+                        <td> Status Aktif</td> <td>  {{$video->is_aktif}}</td>
                     </tr>
                     <table>
                 </div>
