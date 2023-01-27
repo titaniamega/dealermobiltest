@@ -137,6 +137,10 @@ class KonsumenController extends Controller
      */
     public function destroy($id)
     {
-        
+        $konsumen = Konsumen::find($id);
+        $konsumen->delete();
+
+        activity()->log('Menghapus data konsumen');
+        return response()->json(['status' => 'Data konsumen berhasil di hapus!']);
     }
 }

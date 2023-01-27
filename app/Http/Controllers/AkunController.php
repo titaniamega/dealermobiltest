@@ -109,6 +109,6 @@ class AkunController extends Controller
         $akun->delete();
         activity()->log('Menghapus data user');
 
-        return redirect()->route('akun.index')->with('message', 'Data akun berhasil dihapus');
+        return response()->json(['status' => 'Data akun berhasil di hapus!']);
     }
 }

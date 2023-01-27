@@ -140,7 +140,6 @@ class KreditController extends Controller
         $kredit->delete();
 
         activity()->log('Menghapus data kredit');
-        return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil dihapus');
-
+        return response()->json(['status' => 'Data kredit berhasil di hapus!']);
     }
 }

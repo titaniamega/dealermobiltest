@@ -57,12 +57,20 @@ Route::group(
       Route::resource('/contact', ContactController::class);
       Route::get('/home/destroy',[HomeController::class,'destroy'])->name("home.destroy");
       Route::get('/video/updateStatus/{id}',[VideoController::class,'updateStatus'])->name("video.updateStatus");
+      Route::delete('berita/destroy/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+      Route::delete('konsumen/destroy/{id}', [KonsumenController::class, 'destroy'])->name('konsumen.destroy');
+      Route::delete('produk/destroy/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+      Route::delete('tipe/destroy/{id}', [TipeController::class, 'destroy'])->name('tipe.destroy');
+      Route::delete('promo/destroy/{id}', [PromoController::class, 'destroy'])->name('promo.destroy');
+      Route::delete('kredit/destroy/{id}', [KreditController::class, 'destroy'])->name('kredit.destroy');
+      Route::delete('video/destroy/{id}', [VideoController::class, 'destroy'])->name('video.destroy');
     }
   );
 
   Route::group(
     ['middleware'=>['auth','admin']],function(){
       Route::resource('/akun', AkunController::class);
+      Route::delete('akun/destroy/{id}', [AkunController::class, 'destroy'])->name('akun.destroy');
   }
 );
 

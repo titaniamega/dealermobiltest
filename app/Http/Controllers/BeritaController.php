@@ -154,6 +154,6 @@ class BeritaController extends Controller
         $berita->delete();
 
         activity()->log('Menghapus data berita');
-        return redirect()->route('berita.index')->with('message', 'Data berita berhasil dihapus');
+        return response()->json(['status' => 'Data berita berhasil di hapus!']);
     }
 }

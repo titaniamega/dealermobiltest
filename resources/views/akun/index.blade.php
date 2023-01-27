@@ -31,6 +31,7 @@
                         <tbody>
                         @foreach($akun as $key => $akuns)
                             <tr>
+                            <input type="hidden" class="delete_id" value="{{ $akuns->id }}">
                                 <td>{{$key+1}}</td>
                                 <td>{{$akuns->created_at}}</td>
                                 <td>{{$akuns->name}}</td>
@@ -43,9 +44,13 @@
                                     <a href="{{route('akun.edit', $akuns->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit
                                     </a>
-                                    <a href="{{route('akun.destroy', $akuns->id)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash " aria-hidden="true"></i>
-                                        Delete
-                                    </a>
+                                    <form action="{{ route('akun.destroy', $akuns->id) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="btn btn-outline-danger btn-xs btndelete">
+                                        <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -58,20 +63,55 @@
     </div>
 @stop
 @push('js')
-    <form action="" id="delete-form" method="post">
-        @method('delete')
-        @csrf
-    </form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
         $('#dataAkun').DataTable({
             "responsive": true,
         });
-        function notificationBeforeDelete(event, el) {
-            event.preventDefault();
-            if (confirm('Apakah anda yakin akan menghapus data ? ')) {
-                $("#delete-form").attr('action', $(el).attr('href'));
-                $("#delete-form").submit();
-            }
-        }
+
+        $('.btndelete').click(function (e) {
+            e.preventDefault();
+
+            var deleteid = $(this).closest("tr").find('.delete_id').val();
+
+            swal({
+                    title: "Apakah anda yakin?",
+                    text: "Setelah dihapus, Anda tidak dapat memulihkan ini lagi!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+                        var data = {
+                            "_token": $('input[name=_token]').val(),
+                            'id': deleteid,
+                        };
+                        $.ajax({
+                            type: "DELETE",
+                            url: 'akun/destroy/' + deleteid,
+                            data: data,
+                            success: function (response) {
+                                swal(response.status, {
+                                        icon: "success",
+                                    })
+                                    .then((result) => {
+                                        location.reload();
+                                    });
+                            }
+                        });
+                    }
+                });
+        });
+
+        // function notificationBeforeDelete(event, el) {
+        //     event.preventDefault();
+        //     if (confirm('Apakah anda yakin akan menghapus data ? ')) {
+        //         $("#delete-form").attr('action', $(el).attr('href'));
+        //         $("#delete-form").submit();
+        //     }
+        // }
     </script>
 @endpush

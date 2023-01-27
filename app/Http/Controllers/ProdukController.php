@@ -146,6 +146,7 @@ class ProdukController extends Controller
         $produk = Produk::findorFail($id);
         $produk->delete();
         activity()->log('Menghapus data produk');
-        return redirect()->route('produk.index')->with('message', 'Data barang berhasil dihapus');
+        
+        return response()->json(['status' => 'Data produk berhasil di hapus!']);
     }
 }
