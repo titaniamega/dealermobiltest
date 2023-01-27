@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Manajemen Akun')
 @section('content_header')
+@include('sweetalert::alert')
     <h1 class="m-0 text-dark">Manajemen Akun</h1>
 @stop
 @section('content')
@@ -11,11 +12,6 @@
                     <a href="{{route('akun.create')}}" class="btn btn-outline-primary mb-2">
                     <i class="fa fa-plus-circle"></i> Tambah Akun
                     </a>
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataAkun">
                         <thead>
@@ -105,13 +101,5 @@
                     }
                 });
         });
-
-        // function notificationBeforeDelete(event, el) {
-        //     event.preventDefault();
-        //     if (confirm('Apakah anda yakin akan menghapus data ? ')) {
-        //         $("#delete-form").attr('action', $(el).attr('href'));
-        //         $("#delete-form").submit();
-        //     }
-        // }
     </script>
 @endpush

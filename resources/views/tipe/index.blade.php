@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Tipe Produk')
 @section('content_header')
+@include('sweetalert::alert')
     <h1 class="m-0 text-dark">Tipe Produk</h1>
 @stop
 @section('content')

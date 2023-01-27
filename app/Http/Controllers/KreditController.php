@@ -5,6 +5,7 @@ use App\Models\Kredit;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KreditController extends Controller
 {
@@ -67,8 +68,8 @@ class KreditController extends Controller
             $kredit->save();
 
             activity()->log('Menambah data kredit');
-
-            return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data kredit', 'success');
+            return redirect()->route('kredit.index');
     }
 
     /**
@@ -124,8 +125,8 @@ class KreditController extends Controller
             $kredit->save();
 
             activity()->log('Mengupdate data kredit');
-
-            return redirect()->route('kredit.index')->with('message', 'Data kredit berhasil diupdate');
+            Alert::toast('Berhasil update data kredit', 'success');
+            return redirect()->route('kredit.index');
     }
 
     /**

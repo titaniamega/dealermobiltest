@@ -5,6 +5,7 @@ use App\Models\Konsumen;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KonsumenController extends Controller
 {
@@ -66,7 +67,8 @@ class KonsumenController extends Controller
             $konsumen->save();
 
             activity()->log('Menambah data konsumen');
-            return redirect()->route('konsumen.index')->with('message', 'Data konsumen berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data konsumen', 'success');
+            return redirect()->route('konsumen.index');
     }
 
     /**
@@ -125,7 +127,8 @@ class KonsumenController extends Controller
             $konsumen->save();
 
             activity()->log('Mengupdate data konsumen');
-            return redirect()->route('konsumen.index')->with('message', 'Data konsumen berhasil diupdate');
+            Alert::toast('Berhasil update data konsumen', 'success');
+            return redirect()->route('konsumen.index');
     }
 
     

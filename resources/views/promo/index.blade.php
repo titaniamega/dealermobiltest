@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Promo')
 @section('content_header')
+@include('sweetalert::alert')
     <h1 class="m-0 text-dark">Data Promo</h1>
 @stop
 @section('content')

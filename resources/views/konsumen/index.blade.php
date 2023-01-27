@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Konsumen')
 @section('content_header')
+@include('sweetalert::alert')
     <h1 class="m-0 text-dark">Data Konsumen</h1>
 @stop
 @section('content')
@@ -11,11 +12,6 @@
                     <a href="{{route('konsumen.create')}}" class="btn btn-outline-primary mb-2">
                     <i class="fa fa-plus-circle"></i> Tambah Data Konsumen
                     </a>
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataKonsumen">
                         <thead>

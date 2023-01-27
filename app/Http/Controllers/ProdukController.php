@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProdukController extends Controller
 {
@@ -60,8 +60,8 @@ class ProdukController extends Controller
             $produk->save();
 
             activity()->log('Menambah data produk');
-
-            return redirect()->route('produk.index')->with('message', 'Produk baru berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data produk', 'success');
+            return redirect()->route('produk.index');
     }
 
     /**
@@ -132,7 +132,8 @@ class ProdukController extends Controller
             $produk->save();
 
             activity()->log('Mengupdate data produk');
-            return redirect()->route('produk.index')->with('message', 'Data produk berhasil diupdate');
+            Alert::toast('Berhasil update data produk', 'success');
+            return redirect()->route('produk.index');
     }
 
     /**
@@ -146,7 +147,6 @@ class ProdukController extends Controller
         $produk = Produk::findorFail($id);
         $produk->delete();
         activity()->log('Menghapus data produk');
-        
         return response()->json(['status' => 'Data produk berhasil di hapus!']);
     }
 }

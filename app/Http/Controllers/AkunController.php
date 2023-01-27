@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\models\User;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class AkunController extends Controller
@@ -48,7 +49,8 @@ class AkunController extends Controller
         $akun->role = $request->role;
         $akun->save();
         activity()->log('Menambahkan data user');
-        return redirect()->route('akun.index')->with('message', 'Data user berhasil ditambahkan');
+        Alert::toast('Berhasil menambahkan data user', 'success');
+        return redirect()->route('akun.index');
     }
 
     /**
@@ -93,8 +95,8 @@ class AkunController extends Controller
 
         $akun->save();
         activity()->log('Mengubah data user');
-
-        return redirect()->route('akun.index')->with('message', 'Data akun berhasil diupdate');
+        Alert::toast('Berhasil update data user', 'success');
+        return redirect()->route('akun.index');
     }
 
     /**

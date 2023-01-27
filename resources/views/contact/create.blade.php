@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Contact')
 @section('content_header')
+@include('sweetalert::alert')
     <h1 class="m-0 text-dark">Informasi Contact</h1>
 @stop
 @section('content')
@@ -11,11 +12,6 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                         <div class="col">
                         <input type="hidden" name="id" value="{{$contact?->id}}">
                         </div>

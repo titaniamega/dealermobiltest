@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
@@ -74,7 +75,8 @@ class ContactController extends Controller
             
             $contact->save();
             activity()->log('Update data contact');
-            return redirect()->route('contact.create')->with('message', 'Data contact person berhasil diupdate');
+            Alert::toast('Berhasil update kontak', 'success');
+            return redirect()->route('contact.create');
     }
 
     /**

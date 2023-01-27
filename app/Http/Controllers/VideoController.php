@@ -5,6 +5,7 @@ use App\Models\Video;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VideoController extends Controller
 {
@@ -63,8 +64,8 @@ class VideoController extends Controller
             $video->save();
 
             activity()->log('Menambah data video');
-
-            return redirect()->route('video.index')->with('message', 'Data video berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data video', 'success');
+            return redirect()->route('video.index');
     }
 
     /**
@@ -118,7 +119,8 @@ class VideoController extends Controller
             $video->save();
 
             activity()->log('Mengupdate data video');
-            return redirect()->route('video.index')->with('message', 'Data video berhasil diupdate');
+            Alert::toast('Berhasil update data video', 'success');
+            return redirect()->route('video.index');
     }
 
     /**
@@ -147,6 +149,7 @@ class VideoController extends Controller
 
         $video->save();
         activity()->log('Mengupdate status video');
-        return redirect()->route('video.index')->with('message', 'Status video berhasil diupdate');
+        Alert::toast('Berhasil update status video', 'success');
+        return redirect()->route('video.index');
     }
 }

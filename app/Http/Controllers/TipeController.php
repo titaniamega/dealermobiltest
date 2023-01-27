@@ -5,6 +5,7 @@ use App\Models\Tipe;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TipeController extends Controller
 {
@@ -67,8 +68,8 @@ class TipeController extends Controller
             $tipe->save();
 
             activity()->log('Menambah data tipe');
-
-            return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data tipe', 'success');
+            return redirect()->route('tipe.index');
     }
 
     /**
@@ -126,8 +127,8 @@ class TipeController extends Controller
             $tipe->save();
 
             activity()->log('Mengupdate data tipe');
-
-            return redirect()->route('tipe.index')->with('message', 'Data tipe berhasil diupdate');
+            Alert::toast('Berhasil update data tipe', 'success');
+            return redirect()->route('tipe.index');
     }
 
     /**

@@ -5,6 +5,7 @@ use App\Models\Promo;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PromoController extends Controller
 {
@@ -68,8 +69,8 @@ class PromoController extends Controller
             $promo->save();
 
             activity()->log('Menambah data promo');
-
-            return redirect()->route('promo.index')->with('message', 'Data promo berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data promo', 'success');
+            return redirect()->route('promo.index');
     }
 
     /**
@@ -130,7 +131,8 @@ class PromoController extends Controller
             $promo->save();
 
             activity()->log('Mengupdate data promo');
-            return redirect()->route('promo.index')->with('message', 'Data promo berhasil diupdate');
+            Alert::toast('Berhasil update data promo', 'success');
+            return redirect()->route('promo.index');
     }
 
     /**

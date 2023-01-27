@@ -5,6 +5,7 @@ use App\Models\Berita;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BeritaController extends Controller
 {
@@ -67,7 +68,8 @@ class BeritaController extends Controller
             $berita->save();
 
             activity()->log('Menambahkan data berita');
-            return redirect()->route('berita.index')->with('message', 'Data berita berhasil ditambahkan');
+            Alert::toast('Berhasil menambahkan data berita', 'success');
+            return redirect()->route('berita.index');
     }
 
     /**
@@ -139,7 +141,8 @@ class BeritaController extends Controller
             $berita->save();
             
             activity()->log('Mengupdate data berita');
-            return redirect()->route('berita.index')->with('message', 'Data berita berhasil diupdate');
+            Alert::toast('Berhasil update data berita', 'success');
+            return redirect()->route('berita.index');
     }
 
     /**
