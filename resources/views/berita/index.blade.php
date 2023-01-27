@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Berita')
 @section('content_header')
-@include('sweetalert::alert')
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
     <h1 class="m-0 text-dark">Data Berita</h1>
 @stop
 @section('content')
