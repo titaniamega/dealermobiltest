@@ -142,6 +142,6 @@ class TipeController extends Controller
         $tipe->delete();
         
         activity()->log('Menghapus data tipe');
-        return redirect()->route('kredit.index')->with('message', 'Data tipe berhasil dihapus');
+        return response()->json(['status' => 'Data tipe berhasil di hapus!']);
     }
 }

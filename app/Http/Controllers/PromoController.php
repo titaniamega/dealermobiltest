@@ -144,6 +144,6 @@ class PromoController extends Controller
         $promo = Promo::find($id);
         $promo->delete();
         activity()->log('Menghapus data promo');
-        return redirect()->route('promo.index')->with('message', 'Data promo berhasil dihapus');
+        return response()->json(['status' => 'Data promo berhasil di hapus!']);
     }
 }
