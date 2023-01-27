@@ -6,6 +6,7 @@ use App\Models\ActivityLog;
 use Spatie\ActivityLog\Traits\LogsActivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -35,6 +36,7 @@ class HomeController extends Controller
     public function destroy()
     {
         DB::table('activity_log')->delete();
-        return redirect()->route('home')->with('message', 'Log aktivitas berhasil dihapus');
+        Alert::toast('Berhasil menghapus log aktivitas', 'success');
+        return redirect()->route('home');
     }
 }
