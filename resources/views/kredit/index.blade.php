@@ -12,11 +12,6 @@
                     <a href="{{route('kredit.create')}}" class="btn btn-outline-primary mb-2">
                     <i class="fa fa-plus-circle"></i> Tambah Data Paket Kredit
                     </a>
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataKredit">
                         <thead>

@@ -12,11 +12,6 @@
                     <a href="{{route('berita.create')}}" class="btn btn-outline-primary mb-2">
                     <i class="fa fa-plus-circle"></i> Tambah Berita
                     </a>
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataBerita">
                         <thead>
