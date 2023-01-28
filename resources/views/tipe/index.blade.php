@@ -24,7 +24,7 @@
                             <th>Harga Automatic</th>
                             <th>Minimal Angsuran</th>
                             <th>Bonus</th>
-                            <th width="150">Action</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,7 @@
                                 <td>@currency($tipe->harga)</td>
                                 <td>@currency($tipe->harga_automatic)</td>
                                 <td>{{$tipe->minimal_angsuran}}</td>
-                                <td>{{$tipe->bonus}}</td>
+                                <td>{{Str::limit($tipe->bonus, 30)}}</td>
                                 <td>
                                     <a href="{{route('tipe.show', $tipe->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail

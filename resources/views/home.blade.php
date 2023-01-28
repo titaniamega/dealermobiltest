@@ -2,6 +2,7 @@
 @section('title', 'Dealer')
 @section('content_header')
 @include('sweetalert::alert')
+
     <h1 class="m-0 text-dark">Selamat Datang, </h1>
 @stop
 
@@ -10,16 +11,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    @if ($message = Session::get('message'))
-                        <div class="alert alert-success martop-sm">
-                            <p>{{ $message }}</p>
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
                         </div>
                     @endif
+
                     <div class="d-flex justify-content-between">
                         <div>Timeline Log Aktivitas</div>
                         <div>
                         <a href="{{route('home.destroy')}}" class="btn btn-outline-danger btn-sm mb-2 ms-auto">
-                        <i class="fa fa-trash"></i> Hapus Log Aktivitas
+                        <i class="fa fa-trash"></i> Hapus Log
                         </a>
                         </div>
                     </div>

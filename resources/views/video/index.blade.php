@@ -69,12 +69,12 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
-    <form action="" id="delete-form" method="post">
-        @method('delete')
-        @csrf
-    </form>
     <script>
         $('#dataVideo').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
             "responsive": true,
         });
         

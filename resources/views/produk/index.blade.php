@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-body">
                     <a href="{{route('produk.create')}}" class="btn btn-outline-primary mb-2"> 
-                    <i class="fa fa-plus-circle"></i> Tambah Data Produk
+                    <i class="fa fa-plus-circle"></i> Tambah Produk
                     </a>
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataProduk">
