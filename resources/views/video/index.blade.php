@@ -13,7 +13,7 @@
                         Daftar Video
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-outline-success" href="{{route('promo.create')}}"><i class="fa fa-plus-circle"></i> Tambah Video</a>
+                        <a class="btn btn-outline-success" href="{{route('video.create')}}"><i class="fa fa-plus-circle"></i> Tambah Video</a>
                     </div>
                 </div>
                 <div class="card-body">

@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="col-md-12">
+                    <div>
                         <div class="row mb-2">
                             <div class="col-md-6 mb-2">
                             <label>Tanggal : </label>
@@ -24,7 +24,10 @@
                     <tr>
                         <td> ID Tipe </Video></td> <td>{{$tipe->id}}</td>
                     </tr>
-                        <td> Nama Produk</td> <td>{{$tipe->id_produk}}</td>
+                    <tr>
+                        @foreach($tipeProduk as $tp)
+                        <td> Nama Produk</td> <td>{{$tp->nama_produk}}</td>
+                        @endforeach
                     </tr>
                     </tr>
                         <td> Tipe Produk</td> <td>{{$tipe->nama_tipe}}</td>
@@ -32,13 +35,13 @@
                     </tr>
                         <td> Harga </td> <td>@currency($tipe->harga)</td>
                     </tr>
-                    </tr>
+                    <tr>
                         <td> Harga Automatic </td> <td>@currency($tipe->harga_automatic)</td>
                     </tr>
                     <tr>
                         <td> Minimal Angsuran </td> <td>@currency($tipe->minimal_angsuran)</td>
                     </tr>
-                    </tr>
+                    <tr>
                         <td> Bayar Pertama </td> <td>@currency($tipe->bayar_pertama)</td>
                     </tr>
                     <tr>

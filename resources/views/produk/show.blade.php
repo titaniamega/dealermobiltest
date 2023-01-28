@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div>
                             <div class="row mb-2">
                                 <div class="col-md-6 mb-2">
                                 <label>Tanggal : </label>
@@ -33,16 +33,24 @@
                     </div>
                     </div>
                     <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                        <label for="exampleInputGambar">Gambar</label>
-                        <img src="{{url('images/'.$produk->gambar)}}" width="300"/> 
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                <label for="exampleInputGambar">Gambar</label>
+                                </div>
+                                <div class="row">
+                                <img src="{{url('images/'.$produk->gambar)}}" class="img-fluid img-thumbnail"/> 
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                <label for="exampleInputGambarSlide">Gambar Slide</label>
+                                </div>
+                                <div class="row">
+                                <img src="{{url('slides/'.$produk->gambarslide)}}" class="img-fluid img-thumbnail"/>  
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                        <label for="exampleInputGambarSlide">Gambar Slide</label>
-                        <img src="{{url('slides/'.$produk->gambarslide)}}" width="300"/> 
-                        </div>
-                    </div>
                     </div>
                     <div class="form-group">
                     <div class="row">

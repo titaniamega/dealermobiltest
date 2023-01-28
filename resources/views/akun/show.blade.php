@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                        <div class="col-md-12">
+                        <div>
                             <div class="row mb-2">
                                 <div class="col-md-6 mb-2">
                                 <label>Tanggal : </label>
@@ -24,6 +24,7 @@
                     <tr>
                         <td> ID User</td> <td>{{$akun->id}}</td>
                     </tr>
+                    <tr>
                         <td> Nama </td> <td>{{$akun->name}}</td>
                     </tr>
                     <tr>

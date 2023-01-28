@@ -4,15 +4,16 @@
     <h1 class="m-0 text-dark">Tambah Video</h1>
 @stop
 @section('content')
+
     <form action="{{route('video.store')}}" method="post">
         @csrf
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
+<div class="row">
+    <div class="col-12">
+        <div class="card">      
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group">
-                    <div class="row">
-                        <div class="col">
                         <label for="exampleInputProduk">Model</label>
                         <select class="form-control" name="id_produk" id="select_produk" required>
                             <option value="" disabled selected>Pilih Model Produk</option>
@@ -20,13 +21,15 @@
                             <option value="{{$model->id}}"> {{$model->nama_produk}} </option>
                             @endforeach
                         </select>
-                        </div>
-                        <div class="col">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="exampleInputJudulVideo">Judul Video</label>
                         <input type="text" class="form-control @error('judul_video') is-invalid @enderror" id="exampleInputJudulVideo" placeholder="Judul Video" name="judul_video" value="{{old('judul_video')}}">
                         @error('judul_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
-                    </div>
+                    </div>    
                     </div>
                     <div class="form-group">
                     <div class="row">
@@ -36,7 +39,7 @@
                         @error('link_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
-                    </div>
+                </div>
                     
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>

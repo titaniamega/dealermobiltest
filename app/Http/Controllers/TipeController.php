@@ -6,6 +6,7 @@ use App\Models\Produk;
 use Illuminate\Http\Request;
 use DataTables;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 
 class TipeController extends Controller
 {
@@ -78,12 +79,24 @@ class TipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
         $produk = Produk::all(['id','nama_produk']);
+        $produkDet = Produk::findOrFail($id);
 
-        $tipe= Tipe::findOrFail($id);
-        return view('tipe.show', compact('tipe','produk'));
+        $tipe = Tipe::findOrFail($id);
+        $tipeProduk = DB::table('produk')
+            ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+            ->select('produk.*')
+            ->where(function($query) use ($id){
+                if( $id != "" )
+                    $query->where('tipe.id_produk',"=", $id);
+            })
+            ->orderBy('produk.id','DESC')
+            ->groupBy('produk.id')
+            ->get();
+
+        return view('tipe.show', compact('tipe','produk','produkDet','tipeProduk'));
     }
 
     /**
