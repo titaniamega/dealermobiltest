@@ -36,13 +36,11 @@
                         @error('password') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                 </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{route('akun.index')}}" class="btn btn-default">
-                        Batal
-                    </a>
-                </div>
             </div>
         </div>
+        <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{route('akun.index')}}" class="btn btn-warning">Batal</a>
+            </div>
     </div>
 @stop
