@@ -13,7 +13,7 @@
                         Daftar Tipe Produk
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-outline-success" href="{{route('promo.create')}}"><i class="fa fa-plus-circle"></i> Tambah Tipe</a>
+                        <a class="btn btn-outline-success" href="{{route('tipe.create')}}"><i class="fa fa-plus-circle"></i> Tambah Tipe</a>
                     </div>
                 </div>
                 <div class="card-body">
