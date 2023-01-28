@@ -30,8 +30,8 @@
                         @error('judul_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>    
-                    </div>
-                    <div class="form-group">
+                </div>
+                <div class="form-group">
                     <div class="row">
                         <div class="col">
                         <label for="exampleInputLink">Link Video</label>
@@ -40,7 +40,6 @@
                         </div>
                     </div>
                 </div>
-                    
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <a href="{{route('video.index')}}" class="btn btn-default">
