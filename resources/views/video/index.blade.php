@@ -2,16 +2,21 @@
 @section('title', 'Video')
 @section('content_header')
 @include('sweetalert::alert')
-    <h1 class="m-0 text-dark">Data Video</h1>
+    <h1 class="m-0 text-dark">Video</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Daftar Video
+                    </div>
+                    <div class="float-right">
+                        <a class="btn btn-outline-success" href="{{route('promo.create')}}"><i class="fa fa-plus-circle"></i> Tambah Video</a>
+                    </div>
+                </div>
                 <div class="card-body">
-                    <a href="{{route('video.create')}}" class="btn btn-outline-primary mb-2">
-                    <i class="fa fa-plus-circle"></i> Tambah Video
-                    </a>
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataVideo">
                         <thead>

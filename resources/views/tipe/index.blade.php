@@ -8,10 +8,15 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Daftar Tipe Produk
+                    </div>
+                    <div class="float-right">
+                        <a class="btn btn-outline-success" href="{{route('promo.create')}}"><i class="fa fa-plus-circle"></i> Tambah Tipe</a>
+                    </div>
+                </div>
                 <div class="card-body">
-                    <a href="{{route('tipe.create')}}" class="btn btn-outline-primary mb-2">
-                    <i class="fa fa-plus-circle"></i> Tambah Tipe Produk
-                    </a>
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataTipe">
                         <thead>

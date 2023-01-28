@@ -2,16 +2,21 @@
 @section('title', 'Konsumen')
 @section('content_header')
 @include('sweetalert::alert')
-    <h1 class="m-0 text-dark">Data Konsumen</h1>
+    <h1 class="m-0 text-dark">Konsumen</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Daftar Konsumen
+                    </div>
+                    <div class="float-right">
+                        <a class="btn btn-outline-success" href="{{route('konsumen.create')}}"><i class="fa fa-plus-circle"></i> Tambah Konsumen</a>
+                    </div>
+                </div>
                 <div class="card-body">
-                    <a href="{{route('konsumen.create')}}" class="btn btn-outline-primary mb-2">
-                    <i class="fa fa-plus-circle"></i> Tambah Konsumen
-                    </a>
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataKonsumen">
                         <thead>

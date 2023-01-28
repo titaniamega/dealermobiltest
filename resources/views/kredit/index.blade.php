@@ -2,16 +2,21 @@
 @section('title', 'Paket Kredit')
 @section('content_header')
 @include('sweetalert::alert')
-    <h1 class="m-0 text-dark">Data Paket Kredit Global</h1>
+    <h1 class="m-0 text-dark">Paket Kredit Global</h1>
 @stop
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Daftar Paket Kredit
+                    </div>
+                    <div class="float-right">
+                        <a class="btn btn-outline-success" href="{{route('kredit.create')}}"><i class="fa fa-plus-circle"></i> Tambah Paket</a>
+                    </div>
+                </div>
                 <div class="card-body">
-                    <a href="{{route('kredit.create')}}" class="btn btn-outline-primary mb-2">
-                    <i class="fa fa-plus-circle"></i> Tambah Paket Kredit
-                    </a>
                     <div class="table-responsive">
                     <table class="table table-hover table-bordered table-stripped" id="dataKredit">
                         <thead>
