@@ -47,11 +47,6 @@
                         <input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp" value="{{$contact?->whatsapp}}">
                         @error('whatsaap') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputAlamatKantor" class="control-label">Alamat Kantor</label>
-                        <input type="text" class="form-control" name="alamat_kantor" placeholder="Alamat Kantor" value="{{$contact?->alamat_kantor}}">
-                        @error('alamat_kantor') <span class="text-danger">{{$message}}</span> @enderror
-                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -59,6 +54,13 @@
                         <input type="text" class="form-control" name="nama_dealer" placeholder="Nama Dealer" value="{{$contact?->nama_dealer}}">
                         @error('nama_dealer') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="exampleInputAlamatKantor" class="control-label">Alamat Kantor</label>
+                        <input type="text" class="form-control" name="alamat_kantor" placeholder="Alamat Kantor" value="{{$contact?->alamat_kantor}}">
+                        @error('alamat_kantor') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                 </div>
                 <div class="form-group">
