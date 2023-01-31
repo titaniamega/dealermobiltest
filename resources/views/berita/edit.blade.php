@@ -50,10 +50,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{route('berita.index')}}" class="btn btn-warning">Batal</a>
-            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{route('berita.index')}}" class="btn btn-warning">Batal</a>
         </div>
     </div>
 @stop

@@ -58,11 +58,11 @@
                         </script>
                         </div>
                     </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <a href="{{route('promo.index')}}" class="btn btn-warning">Batal</a>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{route('promo.index')}}" class="btn btn-warning">Batal</a>
+                </div>
             </div>
         </div>
     </div>
