@@ -69,6 +69,17 @@
         </div>
     </div>
 @stop
+@push('css')
+<style>
+.btn-xs {
+  padding: .125rem .25rem !important;
+  font-size: .75rem !important;
+  line-height: 1.5 !important;
+  border-radius: .15rem !important;
+  margin-bottom:2px;
+}
+</style>
+@endpush
 @push('js')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">

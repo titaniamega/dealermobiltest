@@ -70,7 +70,7 @@
                         <img src="{{url('images/profil/'.$contact?->foto_profil)}}" width="100"/>
                         </div>
                         <div class="col">
-                        <label for="gambar" class="control-label">Ganti Foto</label><br>
+                        <label for="gambar" class="control-label">Ubah Foto</label><br>
                         <input type="file" name="foto_profil">
                         </div>
                     </div>

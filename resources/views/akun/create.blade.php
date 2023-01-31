@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{route('akun.index')}}" class="btn btn-warning">Batal</a>
-            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{route('akun.index')}}" class="btn btn-warning">Batal</a>
+        </div>
     </div>
 @stop

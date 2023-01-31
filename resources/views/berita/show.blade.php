@@ -25,9 +25,6 @@
                         <td> ID Berita</td> <td>{{$berita->id}}</td>
                     </tr>
                     <tr>
-                        <td> Nama Produk </td> <td>{{$berita->nama_produk}}</td>
-                    </tr>
-                    <tr>
                         <td> Judul Berita </td> <td>{{$berita->judul_berita}}</td>
                     </tr>
                     <tr>

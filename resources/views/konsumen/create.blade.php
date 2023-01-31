@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="exampleInputGambarKonsumen">Gambar</label>
+                        <label for="exampleInputGambarKonsumen">Foto</label>
                         <input type="file" class="form-control @error('gambar') is-invalid @enderror" id="exampleInputGambarKonsumen" placeholder="Gambar konsumen" name="gambar">
                         @error('gambar') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{route('konsumen.index')}}" class="btn btn-warning">Batal</a>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{route('konsumen.index')}}" class="btn btn-warning">Batal</a>
         </div>
     </div>
 @stop

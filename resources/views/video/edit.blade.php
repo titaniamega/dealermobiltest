@@ -7,13 +7,13 @@
     <form action="{{route('video.update',$video->id)}}" method="post">
         @csrf
         @method('PUT')
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
+<div class="row">
+    <div class="col-12">
+        <div class="card">      
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group {{ $errors->has('video') ? 'has-error' : '' }}">
-                    <div class="row">
-                        <div class="col">
                         <label for="exampleInputProduk">Model</label>
                         <select class="form-control" name="id_produk" id="select_produk" required focus>
                         <option value="" disabled selected>Pilih Model Produk</option>
@@ -23,31 +23,29 @@
                             </option>
                             @endforeach
                         </select>
-                        </div>
-                        <div class="col">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="exampleInputJudulVideo">Judul Video</label>
                         <input type="text" class="form-control @error('judul_video') is-invalid @enderror" id="exampleInputJudulVideo" placeholder="Judul Video" name="judul_video" value="{{$video->judul_video}}">
                         @error('judul_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
-                    </div>
+                </div>
                     <div class="form-group">
-                    <div class="row">
-                        <div class="col">
                         <label for="exampleInputLink">Link Video</label>
                         <input type="text" class="form-control @error('link_video') is-invalid @enderror" id="exampleInputLink" placeholder="Link Video" name="link_video" value="{{$video->link_video}}">
                         @error('link_video') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     </div>
-                    </div>
-                    
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{route('video.index')}}" class="btn btn-default">
-                        Batal
-                    </a>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{route('video.index')}}" class="btn btn-warning">Batal</a>
+                </div> 
                 </div>
             </div>
+        </div>
         </div>
     </div>
 @stop

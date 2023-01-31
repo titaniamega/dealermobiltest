@@ -23,7 +23,7 @@
                         <tr>
                             <th>No</th>
                             <th>Tanggal</th>
-                            <th>Gambar</th>
+                            <th>Foto</th>
                             <th>Nama Konsumen</th>
                             <th>Produk</th>
                             <th>Action</th>
