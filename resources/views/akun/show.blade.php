@@ -44,6 +44,9 @@
             </div>
         </div>
     </div>
+    <footer class="main-footer">
+    <strong>Copyright &copy; {{date('Y')}} Dealer Mobil Indonesia </strong> All rights reserved.
+</footer>
 @stop
 
 

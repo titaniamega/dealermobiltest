@@ -64,13 +64,15 @@
             </div>
         </div>
     </div>
+<footer class="main-footer">
+    <strong>Copyright &copy; {{date('Y')}} Dealer Mobil Indonesia </strong> All rights reserved.
+  </footer>
 @stop
 @section('js')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $(function () {
                 $('#dataProduk').DataTable({
-                    "fixedHeader": true,
                     "paging": true,
                     "ordering": true,
                     "info": true,
