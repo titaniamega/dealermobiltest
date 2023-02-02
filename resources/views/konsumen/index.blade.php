@@ -40,7 +40,7 @@
                                 </td>
                                 <td>{{$konsumens->nama_konsumen}}</td>
                                 <td>{{$konsumens->nama_produk}}</td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('konsumen.edit', $konsumens->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit" aria-hidden="true"></i>
                                         Edit
                                     </a>

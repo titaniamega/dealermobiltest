@@ -11,12 +11,10 @@
                     <div>
                         <div class="row mb-2">
                             <div class="col-md-6 mb-2">
-                            <label>Tanggal : </label>
-                            <input disabled class="form-control" value="{{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }}">
+                            <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                             </div>
                             <div class="col-md-6 mb-2">
-                            <label>Tanggal Diperbarui : </label>
-                            <input disabled class="form-control" value="{{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                            <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                             </div>
                         </div>
                     </div>
@@ -29,10 +27,10 @@
                         <td> Nama Produk</td> <td>{{$tp->nama_produk}}</td>
                         @endforeach
                     </tr>
-                    </tr>
+                    <tr>
                         <td> Tipe Produk</td> <td>{{$tipe->nama_tipe}}</td>
                     </tr>
-                    </tr>
+                    <tr>
                         <td> Harga </td> <td>@currency($tipe->harga)</td>
                     </tr>
                     <tr>

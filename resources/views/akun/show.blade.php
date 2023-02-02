@@ -8,18 +8,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                        <div>
-                            <div class="row mb-2">
-                                <div class="col-md-6 mb-2">
-                                <label>Tanggal : </label>
-                                <input disabled class="form-control" value="{{ $registeredAt=$akun->created_at->isoFormat('dddd, D MMMM Y') }}">
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                <label>Tanggal Diperbarui : </label>
-                                <input disabled class="form-control" value="{{ $registeredAt=$akun->updated_at->isoFormat('dddd, D MMMM Y') }}">
-                                </div>
-                            </div>
-                        </div>
                     <table class="table table-striped table-bordered martop-sm">
                     <tr>
                         <td> ID User</td> <td>{{$akun->id}}</td>

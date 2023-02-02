@@ -44,7 +44,7 @@
                                 <td>@currency($tipe->harga_automatic)</td>
                                 <td>{{$tipe->minimal_angsuran}}</td>
                                 <td>{{Str::limit($tipe->bonus, 30)}}</td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('tipe.show', $tipe->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>

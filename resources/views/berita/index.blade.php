@@ -40,7 +40,7 @@
                                 </td>
                                 <td>{{$beritas->judul_berita}}</td>
                                 <td width="200">{{Str::limit($beritas->keterangan, 50)}}</td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('berita.show', $beritas->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>

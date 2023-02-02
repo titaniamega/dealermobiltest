@@ -44,7 +44,7 @@
                                 <td>
                                     <input data-id="{{$videos->id}}" onchange="window.location.href='{{ URL::route('video.updateStatus', $videos->id); }}'" class="toggle-class" type="checkbox" data-onstyle="info" data-offstyle="danger" data-toggle="toggle" data-on="Aktif" data-off="Nonaktif" data-size="xs" {{ $videos->is_aktif == "ya" ? 'checked' : '' }}>
                                 </td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('video.show', $videos->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>

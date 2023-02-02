@@ -11,12 +11,10 @@
                     <div>
                         <div class="row mb-2">
                             <div class="col-md-6 mb-2">
-                            <label>Tanggal : </label>
-                            <input disabled class="form-control" value="{{ $registeredAt=$video->created_at->isoFormat('dddd, D MMMM Y') }}">
+                            <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$video->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                             </div>
                             <div class="col-md-6 mb-2">
-                            <label>Tanggal Diperbarui : </label>
-                            <input disabled class="form-control" value="{{ $registeredAt=$video->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                            <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$video->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                             </div>
                         </div>
                     </div>  

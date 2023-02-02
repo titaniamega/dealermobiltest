@@ -38,7 +38,7 @@
                                 <td>{{$akuns->name}}</td>
                                 <td>{{$akuns->email}}</td>
                                 <td>{{$akuns->role}}</td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('akun.show', $akuns->id)}}" class="btn btn-outline-primary btn-xs"><i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>

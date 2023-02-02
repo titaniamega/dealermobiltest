@@ -40,7 +40,7 @@
                                 <td>
                                 <img src="{{url('images/'.$produk->gambar)}}" width="60">
                                 </td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('produk.show', $produk->id)}}" class="btn btn-outline-primary btn-xs"> <i class="fa fa-eye " aria-hidden="true"></i>
                                         Detail
                                     </a>
@@ -66,7 +66,7 @@
     </div>
 <footer class="main-footer">
     <strong>Copyright &copy; {{date('Y')}} Dealer Mobil Indonesia </strong> All rights reserved.
-  </footer>
+</footer>
 @stop
 @section('js')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

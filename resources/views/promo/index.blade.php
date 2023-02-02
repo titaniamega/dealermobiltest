@@ -44,7 +44,7 @@
                                 <td>{{$promos->nama_produk}}</td>
                                 <td>{!! Str::limit($promos->keterangan, 20) !!}</td>
                                 <td>{{$promos->masa_berlaku?->isoFormat('dddd, D MMMM Y')}}</td>
-                                <td>
+                                <td align="center">
                                     <a href="{{route('promo.edit', $promos->id)}}" class="btn btn-outline-warning btn-xs"><i class="fa fa-edit " aria-hidden="true"></i>
                                         Edit
                                     </a>

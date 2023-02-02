@@ -11,26 +11,20 @@
                         <div class="form-group">
                             <div class="row mb-2">
                                 <div class="col-md-6 mb-2">
-                                <label>Tanggal : </label>
-                                <input disabled class="form-control" value="{{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }}">
+                                <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                <label>Tanggal Diperbarui : </label>
-                                <input disabled class="form-control" value="{{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}">
+                                <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="row mb-2">
-                                <div class="col-md-6 mb-2">
-                                <label>Model</label>
-                                <input type="text" name="nama_produk" value="{{ $produk->nama_produk }}" class="form-control" readonly="readonly" placeholder="Nama Produk">
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                <label>Harga</label>
-                                <input type="number" name="harga" value="{{ $produk->harga }}" class="form-control" placeholder="Harga Mobil" readonly="readonly">
-                            </div>
-                        </div>
+                        <dl class="row">
+                        <dt class="col-3">Nama</dt>
+                        <dd class="col-9">{{$produk->nama_produk}}</dd>
+
+                        <dt class="col-3">Harga</dt>
+                        <dd class="col-9">@currency($produk->harga)</dd>
+                        </dl>
                         <div class="form-group">
                             <div class="row mb-2">
                                 <div class="col-md-6 mb-2">
