@@ -24,7 +24,7 @@
                             <th>No</th>
                             <th>Tanggal</th>
                             <th>Foto</th>
-                            <th>Nama Konsumen</th>
+                            <th>Nama</th>
                             <th>Produk</th>
                             <th>Action</th>
                         </tr>

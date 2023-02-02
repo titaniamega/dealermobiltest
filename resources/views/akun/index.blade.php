@@ -34,7 +34,7 @@
                             <tr>
                             <input type="hidden" class="delete_id" value="{{ $akuns->id }}">
                                 <td>{{$key+1}}</td>
-                                <td>{{$akuns->created_at}}</td>
+                                <td>{{$registeredAt=$akuns->created_at->isoFormat('dddd, D MMMM Y')}}</td>
                                 <td>{{$akuns->name}}</td>
                                 <td>{{$akuns->email}}</td>
                                 <td>{{$akuns->role}}</td>

@@ -18,9 +18,8 @@ class AkunController extends Controller
      */
     public function index()
     {
-        $akun = DB::table('users')->orderBy('id', 'DESC')->get();
+        $akun = User::orderBy('created_at','desc')->get();
         return view('akun.index', compact('akun'));
-
     }
 
     /**

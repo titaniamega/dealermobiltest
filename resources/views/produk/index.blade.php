@@ -70,6 +70,7 @@
         <script>
             $(function () {
                 $('#dataProduk').DataTable({
+                    "fixedHeader": true,
                     "paging": true,
                     "ordering": true,
                     "info": true,
