@@ -71,7 +71,12 @@ class UmumController extends Controller
         ->get();
 
         $tipe = Tipe::where('id_produk','=',$id)->get();
-        $total_tipe= Tipe::count();
+        $total_tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->where(function($query) use ($id){
+            if( $id != "" )
+                $query->where('tipe.id_produk',"=", $id);
+        })
+        ->count();
 
         $produkTipe = DB::table('produk')
             ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
