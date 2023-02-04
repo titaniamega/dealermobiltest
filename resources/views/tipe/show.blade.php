@@ -7,17 +7,17 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">
-                    <div>
-                        <div class="row mb-2">
-                            <div class="col-md-6 mb-2">
-                            <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
-                            </div>
-                            <div class="col-md-6 mb-2">
-                            <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
-                            </div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
+                        </div>
+                        <div class="col-md-6">
+                        <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$tipe->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                         </div>
                     </div>
+                </div>
+                <div class="card-body">
                 <table class="table table-striped table-bordered martop-sm">
                     <tr>
                         <td> ID Tipe </Video></td> <td>{{$tipe->id}}</td>

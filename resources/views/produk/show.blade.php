@@ -7,17 +7,17 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">
-                        <div class="form-group">
-                            <div class="row mb-2">
-                                <div class="col-md-6 mb-2">
-                                <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
-                                </div>
-                            </div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <h5>Tanggal : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->created_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
                         </div>
+                        <div class="col-md-6">
+                        <h5>Diperbarui : <span class="badge badge-pill badge-primary">{{ $registeredAt=$produk->updated_at->isoFormat('dddd, D MMMM Y') }}</span></h5>
+                        </div>
+                        </div>
+                </div>
+                <div class="card-body">
                         <dl class="row">
                         <dt class="col-3">Nama</dt>
                         <dd class="col-9">{{$produk->nama_produk}}</dd>
