@@ -10,11 +10,11 @@
                 <p style="text-align: justify;" class="responsive-font-in"><strong>Persyaratan Kredit Untuk Perorangan &nbsp;:</strong></p>
                     <ol style="text-align: justify;" class="responsive-font-ex">
                         <li>Foto Copy Kartu Keluarga</li>
-                        <li>Foto Copy KTP ( Suami + Istri )</li>
+                        <li>Foto Copy KTP (Suami + Istri)</li>
                         <li>Foto Copy PBB/ Akta Jual Beli Rumah</li>
                         <li>Foto Copy Tabungan / Rekening Koran 3 Bulan Terakhir</li>
                         <li>Foto Copy SIUP &amp; NPWP (Wiraswasta) atau Slip Gaji</li>
-                        <li>Surat Keterangan Kerja ( Karyawan )</li>
+                        <li>Surat Keterangan Kerja (Karyawan)</li>
                     </ol>
                 <p style="text-align: justify;" class="responsive-font-in"><strong>Persyaratan Kredit Untuk Perusahaan  &nbsp;:</strong></p>
                     <ol style="text-align: justify;" class="responsive-font-ex">
