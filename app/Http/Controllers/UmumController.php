@@ -62,10 +62,16 @@ class UmumController extends Controller
 
     public function detailProduk($id, Request $request)
     {   
-        $produk = Produk::all(['id','nama_produk']);
+        $produk = Produk::all();
         $produkDet = Produk::findOrFail($id);
 
+        $produklainnya = Produk::select('*')
+        ->limit(4)
+        ->orderBy('id','DESC')
+        ->get();
+
         $tipe = Tipe::where('id_produk','=',$id)->get();
+        $total_tipe= Tipe::count();
 
         $produkTipe = DB::table('produk')
             ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
@@ -81,7 +87,7 @@ class UmumController extends Controller
             ->groupBy('produk.id')
             ->get();
         
-        return view('umum.detailProduk', compact('produk','produkDet','tipe','produkTipe'));
+        return view('umum.detailProduk', compact('produk','produkDet','tipe','produkTipe','total_tipe','produklainnya'));
     }
 
     public function harga(Request $request)
