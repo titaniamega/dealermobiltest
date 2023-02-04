@@ -12,8 +12,7 @@
                 <input type="search" id="btn-search" class="form-control" placeholder="Cari" aria-label="Search" />
                 </div>
             </div>
-
-            <div class="container px-4 px-lg-5 mt-5 responsive-font-ex">
+            <div class="container px-4 px-lg-5 mt-4 responsive-font-ex">
                     <table class="table table-hover table-bordered table-stripped" id="dataHarga" width="100%">
                     <thead class="thead-dark">
                         <tr>
