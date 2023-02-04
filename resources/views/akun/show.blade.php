@@ -1,7 +1,7 @@
 @extends('adminlte::page')
-@section('title', 'Manajemen Akun')
+@section('title', 'Data Akun')
 @section('content_header')
-    <h1>Manajemen Akun </h1>
+    <h1>Data Akun </h1>
 @stop
 @section('content')
     <div class="row">
