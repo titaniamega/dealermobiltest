@@ -26,7 +26,7 @@
                             <th>Model</th>
                             <th>Harga</th>
                             <th>Gambar</th>
-                            <th width="150">Action</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
