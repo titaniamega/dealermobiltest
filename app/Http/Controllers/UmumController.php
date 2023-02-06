@@ -41,6 +41,7 @@ class UmumController extends Controller
         ->selectRaw('produk.*, min(tipe.harga) as harga')
         ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
         ->selectRaw('min(kredit.dp_mulai) as dp_mulai')
+        ->selectRaw('count(distinct tipe.id) as jumlah_tipe')
         ->where(function($query) use ($request){
                 if( $request->id_produk != "" )
                     $query->where('tipe.id_produk',"=", $request->id_produk);
@@ -75,7 +76,7 @@ class UmumController extends Controller
         ->selectRaw('produk.*, min(tipe.harga) as harga')
         ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
         ->selectRaw('min(kredit.dp_mulai) as dp_mulai')
-        ->selectRaw('count(tipe.id) as jumlah_tipe')
+        ->selectRaw('count(distinct tipe.id) as jumlah_tipe')
         ->where(function($query) use ($request){
                 if( $request->id_produk != "" )
                     $query->where('tipe.id_produk',"=", $request->id_produk);
@@ -92,9 +93,19 @@ class UmumController extends Controller
         $produk = Produk::all();
         $produkDet = Produk::findOrFail($id);
 
-        $produklainnya = Produk::select('*')
-        ->limit(4)
+        $produklainnya = Produk::leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+        ->selectRaw('produk.*, min(tipe.harga) as harga')
+        ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
+        ->selectRaw('min(kredit.dp_mulai) as dp_mulai')
+        ->selectRaw('count(distinct tipe.id) as jumlah_tipe')
+        ->where(function($query) use ($request){
+                if( $request->id_produk != "" )
+                    $query->where('tipe.id_produk',"=", $request->id_produk);
+            })
         ->orderBy('id','DESC')
+        ->groupBy('nama_produk')
+        ->skip(0)
+        ->take(4)
         ->get();
 
         $tipe = Tipe::where('id_produk','=',$id)->get();
@@ -111,6 +122,7 @@ class UmumController extends Controller
             ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
             ->selectRaw('min(kredit.dp_mulai) as dp_mulai , min(kredit.cicilan_mulai) as cicilan_mulai ,
             max(kredit.tenor) as tenor')
+            ->selectRaw('count(distinct tipe.id) as jumlah_tipe')
             ->where(function($query) use ($id){
                 if( $id != "" )
                     $query->where('tipe.id_produk',"=", $id);

@@ -36,7 +36,7 @@
                    @foreach($produkindex as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$total_tipe}} TYPES</div>
+                              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->jumlah_tipe}} TYPES</div>
                               <!-- Product image-->
                               <img class="card-img-top" src="{{url('images/'.$p->gambar)}}" alt="..." />
                               <!-- Product details-->
