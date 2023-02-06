@@ -29,11 +29,27 @@ class UmumController extends Controller
         $id_produk = $request->id_produk;
 
         $produk = Produk::all();
-        $produkindex = Produk::all()
-        ->sortByDesc('id')
+
+        $total_tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('tipe.id_produk',"=",$request->id_produk);
+        })
+        ->count();
+
+        $produkindex = Produk::leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+        ->selectRaw('produk.*, min(tipe.harga) as harga')
+        ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
+        ->selectRaw('min(kredit.dp_mulai) as dp_mulai')
+        ->where(function($query) use ($request){
+                if( $request->id_produk != "" )
+                    $query->where('tipe.id_produk',"=", $request->id_produk);
+            })
+        ->orderBy('id','DESC')
+        ->groupBy('nama_produk')
         ->skip(0)
         ->take(4)
-        ->all();
+        ->get();
 
         $video = Video::all();
         $videoindex = Video::all()
@@ -50,12 +66,23 @@ class UmumController extends Controller
         ->take(4)
         ->all();
         
-        return view('umum.index',compact('produk','video','promo','produkindex','promoindex','videoindex'));
+        return view('umum.index',compact('produk','video','promo','produkindex','promoindex','videoindex','total_tipe'));
     }
 
     public function produk(Request $request)
     {   
-        $produk = Produk::all(['id','nama_produk','gambar','gambarslide','harga']);
+        $produk = Produk::leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+        ->selectRaw('produk.*, min(tipe.harga) as harga')
+        ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
+        ->selectRaw('min(kredit.dp_mulai) as dp_mulai')
+        ->selectRaw('count(tipe.id) as jumlah_tipe')
+        ->where(function($query) use ($request){
+                if( $request->id_produk != "" )
+                    $query->where('tipe.id_produk',"=", $request->id_produk);
+            })
+        ->orderBy('id','DESC')
+        ->groupBy('id')
+        ->get();
 
         return view('umum.produk',compact('produk'));
     }

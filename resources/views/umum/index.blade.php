@@ -29,27 +29,33 @@
          <section class="py-1">
             <div class="container px-4 px-lg-5 mt-5">
                 <h1 class="responsive-font text-center">Rekomendasi Produk</h1>
-                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
-                <p class="responsive-font-ex text-center">Mobil Baru Pilihan Dengan Harga Terbaik</p><br>
+                <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
+                <p class="responsive-font-ex text-center">Mobil Baru Pilihan Harga Terbaik</p>
+                <h4><span class="badge badge-pill badge-danger">Produk Terbaru</span></h4><br>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                    @foreach($produkindex as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$total_tipe}} TYPES</div>
                               <!-- Product image-->
                               <img class="card-img-top" src="{{url('images/'.$p->gambar)}}" alt="..." />
                               <!-- Product details-->
-                              <div class="card-body p-3">
-                                 <div class="text-center">
-                                       <!-- Product name-->
-                                       <h5 class="fw-bolder">{{$p->nama_produk}}</h5>
-                                       <!-- Product price-->
-                                        @currency($p->harga)
+                              <div class="card-body p-2">
+                                <div class="text-left">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder text-danger">{{$p->nama_produk}}</h5>
+                                    <!-- Product price-->
+                                    <dl class="row">
+                                    <dt class="col-4">Mulai</dt>
+                                    <dd class="col-8">@currency($p->harga)</dd>
+                                    <dt class="col-5">DP Mulai</dt>
+                                    <dd class="col-7">@currency($p->dp_mulai)</dd>
+                                    </dl>
                                  </div>
                               </div>
                               <!-- Product actions-->
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
+                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
                               </div>
                            </div>
                      </div>
@@ -179,7 +185,7 @@
 
         <!-- Section-->
         <section class="py-4">
-            <div class="container px-4 px-lg-5 mt-5">
+            <div class="container px-4 px-lg-5 mt-5 mb-3">
                     <h1 class="responsive-font text-center">Video Review</h1>
                     <hr
                         class="mb-4 mt-0 d-inline-block mx-auto"
