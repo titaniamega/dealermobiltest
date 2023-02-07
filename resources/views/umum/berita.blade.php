@@ -15,7 +15,7 @@
                         <div class="card-body">
                         <div class="badge bagde-pill bg-danger text-white position-absolute" style="top: 0.10rem; right: 0.10rem">{{$b->nama_produk}}</div>
                               <h5 class="fw-bolder" style="font-family: Montserrat;"><a class="text-danger" href="{{route('umum.detailBerita',$b->id)}}">{{$b->judul_berita}}</a></h5>
-                              <p style="font-size: small; font-family: Montserrat;"><i class="fa fa-calendar mr-2"></i>{{$registeredAt=$b->updated_at->isoFormat('dddd, D MMMM Y')}}</p> 
+                              <p style="font-size: small; font-family: Montserrat;"><i class="fa fa-calendar mr-2"></i>{{$registeredAt=$b->created_at->isoFormat('dddd, D MMMM Y')}}</p> 
                               <p class="card-text" style="font-family: Montserrat; font-size: medium; text-align: justify;">{{Str::limit($b->keterangan, 120)}}</p>
                         </div>
                         <div class="card-footer">

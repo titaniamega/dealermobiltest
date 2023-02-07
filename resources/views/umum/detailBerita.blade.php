@@ -6,7 +6,7 @@
                 <div class="text-center">
                 <h1 class="responsive-font">{{$berita->judul_berita}}</h1>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
-                <p class="responsive-font-ex">Posted on {{$registeredAt=$berita->updated_at->isoFormat('dddd, D MMMM Y')}}</p>
+                <p class="responsive-font-ex">Posted on {{$registeredAt=$berita->created_at->isoFormat('dddd, D MMMM Y')}}</p>
                 </div>
             </div>
             <div class="container px-4 px-lg-5 mt-5">

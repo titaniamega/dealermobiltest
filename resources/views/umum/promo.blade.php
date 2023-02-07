@@ -9,9 +9,9 @@
                 @foreach($promo as $p)
                      <div class="col mb-5">
                            <div class="card h-100">
-                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
-                                 <div class="badge bg-danger position-absolute" style="top: 0.5rem; left: 0.5rem">
-                                 {{$p->masa_berlaku?->isoFormat('D MMMM Y')}}
+                                 <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->nama_produk}}</div>
+                                 <div class="badge bg-info position-absolute" style="top: 0.5rem; left: 0.5rem">
+                                 <i class="fa fa-clock-o mr-1" aria-hidden="true"></i>{{$p->masa_berlaku?->isoFormat('D MMMM Y')}}
                                  </div>
                               <img class="card-img-top" src="{{url('images/promo/'.$p->gambar)}}" alt="..."  />                         
                               <div class="card-body p-1">
