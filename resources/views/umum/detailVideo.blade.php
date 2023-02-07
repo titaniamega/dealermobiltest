@@ -14,20 +14,41 @@
                     <x-embed url="{{$videoDet->link_video}}" aspect-ratio="16:9"/>
                     </div>
                 </div>
-                <div class="container px-4 px-lg-5 mt-5">
-            <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
-            <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
-                    <ul style="text-align: justify;" class="responsive-font-ex">
-                    @foreach($produkTipe as $tp)
-                        <li>Harga Mulai : @currency($tp->harga) Jutaan</li>
-                        <li>DP Mulai : @currency($tp->dp_mulai) Jutaan </li>
-                        <li>Cicilan Mulai : @currency($tp->cicilan_mulai) Jutaan</li>
-                        <li>Tenor Hingga : {{$tp->tenor}} Tahun</li>
-                        <li>Bonus : {{$tp->bonus}}</li>
-                    @endforeach
-                    </ul>
             </div>
-            <div class="container px-4 px-lg-5 mt-5 responsive-font-ex">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <div class="card-shadow">
+                            <img src="{{url('images/'.$produkDet->gambar)}}" class="img-fluid" width="500px">
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <h3><span class="badge float-right badge-pill badge-danger">{{$total_tipe}} TYPES</span></h3>
+                        <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
+                        <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
+                        <div class="responsive-font-ex">
+                        <dl class="row">
+                        @foreach($produkTipe as $tp)
+                            <dt class="col-4">Harga Mulai</dt>
+                            <dd class="col-8">@currency($tp->harga) Jutaan</dd>
+                            <dt class="col-4">DP Mulai </dt>
+                            <dd class="col-8">@currency($tp->dp_mulai) Jutaan</dd>
+                            <dt class="col-4">Cicilan Mulai </dt>
+                            <dd class="col-8">@currency($tp->cicilan_mulai) Jutaan</dd>
+                            <dt class="col-4">Tenor Hingga </dt>
+                            <dd class="col-8">{{$tp->tenor}} Tahun</dd>
+                            <dt class="col-4">Bonus </dt>
+                            <dd class="col-8">{{$tp->bonus}}</dd>
+                        </dl>
+                        @endforeach
+                        </div>
+                        </div>
+                    </div> 
+                </div>   
+            </div>
+            
+            <div class="container px-4 px-lg-5 mt-3 responsive-font-ex">
             <p class="responsive-font-in text-danger">HARGA {{$produkDet->nama_produk}} DI KOTA INDONESIA </p>
             <p class="responsive-font-ex">Daftar Harga Mobil Baru {{$produkDet->nama_produk}}, Belum Dikurangi Cashback yang berlaku di Indonesia</p>
                     <table class="table table-hover table-bordered table-stripped" id="dataHarga" width="100%">
@@ -46,7 +67,7 @@
                     </table>
             <p class="responsive-font-ex">*Informasi harga diatas dapat berubah sewaktu-waktu tanpa pemberitahuan.</p>
             </div>
-            <div class="container px-4 px-lg-5 mt-5 responsive-font-ex">
+            <div class="container px-4 px-lg-5 mt-3 responsive-font-ex">
             <p class="responsive-font-in text-danger">SPESIFIKASI</p>
                 {!! $produkDet->deskripsi !!}
             </div>

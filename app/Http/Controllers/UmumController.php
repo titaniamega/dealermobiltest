@@ -194,21 +194,29 @@ class UmumController extends Controller
 
         $tipe = Tipe::where('id_produk','=',$id)->get();
 
-        $produkTipe = DB::table('produk')
-            ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
-            ->selectRaw('produk.*, min(tipe.harga) as harga, bonus as bonus')
-            ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
-            ->selectRaw('min(kredit.dp_mulai) as dp_mulai , min(kredit.cicilan_mulai) as cicilan_mulai ,
-            max(kredit.tenor) as tenor')
-            ->where(function($query) use ($id){
-                if( $id != "" )
-                    $query->where('tipe.id_produk',"=", $id);
-            })
-            ->orderBy('produk.id','DESC')
-            ->groupBy('produk.id')
-            ->get();
+        $total_tipe= Tipe::join('produk','tipe.id_produk','=','produk.id')
+        ->where(function($query) use ($id){
+            if( $id != "" )
+                $query->where('tipe.id_produk',"=", $id);
+        })
+        ->count();
 
-        return view('umum.detailVideo', compact('produk','videoDet','produkDet','tipe','produkTipe'));
+        $produkTipe = DB::table('produk')
+        ->leftJoin('tipe', 'produk.id', '=', 'tipe.id_produk')
+        ->selectRaw('produk.*, min(tipe.harga) as harga, bonus as bonus')
+        ->leftJoin('kredit', 'produk.id', '=', 'kredit.id_produk')
+        ->selectRaw('min(kredit.dp_mulai) as dp_mulai , min(kredit.cicilan_mulai) as cicilan_mulai ,
+        max(kredit.tenor) as tenor')
+        ->selectRaw('count(distinct tipe.id) as jumlah_tipe')
+        ->where(function($query) use ($id){
+            if( $id != "" )
+                $query->where('tipe.id_produk',"=", $id);
+        })
+        ->orderBy('produk.id','DESC')
+        ->groupBy('produk.id')
+        ->get();
+
+        return view('umum.detailVideo', compact('produk','videoDet','produkDet','tipe','produkTipe','total_tipe'));
     }
 
     public function galeri(Request $request)
