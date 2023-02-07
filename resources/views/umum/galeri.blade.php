@@ -5,25 +5,77 @@
             <div class="container px-4 px-lg-5 mt-5">
             <h1 class="responsive-font text-center">Galeri Konsumen</h1>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach($konsumen as $k)
-                     <div class="col mb-5">
-                           <div class="card h-100">
-                                 <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$k->nama_produk}}</div>
-                                 <div class="badge bg-success position-absolute" style="top: 0.5rem; left: 0.5rem">
-                                 {{$k->updated_at->isoFormat('D MMMM Y')}}
-                                 </div>
-                              <img class="card-img-top" src="{{url('images/konsumen/'.$k->gambar)}}" alt="..."  />                         
-                              <div class="card-body p-1">
-                                 <div class="text-center">                                 
-                                       <h5 class="fw-bolder">{{$k->nama_produk}}</h5>
-                                 </div>
-                              </div>
-                                                          
-                           </div>
-                     </div>
-                    @endforeach
+                <div class="portfolio-item row">
+                @foreach($konsumen as $k)
+                    <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
+                    <div class="badge bagde-pill bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.10rem">{{$k->nama_produk}}</div>
+                    <a href="{{url('images/konsumen/'.$k->gambar)}}" class="fancylight popup-btn" data-fancybox-group="light"> 
+                    <img class="img-fluid" src="{{url('images/konsumen/'.$k->gambar)}}" alt="">
+                    </a>
+                    </div>
+                @endforeach
                 </div>
             </div>
-    </section>
+        </section>
+@stop
+
+@section('js')
+<script>
+    $('.portfolio-menu ul li').click(function(){
+         	$('.portfolio-menu ul li').removeClass('active');
+         	$(this).addClass('active');
+         	
+         	var selector = $(this).attr('data-filter');
+         	$('.portfolio-item').isotope({
+         		filter:selector
+         	});
+         	return  false;
+         });
+         $(document).ready(function() {
+         var popup_btn = $('.popup-btn');
+         popup_btn.magnificPopup({
+         type : 'image',
+         gallery : {
+         	enabled : true
+         }
+         });
+         });
+</script>
+@stop
+
+@section('css')
+<style>
+    body{
+	margin:0;
+	padding:0;
+}
+/* .container{
+	width:90%
+	margin:10px auto;
+} */
+.portfolio-menu{
+	text-align:center;
+}
+.portfolio-menu ul li{
+	display:inline-block;
+	margin:0;
+	list-style:none;
+	padding:10px 15px;
+	cursor:pointer;
+	-webkit-transition:all 05s ease;
+	-moz-transition:all 05s ease;
+	-ms-transition:all 05s ease;
+	-o-transition:all 05s ease;
+	transition:all .5s ease;
+}
+
+.portfolio-item{
+	/*width:100%;*/
+}
+.portfolio-item .item{
+	/*width:303px;*/
+	float:left;
+	margin-bottom:10px;
+}
+</style>
 @stop

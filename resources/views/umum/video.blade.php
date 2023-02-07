@@ -11,7 +11,7 @@
                         @foreach($video as $v)
                             <div class="col-md-4">
                                 <div class="card">
-                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$v->nama_produk}}</div>
+                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$v->nama_produk}}</div>
                                     <x-embed url="{{$v->link_video}}" />                      
                                     <div class="card-body p-1">
                                     <div class="text-center">                                 

@@ -30,8 +30,10 @@
         google.maps.event.addDomListener(window, 'load', initialize);
         
         </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
         <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/rowgroup/1.3.0/css/rowGroup.bootstrap4.min.css" rel="stylesheet" />
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <style>
             @media (min-width: 1200px) {
             .responsive-font {
@@ -184,10 +186,10 @@
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold">Kontak Kami</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #D22B2B; height: 2px"/>
-                    <p><i class="fas fa-home mr-3"></i> Indonesia</p>
-                    <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    <p><i class="fa fa-home"></i> Indonesia</p>
+                    <p><i class="fa fa-envelope"></i> info@example.com</p>
+                    <p><i class="fa fa-phone"></i> + 01 234 567 88</p>
+                    <p><i class="fa fa-phone"></i> + 01 234 567 89</p>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -213,6 +215,8 @@
         <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
         <script src="https://cdn.datatables.net/rowgroup/1.3.0/js/dataTables.rowGroup.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
         @yield('js')
     </body>
 
