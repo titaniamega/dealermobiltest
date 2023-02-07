@@ -17,7 +17,7 @@
                         </div>
                         </div>
                         <div class="col-lg-6">
-                        <h3><span class="badge float-right badge-pill badge-danger">{{$total_tipe}} TYPES</span></h3>
+                        <h3><span class="badge float-right badge-pill badge-danger">{{$total_tipe}} TIPE</span></h3>
                         <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
                         <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
                         <div class="responsive-font-ex">
@@ -71,7 +71,7 @@
                 @foreach($produklainnya as $p)
                      <div class="col mb-5">
                      <div class="card h-100">
-                              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->jumlah_tipe}} TYPE</div>
+                              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->jumlah_tipe}} TIPE</div>
                               <!-- Product image-->
                               <img class="card-img-top" src="{{url('images/'.$p->gambar)}}" alt="..." />
                               <!-- Product details-->

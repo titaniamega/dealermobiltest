@@ -11,7 +11,7 @@
                 @foreach($produk as $p)
                      <div class="col mb-4">
                            <div class="card h-100">
-                              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->jumlah_tipe}} TYPES</div>
+                              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$p->jumlah_tipe}} TIPE</div>
                               <!-- Product image-->
                               <img class="card-img-top" src="{{url('images/'.$p->gambar)}}" alt="..." />
                               <!-- Product details-->
