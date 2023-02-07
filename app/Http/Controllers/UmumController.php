@@ -216,7 +216,19 @@ class UmumController extends Controller
         ->groupBy('produk.id')
         ->get();
 
-        return view('umum.detailVideo', compact('produk','videoDet','produkDet','tipe','produkTipe','total_tipe'));
+        $videolainnya= Video::join('produk','video.id_produk','=','produk.id')
+        ->select('video.*','produk.nama_produk')
+        ->where(function($query) use ($request){
+            if($request->id_produk != "" )
+                $query->where('video.id_produk',"=",$request->id_produk);
+        })
+        ->where('is_aktif','=','ya')
+        ->orderBy('id', 'DESC')
+        ->skip(0)
+        ->take(3)
+        ->get();
+
+        return view('umum.detailVideo', compact('produk','videoDet','produkDet','tipe','produkTipe','total_tipe','videolainnya'));
     }
 
     public function galeri(Request $request)
