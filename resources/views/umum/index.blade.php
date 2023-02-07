@@ -31,7 +31,7 @@
                 <h1 class="responsive-font text-center">Rekomendasi Produk</h1>
                 <hr class="mb-2 mt-0 d-inline-block mx-auto" style="width: 100%; background-color: #ff0000; height: 2px"/>
                 <p class="responsive-font-ex text-center">Mobil Baru Pilihan Harga Terbaik</p>
-                <h4><span class="badge badge-pill badge-danger">Produk Terbaru</span></h4><br>
+                <h4><span class="badge badge-pill badge-danger responsive-font-ex">Produk Terbaru</span></h4><br>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                    @foreach($produkindex as $p)
                      <div class="col mb-5">
@@ -43,7 +43,7 @@
                               <div class="card-body p-2">
                                 <div class="text-left">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder text-danger">{{$p->nama_produk}}</h5>
+                                    <h5 class="fw-bolder"><a class="text-danger responsive-font-ex" href="{{route('umum.detailProduk',$p->id)}}">{{$p->nama_produk}}</a></h5>
                                     <!-- Product price-->
                                     <dl class="row">
                                     <dt class="col-4">Mulai</dt>
@@ -55,14 +55,14 @@
                               </div>
                               <!-- Product actions-->
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
+                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm responsive-font-ex" style="font-size: small;" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
                               </div>
                            </div>
                      </div>
                     @endforeach
                 </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-center">
-                    <a class="btn btn-danger btn-block" href="{{url('/umum/produk/')}}" role="button">Tampilkan Lainnya</a>
+                    <a class="btn btn-danger btn-block responsive-font-ex" href="{{url('/umum/produk/')}}" role="button">Tampilkan Lainnya</a>
                     </div>
                 </div>
         </section>
@@ -130,18 +130,18 @@
                               <img class="card-img-top" src="{{url('images/promo/'.$p->gambar)}}" alt="..."  />                         
                               <div class="card-body p-1">
                                  <div class="text-center">                                 
-                                       <h5 class="fw-bolder">{{$p->judul}}</h5>
+                                       <h5 class="fw-bolder"><a class="text-danger responsive-font-ex" href="{{route('umum.detailPromo',$p->id)}}">{{$p->judul}}</a></h5>
                                  </div>
                               </div>
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
+                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm responsive-font-ex" style="font-size: small;" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
                               </div>
                            </div>
                      </div>
                     @endforeach
                     </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-center">
-                        <a class="btn btn-danger btn-block" href="{{url('/umum/promo/')}}" role="button">Tampilkan Lainnya</a>
+                        <a class="btn btn-danger btn-block responsive-font-ex" href="{{url('/umum/promo/')}}" role="button">Tampilkan Lainnya</a>
                     </div>
                 </div>
                 </div>
@@ -201,7 +201,7 @@
                                     <x-embed url="{{$v->link_video}}" />                      
                                     <div class="card-body p-1">
                                         <div class="text-center">                                 
-                                            <h5 class="fw-bolder">{{$v->judul_video}}</h5>
+                                            <h5 class="fw-bolder"><a class="text-danger responsive-font-ex" href="{{route('umum.detailVideo',$v->id)}}">{{$v->judul_video}}</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@
                         @endforeach
                         </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-center">
-                            <a class="btn btn-danger btn-block" href="{{url('/umum/video/')}}" role="button">Tampilkan Lainnya</a>
+                            <a class="btn btn-danger btn-block responsive-font-ex" href="{{url('/umum/video/')}}" role="button">Tampilkan Lainnya</a>
                         </div>
                     </div>
                 </div>

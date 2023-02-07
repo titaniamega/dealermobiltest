@@ -14,9 +14,9 @@
                         <img src="{{url('images/berita/'.$b->gambar_berita)}}" alt="" class="card-img-top">
                         <div class="card-body">
                         <div class="badge bagde-pill bg-danger text-white position-absolute" style="top: 0.10rem; right: 0.10rem">{{$b->nama_produk}}</div>
-                              <h5 class="fw-bolder text-danger">{{$b->judul_berita}}</h5>
-                              <p><i class="fa fa-calendar mr-2"></i>{{$registeredAt=$b->updated_at->isoFormat('dddd, D MMMM Y')}}</p> 
-                              <p class="card-text">{{Str::limit($b->keterangan, 100)}}</p>
+                              <h5 class="fw-bolder" style="font-family: Montserrat;"><a class="text-danger" href="{{route('umum.detailBerita',$b->id)}}">{{$b->judul_berita}}</a></h5>
+                              <p style="font-size: small; font-family: Montserrat;"><i class="fa fa-calendar mr-2"></i>{{$registeredAt=$b->updated_at->isoFormat('dddd, D MMMM Y')}}</p> 
+                              <p class="card-text" style="font-family: Montserrat; font-size: medium; text-align: justify;">{{Str::limit($b->keterangan, 120)}}</p>
                         </div>
                         <div class="card-footer">
                         <a href="{{route('umum.detailBerita',$b->id)}}" class="btn btn-outline-danger float-left btn-sm">Lanjut Baca</a>
@@ -27,16 +27,16 @@
                   </div>
             </div>
     </section>
-      <style>
-            .card{
-            padding: .5em .5em .5em;
-            border-radius: 7px;
-            text-align: left;
-            box-shadow: 0 5px 10px rgba(0,0,0,.2);
-            }
-            .card:hover{
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }         
-      </style>
+<style>
+      .card{
+      padding: .5em .5em .5em;
+      border-radius: 7px;
+      text-align: left;
+      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+      }
+      .card:hover{
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+      }
+</style>
 @stop

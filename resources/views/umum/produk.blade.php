@@ -18,7 +18,7 @@
                               <div class="card-body p-2">
                                 <div class="text-left">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder text-danger">{{$p->nama_produk}}</h5>
+                                    <h5 class="fw-bolder"><a class="text-danger responsive-font-ex" href="{{route('umum.detailProduk',$p->id)}}">{{$p->nama_produk}}</a></h5>
                                     <!-- Product price-->
                                     <dl class="row">
                                     <dt class="col-4">Mulai</dt>
@@ -30,7 +30,7 @@
                               </div>
                               <!-- Product actions-->
                                  <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
+                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm responsive-font-ex" style="font-size: small;" href="{{route('umum.detailProduk',$p->id)}}">Lihat Selengkapnya</a></div>
                               </div>
                            </div>
                      </div>

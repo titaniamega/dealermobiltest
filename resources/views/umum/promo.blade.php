@@ -16,11 +16,11 @@
                               <img class="card-img-top" src="{{url('images/promo/'.$p->gambar)}}" alt="..."  />                         
                               <div class="card-body p-1">
                                  <div class="text-center">                                 
-                                       <h5 class="fw-bolder">{{$p->judul}}</h5>
+                                       <h5 class="fw-bolder"><a class="text-danger responsive-font-ex" href="{{route('umum.detailPromo',$p->id)}}">{{$p->judul}}</a></h5>
                                  </div>
                               </div>
                               <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                 <div class="text-center"><a class="btn btn-outline-danger mt-auto" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
+                                 <div class="text-center"><a class="btn btn-block btn-outline-danger mt-auto btn-sm responsive-font-ex" style="font-size: small;" href="{{route('umum.detailPromo',$p->id)}}">Lihat Promo</a></div>
                               </div>
                            </div>
                      </div>
