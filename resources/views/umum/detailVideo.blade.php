@@ -24,7 +24,7 @@
                         </div>
                         </div>
                         <div class="col-lg-6">
-                        <h3><span class="badge float-right badge-pill badge-danger">{{$total_tipe}} TYPES</span></h3>
+                        <h3><span class="badge float-right badge-pill badge-danger">{{$total_tipe}} TYPE</span></h3>
                         <p style="text-align: justify;" class="responsive-font-in"><strong>{{$produkDet->nama_produk}} INDONESIA</strong></p>
                         <p style="text-align: justify;" class="responsive-font-ex">Beli Sekarang Disini Mobil {{$produkDet->nama_produk}}, Dapatkan Promonya Dibawah Ini</p>
                         <div class="responsive-font-ex">

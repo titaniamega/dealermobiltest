@@ -28,9 +28,8 @@
                         <li>Foto copy KTP direksi</li>
                     </ol>
                 <p style="text-align: justify;" class="responsive-font-ex"><strong>NB: Semua persyaratan kredit baik perorangan atau perusahaan dapat berubah sewaktu-waktu tergantung kebijakan masing-masing Leasing.</strong></p>
-                <a class="btn btn-danger responsive-font-ex" href="#" role="button">Simulasi Kredit</a>    
+                <a class="btn btn-danger responsive-font-ex" href="#" role="button"><i class="fa fa-credit-card mr-2"></i>Simulasi Kredit</a>    
                 </div>     
             </div>
         </section>
-
 @stop
