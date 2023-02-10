@@ -49,11 +49,10 @@
             } );
         </script>
 @stop
-
 @section('css')
-        <style>
-            table th:nth-child(3), td:nth-child(3) {
-            display: none;
-            }
-        </style>
+    <style>
+        table th:nth-child(3), td:nth-child(3) {
+        display: none;
+        }
+    </style>
 @endsection

@@ -33,7 +33,7 @@
                     </tr>
                     <table>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer pt-3 border-top-0 bg-transparent">
                 <a href="{{ route('berita.edit', $berita->id) }}" 
                     class="btn btn-warning btn-sm">Edit</a>
                     <a href="{{ route('berita.index') }}" 

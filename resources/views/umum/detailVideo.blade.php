@@ -91,25 +91,23 @@
                         @endforeach
                     </div>
                 </div>
-            
             </div>
       </section>
-
 @stop
 @section('css')
-      <style>
-            table th:nth-child(3), td:nth-child(3) {
-            display: none;
-            }
-            .card{
-            padding: 2.0em .5em .5em;
-            border-radius: 7px;
-            text-align: center;
-            box-shadow: 0 5px 10px rgba(0,0,0,.2);
-            }
-            .card:hover{
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-            }  
-      </style>
+<style>
+    table th:nth-child(3), td:nth-child(3) {
+    display: none;
+    }
+    .card{
+    padding: 2.0em .5em .5em;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+    .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    }
+    </style>
 @endsection

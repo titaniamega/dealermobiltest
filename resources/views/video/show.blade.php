@@ -35,7 +35,7 @@
                     </tr>
                     <table>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer pt-3 border-top-0 bg-transparent">
                 <a href="{{ route('video.edit', $video->id) }}" 
                     class="btn btn-warning btn-sm">Edit</a>
                     <a href="{{ route('video.index') }}" 

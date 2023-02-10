@@ -23,7 +23,7 @@
                     </tr>
                     <table>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer pt-3 border-top-0 bg-transparent">
                 <a href="{{ route('akun.edit', $akun->id) }}" 
                     class="btn btn-warning btn-sm">Ubah</a>
                     <a href="{{ route('akun.index') }}" 
