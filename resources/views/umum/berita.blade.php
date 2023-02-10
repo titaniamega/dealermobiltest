@@ -19,7 +19,7 @@
                               <p class="card-text" style="font-family: Montserrat; font-size: medium; text-align: justify;">{{Str::limit($b->keterangan, 120)}}</p>
                         </div>
                         <div class="card-footer pt-0 border-top-0 bg-transparent">
-                        <a href="{{route('umum.detailBerita',$b->id)}}" class="btn btn-outline-danger float-left btn-sm">Lanjut Baca</a>
+                        <a href="{{route('umum.detailBerita',$b->id)}}" class="btn btn-outline-danger float-left btn-sm">Lanjut Baca &rarr;</a>
                         </div>
                         </div>
                   </div>
